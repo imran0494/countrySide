@@ -1,0 +1,305 @@
+.d-flex {
+  padding-left: 90px;
+}
+
+.icon-slider {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 75%;
+  margin-right: auto;
+}
+
+.icon-list {
+  display: flex;
+  transition: transform 1s ease-in-out;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.icon-list::-webkit-scrollbar {
+  display: none;
+}
+
+.icon-item {
+  flex: 0 0 10%;
+  text-align: center;
+  position: relative;
+  padding-bottom: 5px;
+  cursor: pointer;
+  color: grey;
+}
+
+.icon-item img,
+.icon-item p {
+  color: grey;
+}
+
+.icon-item img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.icon-item p {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.icon-item::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  bottom: 0;
+  width: calc(100% - 4px);
+  height: 2px;
+  background-color: transparent;
+  transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.icon-item:hover::after,
+.icon-item:hover p::after {
+  background-color: grey;
+  transform: scaleX(1);
+}
+
+.icon-item.active::after {
+  background-color: black;
+  transform: scaleX(1);
+}
+
+.icon-item:hover img,
+.icon-item:hover p {
+  color: black;
+  opacity: 1;
+  filter: brightness(1.2);
+}
+
+.icon-item.active img,
+.icon-item.active p {
+  color: black;
+  opacity: 1;
+  filter: brightness(1.2);
+}
+
+.scroll-btn {
+  background-color: white;
+  border: 2px solid #c8c8c8;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 7px;
+}
+
+.scroll-btn .scroll-icon {
+  width: 13px;
+  height: 13px;
+  fill: currentColor;
+}
+
+.control-buttons {
+  display: flex;
+  align-items: center;
+  margin-left: 12px;
+  gap: 10px;
+  width: 25%;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+}
+
+.filter-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 20px;
+  /* border: 1px solid #c8c8c8; */
+  border-radius: 14px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  outline: none;
+  margin-left: 13px;
+}
+
+.filter-button svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+}
+
+.filter-button:hover {
+  border-color: black;
+}
+
+.filter-button:focus {
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 10px 40px;
+  border: 1px solid #c8c8c8;
+  border-radius: 14px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 300;
+  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  outline: none;
+  margin-left: 13px;
+  line-height: 1;
+}
+
+.toggle-container:hover,
+.toggle-container:focus-within {
+  border-color: black;
+}
+
+.toggle-label {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.toggle-switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 14px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+
+input:checked + .slider {
+  background-color: black;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+  background-color: black;
+  color: white;
+  content: "✔";
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 800px) {
+  .icon-slider {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    /* margin-right: -40px; */
+    margin-bottom: 15px; /* Add space below the icon-slider */
+  }
+
+  .control-buttons {
+    flex-direction: column; /* Stack control buttons vertically */
+    align-items: flex-start; /* Align buttons to the left */
+    /* margin-left: -100px; Reset left margin */
+    width: 40%; /* Make control-buttons full width */
+    margin-bottom: 15px; /* Add bottom margin for spacing */
+    gap: 10px; /* Space between buttons */
+    margin-right: 60px;
+  }
+
+  .filter-button,
+  .toggle-container {
+    width: 100%; /* Full width for buttons */
+    padding: 8px 15px; /* Adjust padding */
+    font-size: 12px; /* Adjust font size */
+    margin-bottom: 10px; /* Space below each button */
+  }
+
+  .toggle-container {
+    padding: 8px 10px; /* Adjust padding for toggle container */
+  }
+
+  .scroll-btn {
+    margin-top: 30px;
+    margin-left: -50px;
+    border: 2px solid #c8c8c8;
+    border-radius: 50%;
+  }
+  #left-btn {
+    margin-right: 10px;
+  }
+  #right-btn {
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .control-buttons {
+    margin-left: 1px;
+  }
+}
+/* Media Queries for Responsiveness */
+@media (max-width: 1250px) {
+  .control-buttons {
+    margin-left: 100px;
+  }
+}
+
+@media (max-width: 950px) {
+  .control-buttons {
+    margin-left: 120px;
+  }
+}
+
+@media (max-width: 900px) {
+  .control-buttons {
+    margin-left: 120px;
+  }
+}
+
+@media (max-width: 800px) {
+  .control-buttons {
+    margin-left: 60px;
+  }
+}
+@media (max-width: 775px) {
+  .control-buttons {
+    margin-left: 30px;
+  }
+}

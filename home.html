@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Home - countrysides</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* styles.css */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+
+      header {
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .logo img {
+        height: 40px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav ul li {
+        margin-left: 20px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      .profile-menu i {
+        font-size: 24px;
+        color: #333;
+      }
+
+      .hero-section {
+        background-image: url("hero-bg.jpg");
+        background-size: cover;
+        background-position: center;
+        padding: 60px 20px;
+        text-align: center;
+        color: white;
+      }
+
+      .hero-section h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+
+      .hero-section p {
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+
+      .cta-button {
+        padding: 10px 20px;
+        background-color: #ff385c;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+      }
+
+      .cta-button:hover {
+        background-color: #e0245e;
+      }
+
+      .listing-section {
+        padding: 40px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .listing-section h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .listings {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .listing-card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: calc(50% - 20px);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+
+      .listing-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .listing-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .listing-details {
+        padding: 20px;
+      }
+
+      .listing-details h3 {
+        margin: 0 0 10px 0;
+        font-size: 18px;
+      }
+
+      .listing-details p {
+        margin: 0 0 20px 0;
+        color: #777;
+      }
+
+      .manage-button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .manage-button:hover {
+        background-color: #0056b3;
+      }
+
+      .cta-section {
+        background-color: #ff385c;
+        color: white;
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      .cta-section h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="#"><img src="/images/logo/logo.jpeg" alt="countrysides Logo" /></a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Trips</a></li>
+            <li><a href="#">Messages</a></li>
+            <li>
+              <div class="profile-menu">
+                <i class="fas fa-user-circle"></i>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="hero-section">
+        <h1>Welcome to Your Hosting Dashboard</h1>
+        <p>
+          Manage your listings, track your reservations, and update your
+          settings.
+        </p>
+        <a href="#" class="cta-button">List Your Space</a>
+      </div>
+
+      <div class="listing-section">
+        <h2>Your Listings</h2>
+        <div class="listings">
+          <div class="listing-card">
+            <img src="house1.jpg" alt="Listing Image" />
+            <div class="listing-details">
+              <h3>Cozy Apartment in the City</h3>
+              <p>New York, NY</p>
+              <button class="manage-button">Manage Listing</button>
+            </div>
+          </div>
+          <div class="listing-card">
+            <img src="house2.jpg" alt="Listing Image" />
+            <div class="listing-details">
+              <h3>Modern House with Pool</h3>
+              <p>Los Angeles, CA</p>
+              <button class="manage-button">Manage Listing</button>
+            </div>
+          </div>
+          <!-- Add more listing cards as needed -->
+        </div>
+      </div>
+
+      <div class="cta-section">
+        <h2>Ready to Earn?</h2>
+        <p>List your space and start welcoming guests from around the world.</p>
+        <a href="#" class="cta-button">Get Started</a>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 countrysides, Inc.</p>
+    </footer>
+
+    <!-- Link to Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </body>
+</html>

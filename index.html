@@ -1,0 +1,1421 @@
+<!--Template Name: vacayhome
+File Name: home.html
+Author Name: ThemeVault
+Author URI: http://www.themevault.net/
+License URI: http://www.themevault.net/license/-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="icon" href="images/icons/favicon.png" /> -->
+    <link rel="stylesheet" href="https://cdn.lineicons.com/3.0/lineicons.css">
+    <title>vacayhome</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- <link
+      href="font-awesome/css/font-awesome.min.css"
+      rel="stylesheet"
+      type="text/css"
+    /> -->
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="fonts/antonio-exotic/stylesheet.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/lightbox.min.css" />
+    <link href="css/responsive.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/icons.css" />
+    <link rel="stylesheet" href="css/page.css" />
+    <link rel="stylesheet" href="css/footer.css">
+    <!-- <link rel="stylesheet" href="css/carousel.css"> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script
+      src="js/lightbox-plus-jquery.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="js/instafeed.min.js" type="text/javascript"></script>
+    <script src="js/custom.js" type="text/javascript"></script>
+    <!-- added new -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+   
+  </head>
+  <body>
+    <div id="page">
+      
+      <!--navbar--->
+      <div class="nav-bar">
+        <div class="logo" >
+          <img src="images/logo.jpeg" style="object-fit:contain" alt="logo" height="50rem" />
+        </div>
+        <div>
+          <a style="padding: 0 1rem; font-weight: 500; font-size: medium;">Stays</a>
+          <a style="padding: 0 1rem; font-weight: 500; font-size: medium;">Experiences</a>
+        </div>
+        <div>
+          <button class="burger-menu" onclick="toggleModal()">
+            <i class="lni lni-menu"></i>
+          </button>
+        </div>
+        
+      </div>
+      <div class="modal" id="modal" onclick="closeModal(event)">
+        <ul class="menu">
+          <li><a href="signup.html">Sign up</a></li>
+          <li><a href="login.html">Log in</a></li>
+         <li><a href="home.html">CountrySide  your home</a></li>
+          <li><a href="contact.html">Help Centre</a></li>
+        </ul>
+      </div>
+      
+      <!--header--->
+      <header class="header-container">
+        <div class="container">
+          <div class="top-row">
+                <div class="bar">
+                    <div class="location">
+                      <p>Where</p>
+                      <input type="text" placeholder="Search destinations">
+                    </div>
+
+                      <div class="check-in">
+                        <p>Check in</p>
+                        <input type="text" name="dates" placeholder="Add dates">
+                      </div>
+                      <div class="check-out">
+                        <p>Check out</p>
+                        <input type="text" name="dates" placeholder="Add dates">
+                      </div>
+                    <div class="guests">
+                          <p>Guests</p>
+                      <input type="text" placeholder="Add guests">
+                    </div>
+                    <div class="search-btn">
+
+                        <button class=" flex"><i class="lni lni-search-alt"></i></button>
+                    </div>
+                  </div>
+          
+        </div>
+      </header>
+
+      <!--end-->
+
+      <!-- icons scrolling section -->
+      <div class="d-flex">
+        <div class="scroll-btn" id="left-btn">
+          <svg
+            class="scroll-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+            aria-hidden="true"
+            role="presentation"
+            focusable="false"
+          >
+            <path
+              d="M10.59 15.7L12 14.3 5.7 8l6.3-6.3L10.59.3 4 6.88a1.5 1.5 0 000 2.24L10.59 15.7z"
+            ></path>
+          </svg>
+        </div>
+
+        <div class="icon-slider">
+          <div class="icon-list" id="icon-list">
+             <div class="icon-item" >
+      <img src="/images/icons-slider/icons.webp" alt="Icons" />
+      <p>Icons</p>
+    </div>
+            <div class="icon-item" id="icons-item">
+              <img
+                src="/images/icons-slider/amazing-pools.jpg"
+                alt="Amzing Pools"
+              />
+              <p>Amzing Pools</p>
+            </div>
+            <div class="icon-item">
+              <img src="/images/icons-slider/farms.jpg" alt="Farms" />
+              <p>Farms</p>
+            </div>
+            <div class="icon-item">
+              <img
+                src="/images/icons-slider/amazing-views.jpg"
+                alt="amazing-views"
+              />
+              <p>Amazing Views</p>
+            </div>
+            <div class="icon-item">
+              <img src="/images/icons-slider/Treehouses.jpg" alt="Treehouses" />
+              <p>Treehouses</p>
+            </div>
+            <div class="icon-item">
+              <img src="/images/icons-slider/rooms.jpg" alt="Rooms" />
+              <p>Rooms</p>
+            </div>
+            <div class="icon-item">
+              <img src="/images/icons-slider/boats.jpg" alt="Boats" />
+              <p>Boats</p>
+            </div>
+            <div class="icon-item">
+              <img src="/images/icons-slider/lake.jpg" alt="Lake" />
+              <p>Lake</p>
+            </div>
+            <div class="icon-item">
+              <img src="/images/icons-slider/Cabins.jpg" alt="Cabins" />
+              <p>Cabins</p>
+            </div>
+            <div class="icon-item">
+              <img src="/images/icons-slider/domes.jpg" alt="Domes" />
+              <p>Domes</p>
+            </div>
+            <div class="icon-item">
+              <img src="/images/icons-slider/castles.jpg" alt="Castles" />
+              <p>Castles</p>
+            </div>
+            <div class="icon-item">
+              <img src="/images/icons-slider/omg.jpg" alt="OMG!" />
+              <p>OMG!</p>
+            </div>
+            <div class="icon-item">
+              <img
+                src="/images/icons-slider/countrysides.jpg"
+                alt="Country Sides"
+              />
+              <p>Country Sides</p>
+            </div>
+            <div class="icon-item">
+              <img src="/images/icons-slider/mansions.jpg" alt="Mansions" />
+              <p>Mansions</p>
+            </div>
+            <div class="icon-item">
+              <img
+                src="/images/icons-slider/chef'sKitchen.jpg"
+                alt="Chef's Kitchen"
+              />
+              <p>Chef's Kitchen</p>
+            </div>
+            <div class="icon-item">
+              <img src="/images/icons-slider/vineyards.jpg" alt="Vineyards" />
+              <p>Vineyards</p>
+            </div>
+            <div class="icon-item">
+              <img src="/images/icons-slider/TinyHomes.jpg" alt="Tiny Homes" />
+              <p>Tiny Homes</p>
+            </div>
+            <div class="icon-item">
+              <img
+                src="/images/icons-slider/creativeSpace.jpg"
+                alt="Creative Space"
+              />
+              <p>Creative Space</p>
+            </div>
+            <div class="icon-item">
+              <img src="/images/icons-slider/golfing.jpg" alt="Golfing" />
+              <p>Golfing</p>
+            </div>
+            <div class="icon-item">
+              <img
+                src="/images/icons-slider/historicalHomes.jpg"
+                alt="Historical Homes"
+              />
+              <p>Historical Homes</p>
+            </div>
+            <div class="icon-item">
+              <img
+                src="/images/icons-slider/NationalParks.jpg"
+                alt="National Parks"
+              />
+              <p>National Parks</p>
+            </div>
+            <div class="icon-item">
+              <img src="/images/icons-slider/LakeFront.jpg" alt="Lakefront" />
+              <p>Lakefront</p>
+            </div>
+            <div class="icon-item">
+              <img src="/images/icons-slider/Bearch.jpg" alt="Bearch" />
+              <p>Bearch</p>
+            </div>
+            <div class="icon-item">
+              <img src="/images/icons-slider/Luxe.jpg" alt="Luxe" />
+              <p>Luxe</p>
+            </div>
+            <div class="icon-item">
+              <img
+                src="/images/icons-slider/CycladicsHomes.jpg"
+                alt="Cycladic Homes"
+              />
+              <p>Cycladic Homes</p>
+            </div>
+            <div class="icon-item">
+              <img
+                src="/images/icons-slider/BeachFront.jpg"
+                alt="Beach Front"
+              />
+              <p>Beach Front</p>
+            </div>
+            <div class="icon-item">
+              <img src="/images/icons-slider/Tropical.jpg" alt="Tropical" />
+              <p>Tropical</p>
+            </div>
+            <div class="icon-item">
+              <img src="/images/icons-slider/Desert.jpg" alt="Desert" />
+              <p>Desert</p>
+            </div>
+            <div class="icon-item">
+              <img
+                src="/images/icons-slider/OffTheGrid.jpg"
+                alt="Off The Grid"
+              />
+              <p>Off The Grid</p>
+            </div>
+            <div class="icon-item">
+              <img
+                src="/images/icons-slider/Bed&Breakfast.jpg"
+                alt="Bed & Breakfast"
+              />
+              <p>Bed & Breakfast</p>
+            </div>
+            <div class="icon-item">
+              <img src="/images/icons-slider/arctics.jpg" alt="Arctics" />
+              <p>Arctics</p>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-btn" id="right-btn">
+          <svg
+            class="scroll-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+            aria-hidden="true"
+            role="presentation"
+            focusable="false"
+          >
+            <path
+              d="M5.41.3 4 1.7 10.3 8 4 14.3l1.41 1.4 6.6-6.58c.57-.58.6-1.5.1-2.13l-.1-.11z"
+            ></path>
+          </svg>
+        </div>
+        <div class="control-buttons">
+          <button class="filter-button">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 32 32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                d="M7 16H3m26 0H15M29 6h-4m-8 0H3m26 20h-4M7 16a4 4 0 1 0 8 0 4 4 0 0 0-8 0zM17 6a4 4 0 1 0 8 0 4 4 0 0 0-8 0zm0 20a4 4 0 1 0 8 0 4 4 0 0 0-8 0zm0 0H3"
+              ></path>
+            </svg>
+            Filter
+          </button>
+
+          <div class="toggle-container">
+            <span class="toggle-label">Display total before taxes</span>
+            <label class="toggle-switch">
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Icon that triggers the display of images -->
+
+      <!-- Images section -->
+      <div id="dynamic-content"></div>
+
+
+      <!-- icon-page -->
+  
+      <div class="container-custom">
+        <div class="row-custom">
+          <div class="grid-container-custom">
+            <!-- Carousel 1 -->
+            <div class="carousel-container-custom">
+              <div class="carousel-wrapper">
+                <div class="navigation-buttons-custom">
+                  <div class="previous nav-btn">&lt;</div>
+                  <div class="next nav-btn">&gt;</div>
+                </div>
+                <div class="slider-carousel-custom">
+                  
+                  <a href="./second.html" target="_blank">
+                    <div class="images main">
+                      <img src="./images/a4.webp" alt="flower 1" />
+                      <div class="image-text">
+                        <strong>Go VIP with Kevin Hart</strong>
+                      </div>
+                      <div class="image-text">
+                        <p>Hosted by Author</p>
+                      </div>
+                      <div class="image-text">Coming on 21 August</div>
+                    </div>
+                    <div class="images">
+                      <img src="./images/a2.webp" alt="flower 2" />
+                      <div class="image-text">
+                        <strong>Go VIP with Kevin Hart</strong>
+                      </div>
+                      <div class="image-text">
+                        <p>Hosted by Author</p>
+                      </div>
+                      <div class="image-text">Coming on 21 August</div>
+                    </div>
+                    <div class="images">
+                      <img src="./images/a1.webp" alt="flower 3" />
+                      <div class="image-text">
+                        <strong> VIP with Kevin Hart</strong>
+                      </div>
+                      <div class="image-text">
+                        <p>Hosted by Author</p>
+                      </div>
+                      <div class="image-text">Coming on 21 August</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Carousel 2 -->
+            <div class="carousel-container-custom">
+              <div class="carousel-wrapper">
+                <div class="navigation-buttons-custom">
+                  <div class="previous nav-btn">&lt;</div>
+                  <div class="next nav-btn">&gt;</div>
+                </div>
+                <div class="slider-carousel-custom">
+                  <a href="./image2.html" target="_blank">
+                    <div class="images main">
+                      <img src="./images/b1.webp" alt="flower 1" />
+                      <div class="image-text">
+                        <strong>Go VIP with Kevin Hart</strong>
+                      </div>
+                      <div class="image-text">
+                        <p>Hosted by Author</p>
+                      </div>
+                      <div class="image-text">Coming on 21 August</div>
+                    </div>
+                    <div class="images">
+                      <img src="./images/a4.webp" alt="flower 2" />
+                      <div class="image-text">
+                        <strong>Go VIP with Kevin Hart</strong>
+                      </div>
+                      <div class="image-text">
+                        <p>Hosted by Author</p>
+                      </div>
+                      <div class="image-text">Coming on 21 August</div>
+                    </div>
+                    <div class="images">
+                      <img src="./images/a2.webp" alt="flower 3" />
+                      <div class="image-text">
+                        <strong> VIP with Kevin Hart</strong>
+                      </div>
+                      <div class="image-text">
+                        <p>Hosted by Author</p>
+                      </div>
+                      <div class="image-text">Coming on 21 August</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Add more carousels here -->
+            <div class="carousel-container-custom">
+              <div class="carousel-wrapper">
+                <div class="navigation-buttons-custom">
+                  <div class="previous nav-btn">&lt;</div>
+                  <div class="next nav-btn">&gt;</div>
+                </div>
+                <div class="slider-carousel-custom">
+                  <a href="./image1.html" target="_blank">
+                    <div class="images main">
+                      <img src="./images/c1.webp" alt="flower 1" />
+                      <div class="image-text">
+                        <strong>Go VIP with Kevin Hart</strong>
+                      </div>
+                      <div class="image-text">
+                        <p>Hosted by Author</p>
+                      </div>
+                      <div class="image-text">Coming on 21 August</div>
+                    </div>
+                    <div class="images">
+                      <img src="./images/a2.webp" alt="flower 2" />
+                      <div class="image-text">
+                        <strong>Go VIP with Kevin Hart</strong>
+                      </div>
+                      <div class="image-text">
+                        <p>Hosted by Author</p>
+                      </div>
+                      <div class="image-text">Coming on 21 August</div>
+                    </div>
+                    <div class="images">
+                      <img src="./images/a1.webp" alt="flower 3" />
+                      <div class="image-text">
+                        <strong> VIP with Kevin Hart</strong>
+                      </div>
+                      <div class="image-text">
+                        <p>Hosted by Author</p>
+                      </div>
+                      <div class="image-text">Coming on 21 August</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-container-custom">
+              <div class="carousel-wrapper">
+                <div class="navigation-buttons-custom">
+                  <div class="previous nav-btn">&lt;</div>
+                  <div class="next nav-btn">&gt;</div>
+                </div>
+                <div class="slider-carousel-custom">
+                  <a href="./image1.html" target="_blank">
+                    <div class="images main">
+                      <img src="./images/d1.webp" alt="flower 1" />
+                      <div class="image-text">
+                        <strong>Go VIP with Kevin Hart</strong>
+                      </div>
+                      <div class="image-text">
+                        <p>Hosted by Author</p>
+                      </div>
+                      <div class="image-text">Coming on 21 August</div>
+                    </div>
+                    <div class="images">
+                      <img src="./images/d2.jpeg" alt="flower 2" />
+                      <div class="image-text">
+                        <strong>Go VIP with Kevin Hart</strong>
+                      </div>
+                      <div class="image-text">
+                        <p>Hosted by Author</p>
+                      </div>
+                      <div class="image-text">Coming on 21 August</div>
+                    </div>
+                    <div class="images">
+                      <img src="./images/d3.webp" alt="flower 3" />
+                      <div class="image-text">
+                        <strong> VIP with Kevin Hart</strong>
+                      </div>
+                      <div class="image-text">
+                        <p>Hosted by Author</p>
+                      </div>
+                      <div class="image-text">Coming on 21 August</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-container-custom">
+              <div class="carousel-wrapper">
+                <div class="navigation-buttons-custom">
+                  <div class="previous nav-btn">&lt;</div>
+                  <div class="next nav-btn">&gt;</div>
+                </div>
+                <div class="slider-carousel-custom">
+                  <a href="./image1.html" target="_blank">
+                    <div class="images main">
+                      <img src="./images/d4.webp" alt="flower 1" />
+                      <div class="image-text">
+                        <strong>Go VIP with Kevin Hart</strong>
+                      </div>
+                      <div class="image-text">
+                        <p>Hosted by Author</p>
+                      </div>
+                      <div class="image-text">Coming on 21 August</div>
+                    </div>
+                    <div class="images">
+                      <img src="./images/a2.webp" alt="flower 2" />
+                      <div class="image-text">
+                        <strong>Go VIP with Kevin Hart</strong>
+                      </div>
+                      <div class="image-text">
+                        <p>Hosted by Author</p>
+                      </div>
+                      <div class="image-text">Coming on 21 August</div>
+                    </div>
+                    <div class="images">
+                      <img src="./images/a1.webp" alt="flower 3" />
+                      <div class="image-text">
+                        <strong> VIP with Kevin Hart</strong>
+                      </div>
+                      <div class="image-text">
+                        <p>Hosted by Author</p>
+                      </div>
+                      <div class="image-text">Coming on 21 August</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-container-custom">
+              <div class="carousel-wrapper">
+                <div class="navigation-buttons-custom">
+                  <div class="previous nav-btn">&lt;</div>
+                  <div class="next nav-btn">&gt;</div>
+                </div>
+                <div class="slider-carousel-custom">
+                  <a href="./image1.html" target="_blank">
+                    <div class="images main">
+                      <img src="./images/e1.webp" alt="flower 1" />
+                      <div class="image-text">
+                        <strong>Go VIP with Kevin Hart</strong>
+                      </div>
+                      <div class="image-text">
+                        <p>Hosted by Author</p>
+                      </div>
+                      <div class="image-text">Coming on 21 August</div>
+                    </div>
+                    <div class="images">
+                      <img src="./images/e2.webp" alt="flower 2" />
+                      <div class="image-text">
+                        <strong>Go VIP with Kevin Hart</strong>
+                      </div>
+                      <div class="image-text">
+                        <p>Hosted by Author</p>
+                      </div>
+                      <div class="image-text">Coming on 21 August</div>
+                    </div>
+                    <div class="images">
+                      <img src="./images/e3.webp" alt="flower 3" />
+                      <div class="image-text">
+                        <strong> VIP with Kevin Hart</strong>
+                      </div>
+                      <div class="image-text">
+                        <p>Hosted by Author</p>
+                      </div>
+                      <div class="image-text">Coming on 21 August</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- past experience  -->
+
+      <div class="experience-container">
+        <h1 class="text">Past Experiences</h1>
+        <div class="experiences">
+          <!-- First 4 experience containers -->
+          <div class="experience">
+            <a
+              href="experience.html"
+            >
+              <img
+                src="/images/room1.png"
+                alt="Open the Olympic Games at Musée"
+                class="pastExperience-active"
+              />
+              <img src="/images/room2.png" alt="Image 2" />
+              <img src="/images/room3.png" alt="Image 3" />
+              <img src="/images/room4.png" alt="Image 4" />
+              <img src="/images/room1.png" alt="Image 5" />
+            </a>
+            <div class="pastExperience-slider">
+              <input
+                type="radio"
+                id="radio1-1"
+                name="pastExperience-slider1"
+                checked
+              />
+              <label for="radio1-1" onclick="showImage(1, 1)"></label>
+              <input type="radio" id="radio1-2" name="pastExperience-slider1" />
+              <label for="radio1-2" onclick="showImage(1, 2)"></label>
+              <input type="radio" id="radio1-3" name="pastExperience-slider1" />
+              <label for="radio1-3" onclick="showImage(1, 3)"></label>
+              <input type="radio" id="radio1-4" name="pastExperience-slider1" />
+              <label for="radio1-4" onclick="showImage(1, 4)"></label>
+            </div>
+            <div class="experience-info">
+              <h2>Open the Olympic Games at Musée...</h2>
+              <p>Hosted by Mathieu Lehanneur</p>
+              <span class="sold-out">Sold out</span>
+            </div>
+          </div>
+          <div class="experience">
+            <a href="experience1.html">
+              <img
+                src="/images/room2.png"
+                alt="Open the Olympic Games at Musée"
+                class="pastExperience-active"
+              />
+              <img src="/images/room2.png" alt="Image 2" />
+              <img src="/images/room3.png" alt="Image 3" />
+              <img src="/images/room4.png" alt="Image 4" />
+              <img src="/images/room1.png" alt="Image 5" />
+            </a>
+            <div class="pastExperience-slider">
+              <input
+                type="radio"
+                id="radio2-1"
+                name="pastExperience-slider2"
+                checked
+              />
+              <label for="radio2-1" onclick="showImage(2, 1)"></label>
+              <input type="radio" id="radio2-2" name="pastExperience-slider2" />
+              <label for="radio2-2" onclick="showImage(2, 2)"></label>
+              <input type="radio" id="radio2-3" name="pastExperience-slider2" />
+              <label for="radio2-3" onclick="showImage(2, 3)"></label>
+              <input type="radio" id="radio2-4" name="pastExperience-slider2" />
+              <label for="radio2-4" onclick="showImage(2, 4)"></label>
+            </div>
+            <div class="experience-info">
+              <h2>Wake up in the Musée d'Orsay</h2>
+              <p>Hosted by Mathieu Lehanneur</p>
+              <span class="sold-out">Sold out</span>
+            </div>
+          </div>
+          <div class="experience">
+            <a href="experience2.html">
+              <img
+                src="/images/room3.png"
+                alt="Open the Olympic Games at Musée"
+                class="pastExperience-active"
+              />
+              <img src="/images/room2.png" alt="Image 2" />
+              <img src="/images/room3.png" alt="Image 3" />
+              <img src="/images/room4.png" alt="Image 4" />
+              <img src="/images/room1.png" alt="Image 5" />
+            </a>
+            <div class="pastExperience-slider">
+              <input
+                type="radio"
+                id="radio3-1"
+                name="pastExperience-slider3"
+                checked
+              />
+              <label for="radio3-1" onclick="showImage(3, 1)"></label>
+              <input type="radio" id="radio3-2" name="pastExperience-slider3" />
+              <label for="radio3-2" onclick="showImage(3, 2)"></label>
+              <input type="radio" id="radio3-3" name="pastExperience-slider3" />
+              <label for="radio3-3" onclick="showImage(3, 3)"></label>
+              <input type="radio" id="radio3-4" name="pastExperience-slider3" />
+              <label for="radio3-4" onclick="showImage(3, 4)"></label>
+            </div>
+            <div class="experience-info">
+              <h2>Make core memories with Inside O...</h2>
+              <p>Hosted by Joy</p>
+              <span class="sold-out">Sold out</span>
+            </div>
+          </div>
+          <div class="experience">
+            <a href="experience3.html">
+              <img
+                src="/images/room4.png"
+                alt="Open the Olympic Games at Musée"
+                class="pastExperience-active"
+              />
+              <img src="/images/room3.png" alt="Image 2" />
+              <img src="/images/room1.png" alt="Image 3" />
+              <img src="/images/room2.png" alt="Image 4" />
+              <img src="/images/room4.png" alt="Image 5" />
+            </a>
+            <div class="pastExperience-slider">
+              <input
+                type="radio"
+                id="radio4-1"
+                name="pastExperience-slider4"
+                checked
+              />
+              <label for="radio4-1" onclick="showImage(4, 1)"></label>
+              <input type="radio" id="radio4-2" name="pastExperience-slider4" />
+              <label for="radio4-2" onclick="showImage(4, 2)"></label>
+              <input type="radio" id="radio4-3" name="pastExperience-slider4" />
+              <label for="radio4-3" onclick="showImage(4, 3)"></label>
+              <input type="radio" id="radio4-4" name="pastExperience-slider4" />
+              <label for="radio4-4" onclick="showImage(4, 4)"></label>
+            </div>
+            <div class="experience-info">
+              <h2>Design your Incredibles Supersuit</h2>
+              <p>Hosted by Edna Mode</p>
+              <span class="sold-out">Sold out</span>
+            </div>
+          </div>
+          <!-- 11 more experience containers -->
+          <div class="experience">
+            <a href="experience4.html">
+              <img
+                src="/images/Airbnb2img/108249b2-6e2b-4dfd-abc4-f0d0da659959.webp"
+                alt="Experience 1"
+                class="pastExperience-active"
+              />
+              <img
+                src="/images/Airbnb2img/16a723d0-513e-4aa4-9484-a388f1d08a30.webp"
+                alt="Image 2"
+              />
+              <img
+                src="/images/Airbnb2img/180686c5-db83-4b9d-933e-f6b6194b4dff.webp"
+                alt="Image 3"
+              />
+              <img
+                src="/images/Airbnb2img/1954ee23-d520-4c4c-964a-b8c908c07d78.jpeg"
+                alt="Image 4"
+              />
+              <img
+                src="/images/Airbnb2img/108249b2-6e2b-4dfd-abc4-f0d0da659959.webp"
+                alt="Image 4"
+              />
+            </a>
+            <div class="pastExperience-slider">
+              <input
+                type="radio"
+                id="radio5-1"
+                name="pastExperience-slider5"
+                checked
+              />
+              <label for="radio5-1" onclick="showImage(5, 1)"></label>
+              <input type="radio" id="radio5-2" name="pastExperience-slider5" />
+              <label for="radio5-2" onclick="showImage(5, 2)"></label>
+              <input type="radio" id="radio5-3" name="pastExperience-slider5" />
+              <label for="radio5-3" onclick="showImage(5, 3)"></label>
+              <input type="radio" id="radio5-4" name="pastExperience-slider5" />
+              <label for="radio5-4" onclick="showImage(5, 4)"></label>
+            </div>
+            <div class="experience-info">
+              <h2>Go on tour with Feid</h2>
+              <p>Hosted by Feid</p>
+              <span class="sold-out">Sold out</span>
+            </div>
+          </div>
+          <div class="experience">
+            <a href="experience5.html">
+              <img
+                src="/images/Airbnb2img/8fd228a5-c87b-47ed-a057-80d1e3b1bcee.webp"
+                alt="Experience 2"
+                class="pastExperience-active"
+              />
+              <img
+                src="/images/Airbnb2img/c1f73593-65e0-48e0-9235-e4427f567460.webp"
+                alt="Image 2"
+              />
+              <img
+                src="/images/Airbnb2img/6bcaf9e7-9496-4d98-90f1-d77c4f9cf0be.webp"
+                alt="Image 3"
+              />
+              <img
+                src="/images/Airbnb2img/a87f8f76-689b-446c-8c1b-568b00b8061a.webp"
+                alt="Image 4"
+              />
+              <img
+                src="/images/Airbnb2img/5301d677-7a92-4420-88f8-51b9c2bf11f2.webp"
+                alt="Image 4"
+              />
+            </a>
+            <div class="pastExperience-slider">
+              <input
+                type="radio"
+                id="radio6-1"
+                name="pastExperience-slider6"
+                checked
+              />
+              <label for="radio6-1" onclick="showImage(6, 1)"></label>
+              <input type="radio" id="radio6-2" name="pastExperience-slider6" />
+              <label for="radio6-2" onclick="showImage(6, 2)"></label>
+              <input type="radio" id="radio6-3" name="pastExperience-slider6" />
+              <label for="radio6-3" onclick="showImage(6, 3)"></label>
+              <input type="radio" id="radio6-4" name="pastExperience-slider6" />
+              <label for="radio6-4" onclick="showImage(6, 4)"></label>
+            </div>
+            <div class="experience-info">
+              <h2>Game with Khaby Lame</h2>
+              <p>Hosted by Khaby Lame</p>
+              <span class="sold-out">Sold out</span>
+            </div>
+          </div>
+          <div class="experience">
+            <a href="experience6.html">
+              <img
+                src="/images/Airbnb2img/b676fc8d-8250-4df0-a7cb-728b0486e371.webp"
+                alt="Experience 3"
+                class="pastExperience-active"
+              />
+              <img
+                src="/images/Airbnb2img/97d5fe8e-c19d-4f61-b9aa-11895feaacbe.jpeg"
+                alt="Image 2"
+              />
+              <img
+                src="/images/Airbnb2img/8b6d7a9d-92bf-449b-bc68-3742c6628a13.webp"
+                alt="Image 3"
+              />
+              <img
+                src="/images/Airbnb2img/862336a0-9c76-41e0-a350-77b345b6548f.webp"
+                alt="Image 4"
+              />
+              <img
+                src="/images/Airbnb2img/f39f4ad7-e951-464c-bfde-842e8ac3ea18.webp"
+                alt="Image 5"
+              />
+            </a>
+            <div class="pastExperience-slider">
+              <input
+                type="radio"
+                id="radio7-1"
+                name="pastExperience-slider7"
+                checked
+              />
+              <label for="radio7-1" onclick="showImage(7, 1)"></label>
+              <input type="radio" id="radio7-2" name="pastExperience-slider7" />
+              <label for="radio7-2" onclick="showImage(7, 2)"></label>
+              <input type="radio" id="radio7-3" name="pastExperience-slider7" />
+              <label for="radio7-3" onclick="showImage(7, 3)"></label>
+              <input type="radio" id="radio7-4" name="pastExperience-slider7" />
+              <label for="radio7-4" onclick="showImage(7, 4)"></label>
+            </div>
+            <div class="experience-info">
+              <h2>Crash at the X-Mansion</h2>
+              <p>Hosted by Jubilee</p>
+              <span class="sold-out">Sold out</span>
+            </div>
+          </div>
+          <div class="experience">
+            <a href="experience7.html">
+              <img
+                src="/images/Airbnb2img/1b9af44a-7179-4e2a-9db6-3c6c09b0609d.jpeg"
+                alt="Experience 4"
+                class="pastExperience-active"
+              />
+              <img
+                src="/images/Airbnb2img/bd6acfc2-8099-46a4-9f6d-5456781f2cd0.webp"
+                alt="Image 2"
+              />
+              <img
+                src="/images/Airbnb2img/90ec472f-9f0d-4d83-9696-c6699f4fe2fe.webp"
+                alt="Image 3"
+              />
+              <img
+                src="/images/Airbnb2img/8fd228a5-c87b-47ed-a057-80d1e3b1bcee.webp"
+                alt="Image 4"
+              />
+              <img
+                src="/images/Airbnb2img/bd6acfc2-8099-46a4-9f6d-5456781f2cd0.webp"
+                alt="Image 5"
+              />
+            </a>
+            <div class="pastExperience-slider">
+              <input
+                type="radio"
+                id="radio8-1"
+                name="pastExperience-slider8"
+                checked
+              />
+              <label for="radio8-1" onclick="showImage(8, 1)"></label>
+              <input type="radio" id="radio8-2" name="pastExperience-slider8" />
+              <label for="radio8-2" onclick="showImage(8, 2)"></label>
+              <input type="radio" id="radio8-3" name="pastExperience-slider8" />
+              <label for="radio8-3" onclick="showImage(8, 3)"></label>
+              <input type="radio" id="radio8-4" name="pastExperience-slider8" />
+              <label for="radio8-4" onclick="showImage(8, 4)"></label>
+            </div>
+            <div class="experience-info">
+              <h2>Spend the night in the Ferrari Museum</h2>
+              <p>Hosted by Marc Gené</p>
+              <span class="sold-out">Sold out</span>
+            </div>
+          </div>
+          <div class="experience">
+            <a href="experience8.html">
+              <img
+                src="/images/Airbnb2img/55a2777a-fc80-4d7b-af05-a9f737ff8661 (1).webp"
+                alt="Experience 5"
+                class="pastExperience-active"
+              />
+              <img
+                src="/images/Airbnb2img/ba2f3fdb-57c8-48c3-81bc-9f9b79a90b42.webp"
+                alt="Image 2"
+              />
+              <img
+                src="/images/Airbnb2img/c6e8b725-62c3-45d8-a9bb-33dd6b62df99.webp"
+                alt="Image 3"
+              />
+              <img
+                src="/images/Airbnb2img/3678fa10-80f2-49ba-bff4-657eecf0cbc5.webp"
+                alt="Image 4"
+              />
+              <img
+                src="/images/Airbnb2img/f39f4ad7-e951-464c-bfde-842e8ac3ea18.webp"
+                alt="Image "
+              />
+            </a>
+            <div class="pastExperience-slider">
+              <input
+                type="radio"
+                id="radio9-1"
+                name="pastExperience-slider9"
+                checked
+              />
+              <label for="radio9-1" onclick="showImage(9, 1)"></label>
+              <input type="radio" id="radio9-2" name="pastExperience-slider9" />
+              <label for="radio9-2" onclick="showImage(9, 2)"></label>
+              <input type="radio" id="radio9-3" name="pastExperience-slider9" />
+              <label for="radio9-3" onclick="showImage(9, 3)"></label>
+              <input type="radio" id="radio9-4" name="pastExperience-slider9" />
+              <label for="radio9-4" onclick="showImage(9, 4)"></label>
+            </div>
+            <div class="experience-info">
+              <h2>Drift off in the Up house</h2>
+              <p>Hosted by Carl Fredricksen</p>
+              <span class="sold-out">Sold out</span>
+            </div>
+          </div>
+          <div class="experience">
+            <a href="experience9.html">
+              <img
+                src="/images/Airbnb2img/58387bc5-15cf-4be7-bb18-56a9081326fb.webp"
+                alt="Experience 6"
+                class="pastExperience-active"
+              />
+              <img
+                src="/images/Airbnb2img/c9a998fa-2f64-4576-a8e7-025cf2f08e66.webp"
+                alt="Image 2"
+              />
+              <img
+                src="/images/Airbnb2img/e504263d-6a89-4124-8b3b-7483d658a29e.webp"
+                alt="Image 3"
+              />
+              <img
+                src="/images/Airbnb2img/d9520bdd-c46e-433d-a467-372a2157cb43.webp"
+                alt="Image 4"
+              />
+              <img
+                src="/images/Airbnb2img/58387bc5-15cf-4be7-bb18-56a9081326fb.webp"
+                alt="Image 5"
+              />
+            </a>
+            <div class="pastExperience-slider">
+              <input
+                type="radio"
+                id="radio10-1"
+                name="pastExperience-slider10"
+                checked
+              />
+              <label for="radio10-1" onclick="showImage(10, 1)"></label>
+              <input
+                type="radio"
+                id="radio10-2"
+                name="pastExperience-slider10"
+              />
+              <label for="radio10-2" onclick="showImage(10, 2)"></label>
+              <input
+                type="radio"
+                id="radio10-3"
+                name="pastExperience-slider10"
+              />
+              <label for="radio10-3" onclick="showImage(10, 3)"></label>
+              <input
+                type="radio"
+                id="radio10-4"
+                name="pastExperience-slider10"
+              />
+              <label for="radio10-4" onclick="showImage(10, 4)"></label>
+            </div>
+            <div class="experience-info">
+              <h2>Shrek’s Swamp</h2>
+              <p>Hosted by Donkey</p>
+              <span class="sold-out">Sold out</span>
+            </div>
+          </div>
+          <div class="experience">
+            <a href="experience10.html">
+              <img
+                src="/images/Airbnb2img/7da53713-0a37-40c4-8eb0-3b294db5757e.webp"
+                alt="Experience 7"
+                class="pastExperience-active"
+              />
+              <img
+                src="/images/Airbnb2img/1954ee23-d520-4c4c-964a-b8c908c07d78.jpeg"
+                alt="Image 2"
+              />
+              <img
+                src="/images/Airbnb2img/180686c5-db83-4b9d-933e-f6b6194b4dff.webp"
+                alt="Image 3"
+              />
+              <img
+                src="/images/Airbnb2img/16a723d0-513e-4aa4-9484-a388f1d08a30.webp"
+                alt="Image 4"
+              />
+              <img
+                src="/images/Airbnb2img/862336a0-9c76-41e0-a350-77b345b6548f.webp"
+                alt="Image 5"
+              />
+            </a>
+            <div class="pastExperience-slider">
+              <input
+                type="radio"
+                id="radio11-1"
+                name="pastExperience-slider11"
+                checked
+              />
+              <label for="radio11-1" onclick="showImage(11, 1)"></label>
+              <input
+                type="radio"
+                id="radio11-2"
+                name="pastExperience-slider11"
+              />
+              <label for="radio11-2" onclick="showImage(11, 2)"></label>
+              <input
+                type="radio"
+                id="radio11-3"
+                name="pastExperience-slider11"
+              />
+              <label for="radio11-3" onclick="showImage(11, 3)"></label>
+              <input
+                type="radio"
+                id="radio11-4"
+                name="pastExperience-slider11"
+              />
+              <label for="radio11-4" onclick="showImage(11, 4)"></label>
+            </div>
+            <div class="experience-info">
+              <h2>Barbie’s Malibu DreamHouse, Ken’s Way</h2>
+              <p>Hosted by Ken</p>
+              <span class="sold-out">Sold out</span>
+            </div>
+          </div>
+          <div class="experience">
+            <a href="experience11.html">
+              <img
+                src="/images/Airbnb2img/e9fec6f3-b66f-4156-968a-7cc537c06519.webp"
+                alt="Experience 8"
+                class="pastExperience-active"
+              />
+              <img
+                src="/images/Airbnb2img/c963ea36-dc00-4030-9719-34ba4f45ce42.webp"
+                alt="Image 2"
+              />
+              <img
+                src="/images/Airbnb2img/98e420b2-c582-4b82-b13f-7338c1e28ce7.webp"
+                alt="Image 3"
+              />
+              <img
+                src="/images/Airbnb2img/1b848add-640d-49a9-a3d5-96c19b6ff743.webp"
+                alt="Image 4"
+              />
+              <img
+                src="/images/Airbnb2img/97d5fe8e-c19d-4f61-b9aa-11895feaacbe.jpeg"
+                alt="Image 5"
+              />
+            </a>
+            <div class="pastExperience-slider">
+              <input
+                type="radio"
+                id="radio12-1"
+                name="pastExperience-slider12"
+                checked
+              />
+              <label for="radio12-1" onclick="showImage(12, 1)"></label>
+              <input
+                type="radio"
+                id="radio12-2"
+                name="pastExperience-slider12"
+              />
+              <label for="radio12-2" onclick="showImage(12, 2)"></label>
+              <input
+                type="radio"
+                id="radio12-3"
+                name="pastExperience-slider12"
+              />
+              <label for="radio12-3" onclick="showImage(12, 3)"></label>
+              <input
+                type="radio"
+                id="radio12-4"
+                name="pastExperience-slider12"
+              />
+              <label for="radio12-4" onclick="showImage(12, 4)"></label>
+            </div>
+            <div class="experience-info">
+              <h2>Ted Lasso’s Favourite Pub</h2>
+              <p>Hosted by Mae</p>
+              <span class="sold-out">Sold out</span>
+            </div>
+          </div>
+          <div class="experience">
+            <a href="experience12.html">
+              <img
+                src="/images/Airbnb2img/59c0c816-3f21-4027-bfa6-9cf361464921.webp"
+                alt="Experience 9"
+                class="pastExperience-active"
+              />
+              <img
+                src="/images/Airbnb2img/9f57a7cf-5910-4f51-9f7b-0b6b2505bc1d.webp"
+                alt="Image 2"
+              />
+              <img
+                src="/images/Airbnb2img/ed52e65f-fd82-4007-97cb-6a6b1d25c896.webp"
+                alt="Image 3"
+              />
+              <img
+                src="/images/Airbnb2img/7c7a3716-6a1a-41c5-bb1c-e33d232373b5.webp"
+                alt="Image 4"
+              />
+              <img
+                src="/images/Airbnb2img/59c0c816-3f21-4027-bfa6-9cf361464921.webp"
+                alt="Image 5"
+              />
+            </a>
+            <div class="pastExperience-slider">
+              <input
+                type="radio"
+                id="radio13-1"
+                name="pastExperience-slider13"
+                checked
+              />
+              <label for="radio13-1" onclick="showImage(13, 1)"></label>
+              <input
+                type="radio"
+                id="radio13-2"
+                name="pastExperience-slider13"
+              />
+              <label for="radio13-2" onclick="showImage(13, 2)"></label>
+              <input
+                type="radio"
+                id="radio13-3"
+                name="pastExperience-slider13"
+              />
+              <label for="radio13-3" onclick="showImage(13, 3)"></label>
+              <input
+                type="radio"
+                id="radio13-4"
+                name="pastExperience-slider13"
+              />
+              <label for="radio13-4" onclick="showImage(13, 4)"></label>
+            </div>
+            <div class="experience-info">
+              <h2>Houseplant Retreat</h2>
+              <p>Hosted by Seth Rogen</p>
+              <span class="sold-out">Sold out</span>
+            </div>
+          </div>
+          <div class="experience">
+            <a href="experience13.html">
+              <img
+                src="/images/Airbnb2img/cccf5fd2-d52e-4e18-bd92-cbd04576de77.webp"
+                alt="Experience 10"
+                class="pastExperience-active"
+              />
+              <img
+                src="/images/Airbnb2img/a927a15f-fe37-4398-ac87-2386ea0c66bd.webp"
+                alt="Image 2"
+              />
+              <img
+                src="/images/Airbnb2img/9f845a2c-a22b-4b93-a39c-efaadfd8a2ac.jpeg"
+                alt="Image 3"
+              />
+              <img
+                src="/images/Airbnb2img/cccf5fd2-d52e-4e18-bd92-cbd04576de77.webp"
+                alt="Image 4"
+              />
+            </a>
+            <div class="pastExperience-slider">
+              <input
+                type="radio"
+                id="radio14-1"
+                name="pastExperience-slider14"
+                checked
+              />
+              <label for="radio14-1" onclick="showImage(14, 1)"></label>
+              <input
+                type="radio"
+                id="radio14-2"
+                name="pastExperience-slider14"
+              />
+              <label for="radio14-2" onclick="showImage(14, 2)"></label>
+              <input
+                type="radio"
+                id="radio14-3"
+                name="pastExperience-slider14"
+              />
+              <label for="radio14-3" onclick="showImage(14, 3)"></label>
+              <input
+                type="radio"
+                id="radio14-4"
+                name="pastExperience-slider14"
+              />
+              <label for="radio14-4" onclick="showImage(14, 4)"></label>
+            </div>
+            <div class="experience-info">
+              <h2>Home Alone Holiday</h2>
+              <p>Hosted by Buzz</p>
+              <span class="sold-out">Sold out</span>
+            </div>
+          </div>
+          <div class="experience">
+            <a href="experience14.html">
+              <img
+                src="/images/Airbnb2img/be0957a9-da56-47d6-89ca-223b6e75321a.webp"
+                alt="Experience 11"
+                class="pastExperience-active"
+              />
+              <img
+                src="/images/Airbnb2img/c27c3eaf-d825-4628-9d8f-fdbf79910525.webp"
+                alt="Image 2"
+              />
+              <img
+                src="/images/Airbnb2img/ccb23909-6320-4f68-9dda-be3cdbb5315f.webp"
+                alt="Image 3"
+              />
+              <img
+                src="/images/Airbnb2img/a43bc870-91dd-4107-be5d-ed441418e42b.webp"
+                alt="Image 4"
+              />
+              <img
+                src="/images/Airbnb2img/16a723d0-513e-4aa4-9484-a388f1d08a30.webp"
+                alt="Image 5"
+              />
+            </a>
+            <div class="pastExperience-slider">
+              <input
+                type="radio"
+                id="radio15-1"
+                name="pastExperience-slider15"
+                checked
+              />
+              <label for="radio15-1" onclick="showImage(15, 1)"></label>
+              <input
+                type="radio"
+                id="radio15-2"
+                name="pastExperience-slider15"
+              />
+              <label for="radio15-2" onclick="showImage(15, 2)"></label>
+              <input
+                type="radio"
+                id="radio15-3"
+                name="pastExperience-slider15"
+              />
+              <label for="radio15-3" onclick="showImage(15, 3)"></label>
+              <input
+                type="radio"
+                id="radio15-4"
+                name="pastExperience-slider15"
+              />
+              <label for="radio15-4" onclick="showImage(15, 4)"></label>
+            </div>
+            <div class="experience-info">
+              <h2>The Last Blockbuster</h2>
+              <p>Hosted by Sandi</p>
+              <span class="sold-out">Sold out</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+ 
+      <footer>
+        <h2 style="font-weight: 600; margin: 2rem 0">
+          Inspiration for future getaways
+        </h2>
+        <div class="footer-tabs">
+          <button class="tab" data-category="popular">Popular</button>
+          <button class="tab" data-category="artsAndCulture">
+            Arts & culture
+          </button>
+          <button class="tab" data-category="outdoors">Outdoors</button>
+          <button class="tab" data-category="mountains">Mountains</button>
+          <button class="tab" data-category="beach">Beach</button>
+          <button class="tab" data-category="uniqueStays">Unique stays</button>
+          <button class="tab" data-category="categories">Categories</button>
+          <button class="tab" data-category="thingsToDo">Things to do</button>
+        </div>
+        <div class="content">
+          <div class="footer-top"></div>
+        </div>
+
+        <div class="footer-mid" style="font-size: small;">
+          <div >
+            <h4 style="margin: 1rem 0">Support</h4>
+            <ul>
+              <li>Help Centre</li>
+              <li>AirCover</li>
+              <li>Anti-discrimination</li>
+              <li>Disability support</li>
+              <li>Cancellation options</li>
+              <li>Report neighbourhood concern</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="margin: 1rem 0">Support</h4>
+            <ul>
+              <li>Help Centre</li>
+              <li>AirCover</li>
+              <li>Anti-discrimination</li>
+              <li>Disability support</li>
+              <li>Cancellation options</li>
+              <li>Report neighbourhood concern</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="margin: 1rem 0">Support</h4>
+            <ul>
+              <li>Help Centre</li>
+              <li>AirCover</li>
+              <li>Anti-discrimination</li>
+              <li>Disability support</li>
+              <li>Cancellation options</li>
+              <li>Report neighbourhood concern</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <ul class="flex" style="font-size: small;">
+            <p>&copy; 2024 Airbnb, Inc.</p>
+            <li href="">Privacy</li>
+            <li href="">Sitemap</li>
+            <li href="">Company Details</li>
+          </ul>
+          <div class="flex" style="justify-items: center; align-items: center">
+            <img
+              src="./images/icons8-facebook-50.png"
+              alt="fa-facebook"
+              height="40rem" />
+            <img
+              src="./images/icons8-twitter-squared-50.png"
+              alt="twitter"
+              height="40rem" />
+            <img
+              src="./images/icons8-instagram-logo-48.png"
+              alt="twitter"
+              height="36rem" />
+          </div>
+        </div>
+        <script src="./js/footer.js"></script>
+      </footer>
+      <!--back to top--->
+      <a
+        style="display: none"
+        href="javascript:void(0);"
+        class="scrollTop back-to-top"
+        id="back-to-top">
+        <span><i aria-hidden="true" class="fa fa-angle-up fa-lg"></i></span>
+        <span>Top</span>
+      </a>
+    
+
+    <!-- added script new -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="js/icons.js" type="text/javascript"></script>
+    <script src="js/page.js" type="text/javascript"></script>
+    <script src="js/icons-page.js" type="text/javascript"></script>
+   
+    
+  
+      
+    </script> 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+      <script src="js/header.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Layout</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .grid-container img {
+            width: 100%;
+            display: block;
+        }
+
+        .grid-container .large {
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <img src="c:\Users\Admin\OneDrive\Desktop\e6b26733-2c15-47d9-b097-6968b39bb697.webp" alt="Open the Olympic Games at Musée" class="large">
+        <img src="c:\Users\Admin\OneDrive\Desktop\Airbnb2img\55a2777a-fc80-4d7b-af05-a9f737ff8661.webp" alt="Image 2">
+        <img src="c:\Users\Admin\OneDrive\Desktop\Airbnb2img\c6e8b725-62c3-45d8-a9bb-33dd6b62df99.webp" alt="Image 3">
+        <img src="c:\Users\Admin\OneDrive\Desktop\Airbnb2img\ba2f3fdb-57c8-48c3-81bc-9f9b79a90b42.webp" alt="Image 4" class="large">
+    </div>
+</body>
+</html>

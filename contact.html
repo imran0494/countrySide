@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - countrysides</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* styles.css */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+
+      header {
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .logo img {
+        height: 40px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav ul li {
+        margin-left: 20px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      .profile-menu i {
+        font-size: 24px;
+        color: #333;
+      }
+
+      .contact-section {
+        padding: 60px 20px;
+        text-align: center;
+        background-color: #fff;
+        max-width: 1200px;
+        margin: 40px auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-section h1 {
+        font-size: 32px;
+        margin-bottom: 10px;
+      }
+
+      .contact-section p {
+        font-size: 16px;
+        margin-bottom: 40px;
+        color: #666;
+      }
+
+      .contact-options {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 40px;
+      }
+
+      .contact-card {
+        background-color: #f7f7f7;
+        padding: 20px;
+        border-radius: 10px;
+        width: 30%;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .contact-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .contact-card i {
+        font-size: 40px;
+        color: #ff385c;
+        margin-bottom: 10px;
+      }
+
+      .contact-card h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .contact-card p {
+        font-size: 14px;
+        color: #666;
+      }
+
+      .contact-card a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      .contact-form {
+        text-align: left;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .contact-form h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .input-group {
+        margin-bottom: 20px;
+      }
+
+      .input-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: #333;
+      }
+
+      .input-group input,
+      .input-group textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+        box-sizing: border-box;
+      }
+
+      .submit-button {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        background-color: #ff385c;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .submit-button:hover {
+        background-color: #e0245e;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 40px;
+      }
+
+      footer p {
+        margin: 0;
+      }
+
+      .social-media {
+        margin-top: 10px;
+      }
+
+      .social-media a {
+        color: white;
+        margin: 0 10px;
+        font-size: 20px;
+        text-decoration: none;
+      }
+
+      .social-media a:hover {
+        color: #ff385c;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="#"><img src="/images/logo/logo.jpeg" alt="countrysides Logo" /></a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Host</a></li>
+            <li><a href="#">Help</a></li>
+            <li>
+              <div class="profile-menu">
+                <i class="fas fa-user-circle"></i>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="contact-section">
+        <h1>Hi, how can we help?</h1>
+        <p></p>
+
+        <div class="contact-options">
+          <div class="contact-card">
+            <i class="fas fa-phone-alt"></i>
+            <h3>Phone Support</h3>
+            <p>Call us at <a href="tel:+1234567890">+1 234 567 890</a></p>
+          </div>
+
+          <div class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <h3>Email Support</h3>
+            <p>
+              Email us at
+              <a href="mailto:support@countrysides.com">support@countrysides.com</a>
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <i class="fas fa-comments"></i>
+            <h3>Live Chat</h3>
+            <p>Chat with a representative <a href="#">here</a></p>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <h2>Send Us a Message</h2>
+          <form action="/send-message" method="post">
+            <div class="input-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="input-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="input-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="submit-button">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 countrysides, Inc. All rights reserved.</p>
+      <div class="social-media">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </footer>
+
+    <!-- Link to Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </body>
+</html>

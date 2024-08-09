@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Grid Layout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 10px;
+            padding: 20px;
+            max-width: 1000px; /* Reduced the max-width to make the images smaller */
+            margin: 0 auto;
+        }
+
+        .image-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            margin: -5px; /* Added margin to each image */
+        }
+
+        .image-item img {
+            width: calc(100% - 10px); /* Adjust width to account for margin */
+            height: calc(100% - 10px); /* Adjust height to account for margin */
+            object-fit: cover;
+        }
+
+        .image-grid .image-item:nth-child(1) {
+            grid-column: 1 / 2;
+            grid-row: 1 / 3;
+        }
+
+        .image-grid .image-item:nth-child(2) {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+
+        .image-grid .image-item:nth-child(3) {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+        }
+
+        .image-grid .image-item:nth-child(4) {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
+
+        .image-grid .image-item:nth-child(5) {
+            grid-column: 3 / 4;
+            grid-row: 2 / 3;
+        }
+        .cookie-card {
+        width: 100%;
+        max-width: 320px;
+        padding: 1rem;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4p x 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100px;
+        width: 400px;
+    }
+
+    .title {
+        font-weight: 600;
+        color: rgb(31 41 55);
+    }
+
+    .description {
+        margin-top: 1rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        color: rgb(75 85 99);
+    }
+
+    .description a {
+        --tw-text-opacity: 1;
+        color: rgb(59 130 246);
+    }
+
+    .description a:hover {
+        text-decoration: underline;
+    }
+
+    .actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 1rem;
+        column-gap: 1rem;
+        flex-shrink: 0;
+    }
+
+    .pref {
+        font-size: 0.75rem;
+        line-height: 1rem;
+        color: rgb(31 41 55);
+        text-decoration: underline;
+        transition: all .3s;
+        border: none;
+        background-color: transparent;
+    }
+
+    .pref:hover {
+        color: rgb(156 163 175);
+    }
+
+    .pref:focus {
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+    }
+
+    .accept {
+        font-size: 0.75rem;
+        line-height: 1rem;
+        background-color: rgb(236, 50, 50);
+        font-weight: 500;
+        border-radius: 0.5rem;
+        color: #fff;
+        padding: 0.625rem 1rem;
+        border: none;
+        transition: all .15s;
+        width: 300px;
+        /* height: 20px; */
+    }
+
+    .accept:hover {
+        background-color: rgb(55 65 81);
+    }
+
+    .accept:focus {
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+    }
+
+    /* New styles for the added container */
+    .left-container-content {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        border: 1px solid #ddd;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1rem; /* Add margin if needed to space out */
+    }
+
+    .left-container-content img {
+        max-width: 80px;
+        margin-right: 1rem;
+        border-radius: 50%;
+    }
+
+    .author-name {
+        font-weight: 600;
+        color: rgb(31 41 55);
+    }
+/* css for list in left container */
+.inner-container {
+    width: 565.51px;
+    height: auto ;
+    overflow-y: auto; /* Allows scrolling if content exceeds height */
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+   
+}
+
+.list-item i {
+    margin-right: 0.5rem;
+    color: #000000; /* Adjust color as needed */
+}
+
+.list-item p {
+    margin: 3px 3px 3px;
+}
+
+/* profile card */
+.profile-card-container {
+    width: 100%;
+    padding: 1rem;
+    box-shadow: thistle;
+    
+}
+
+.profile-card {
+    max-width: 300px; /* Adjust as needed */
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+    width: 150px;
+    margin: auto;
+    margin-top: 5px;
+    height: 150px; /* Adjust height as needed */
+    object-fit: cover;
+    border-radius: 50%
+    /* border-top-left-radius: 50%;
+    border-top-right-radius: 50%; */
+}
+
+.author-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: rgb(31 41 55);
+    margin-bottom: 0.5rem;
+}
+
+.author-designation {
+    font-size: 1rem;
+    color: rgb(75 85 99);
+    margin: 0;
+}
+/* new container for 2nd half */
+.new-container {
+    width: 100%;
+    padding: 1rem;
+    
+    background-color: #f9f9f9;
+    /* border: 1px solid #ddd; */
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust shadow as needed */
+}
+.new-container-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(31, 41, 55); /* Adjust color as needed */
+    margin-bottom: 0.5rem;
+}
+
+.new-container-description {
+    font-size: 1rem;
+    color: rgb(75, 85, 99); /* Adjust color as needed */
+    margin: 0;
+}
+/* new containers center  */
+.centered-container {
+    width: 100%;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust shadow as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+/* three containers  */
+#threebox{
+    font-size: 15px;
+   
+}
+#threebox p{
+    color: grey;
+}
+
+
+/* new  */
+  /* New main container styling */
+  .new-main-container {
+    width: 100%; /* Full width */
+    /* height: 100%; */
+    display: flex; /* Flex layout */
+    justify-content: center; /* Center the inner container */
+    align-items: center; /* Center align items */
+    padding: 1rem; /* Padding around the main container */
+}
+
+/* New inner container styling */
+.new-container-title{
+    font-size: 22px;
+}
+.new-inner-container {
+    width: 100%; /* Full width */
+    /* height: 100%; */
+    display: flex; /* Flex layout for inner boxes */
+    justify-content: flex-start; /* Align inner boxes to the left */
+    align-items: flex-start; /* Align inner boxes to the top */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* New inner box styling */
+.new-inner-box {
+    width: 300px; /* Fixed width for inner box */
+    text-align: left; /* Align content to the left */
+    padding: 1rem; /* Padding inside the inner box */
+}
+
+/* New heading styling */
+.new-heading {
+    font-size: 1.25rem; /* Font size for heading */
+    margin-bottom: 0.5rem; /* Space below heading */
+}
+
+/* New description styling */
+.new-description {
+    display: flex; /* Flex layout for spans */
+    flex-direction: column; /* Stack spans vertically */
+    align-items: flex-start; /* Align spans to the left */
+}
+
+.new-description span {
+    display: block; /* Block display for spans */
+    font-size: 1rem; /* Font size for spans */
+    margin-bottom: 0.5rem; /* Space below each span */
+}
+
+    </style>
+</head>
+<body>
+    <div class="image-grid">
+        <a href="collage4.html" class="image-item">
+        <img src="c:\Users\Admin\OneDrive\Desktop\99417998-fa44-4c75-ae77-287c1468977b.webp" alt="Image 1">
+        </a>
+        <a href="collage4.html" class="image-item">
+        <img src="c:\Users\Admin\OneDrive\Desktop\Airbnb2img\108249b2-6e2b-4dfd-abc4-f0d0da659959.webp" alt="Image 2">
+        </a>
+        <a href="collage4.html" class="image-item">
+        <img src="c:\Users\Admin\OneDrive\Desktop\Airbnb2img\976f6371-eea8-4221-aab8-6d74c7c392a8.webp" alt="Image 3">
+        </a>
+        <a href="collage4.html" class="image-item">
+        <img src="c:\Users\Admin\OneDrive\Desktop\Airbnb2img\e7843985-2cc0-4ae6-a528-babbbe8f5948.webp" alt="Image 4">
+        </a>
+        <a href="collage4.html" class="image-item">
+        <img src="c:\Users\Admin\OneDrive\Desktop\Airbnb2img\977dda44-cb92-4a6d-a9ef-b7ed7cf31df1.webp" alt="Image 5">
+        </a>
+
+    </div>
+    <div class="main-container container">
+        <!-- Existing content here -->
+        <!-- New container inside the main-container -->
+        <div class="new-container container mt-4">
+            <div class="row">
+                <div class="col-md-6 d-flex justify-content-start">
+                    <div class="side-by-side-container">
+                        <div class="left-container-content" height="200px" width="500px">
+                            <img src="c:\Users\Admin\OneDrive\Desktop\Airbnb2img\Author image.jpeg" alt="Author Image">
+                            <div class="author-name">Hosted by Mathieu Lehanneur<br>
+                                <p> Designer at large</p>
+                            </div>
+                        </div>
+
+                        <!-- New container inside the left-container-content -->
+                        <div class="inner-container mt-4">
+                            <ul class="list-unstyled">
+                                <li class="list-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                                        class="bi bi-lock" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2M5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1" />
+                                    </svg>
+
+                                    <p> Witness the Opening Ceremony of the Olympic Games<br>
+                                        Be a part of history as the celebration passes on the iconic Seine River...
+                                    </p>
+
+                                </li>
+                                <li class="list-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                                        class="bi bi-cup-straw" viewBox="0 0 16 16">
+                                        <path
+                                            d="M13.902.334a.5.5 0 0 1-.28.65l-2.254.902-.4 1.927c.376.095.715.215.972.367.228.135.56.396.56.82q0 .069-.011.132l-.962 9.068a1.28 1.28 0 0 1-.524.93c-.488.34-1.494.87-3.01.87s-2.522-.53-3.01-.87a1.28 1.28 0 0 1-.524-.93L3.51 5.132A1 1 0 0 1 3.5 5c0-.424.332-.685.56-.82.262-.154.607-.276.99-.372C5.824 3.614 6.867 3.5 8 3.5c.712 0 1.389.045 1.985.127l.464-2.215a.5.5 0 0 1 .303-.356l2.5-1a.5.5 0 0 1 .65.278M9.768 4.607A14 14 0 0 0 8 4.5c-1.076 0-2.033.11-2.707.278A3.3 3.3 0 0 0 4.645 5c.146.073.362.15.648.222C5.967 5.39 6.924 5.5 8 5.5c.571 0 1.109-.03 1.588-.085zm.292 1.756C9.445 6.45 8.742 6.5 8 6.5c-1.133 0-2.176-.114-2.95-.308a6 6 0 0 1-.435-.127l.838 8.03c.013.121.06.186.102.215.357.249 1.168.69 2.438.69s2.081-.441 2.438-.69c.042-.029.09-.094.102-.215l.852-8.03a6 6 0 0 1-.435.127 9 9 0 0 1-.89.17zM4.467 4.884s.003.002.005.006zm7.066 0-.005.006zM11.354 5a3 3 0 0 0-.604-.21l-.099.445.055-.013c.286-.072.502-.149.648-.222" />
+                                    </svg>
+
+                                    <p>Turn up for tequila time <br>
+                                        My resident tequila tutor Chai Lee will take you to school on these dranks!</p>
+                                </li>
+                                <li class="list-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                                        class="bi bi-person-raised-hand" viewBox="0 0 16 16">
+                                        <path
+                                            d="M6 6.207v9.043a.75.75 0 0 0 1.5 0V10.5a.5.5 0 0 1 1 0v4.75a.75.75 0 0 0 1.5 0v-8.5a.25.25 0 1 1 .5 0v2.5a.75.75 0 0 0 1.5 0V6.5a3 3 0 0 0-3-3H6.236a1 1 0 0 1-.447-.106l-.33-.165A.83.83 0 0 1 5 2.488V.75a.75.75 0 0 0-1.5 0v2.083c0 .715.404 1.37 1.044 1.689L5.5 5c.32.32.5.754.5 1.207" />
+                                        <path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
+                                    </svg>
+                                    <p>Throw down on the dance floor <br>
+                                        Get wild to our DJ – just don’t challenge me to a dance battle. I will win..</p>
+                                </li>
+                                <li class="list-item">
+                                    <i class="fas fa-question-circle"></i>
+                                    <p>Watch all-stars perform <br>
+                                        I’m calling in some favours for this one. Hell, I might even hit the stage.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <!-- New container for description -->
+                        <div class="description-container mt-4">
+                            <p class="description-text">For the first time ever, I’m opening the doors to the Coramino
+                                Live Lounge – an exclusive, members-only speakeasy where you and a guest will get a
+                                front-row seat to how I live. This is inner circle stuff. You think I’d open a bottle of
+                                Gran Coramino’s finest reposado for any Joe and Nancy off the street? No! (Unless your
+                                name is Joe or Nancy, my apologies.) I hope you’re as hyped as I am. See you on the
+                                other side of that velvet rope.
+                                <br> <br>
+
+                                <strong>What you’ll do</strong> <br>
+                                The Coramino Live Lounge is my baby. It’s a labour of love and a testament to my hard
+                                work because it brings together my two greatest passions – comedy and tequila. (Besides
+                                my family, of course. Not trying to get in trouble here.) The vibe is incredible – it’s
+                                old-school Hollywood meets Kevin Hart. Like a Rat Pack spot if there were more menu
+                                options than just Beef Wellington. Come join me and share a few laughs (and a few
+                                drinks).
+                                <br> <br>
+                                Here’s the Kevin Hart-level VIP treatment you can expect.
+                            </p>
+                            <ul>
+                                <li>When you enter through the velvet rope, you’ll be greeted with Gran Coramino’s
+                                    finest – cristalinos, añejos and my personal favourite, reposados – all paired with
+                                    the perfect plant-based appetiser. Just a quick heads-up – I will say “flavour
+                                    profile” no less than fifteen times. I apologise in advance.</li>
+                                <li>When you enter through the velvet rope, you’ll be greeted with Gran Coramino’s
+                                    finest – cristalinos, añejos and my personal favourite, reposados – all paired with
+                                    the perfect plant-based appetiser. Just a quick heads-up – I will say “flavour
+                                    profile” no less than fifteen times. I apologise in advance.</li>
+                                <li>When you enter through the velvet rope, you’ll be greeted with Gran Coramino’s
+                                    finest – cristalinos, añejos and my personal favourite, reposados – all paired with
+                                    the perfect plant-based appetiser. Just a quick heads-up – I will say “flavour
+                                    profile” no less than fifteen times. I apologise in advance.</li>
+                                <li>When you enter through the velvet rope, you’ll be greeted with Gran Coramino’s
+                                    finest – cristalinos, añejos and my personal favourite, reposados – all paired with
+                                    the perfect plant-based appetiser. Just a quick heads-up – I will say “flavour
+                                    profile” no less than fifteen times. I apologise in advance.</li>
+                                <li>When you enter through the velvet rope, you’ll be greeted with Gran Coramino’s
+                                    finest – cristalinos, añejos and my personal favourite, reposados – all paired with
+                                    the perfect plant-based appetiser. Just a quick heads-up – I will say “flavour
+                                    profile” no less than fifteen times. I apologise in advance.</li>
+                            </ul> <br><br>
+                            <hr>
+
+                        </div>
+                        <!-- New container for host information -->
+                        <div class="host-info-container mt-4">
+                            <h4 class="host-title">Meet Your Host </h4>
+                            <!-- Profile card container -->
+                            <div class="profile-card-container mt-4 d-flex justify-content-center ">
+                                <div class="card profile-card shadow-lg p-3 mb-5 bg-body rounded">
+                                    <img src="c:\Users\Admin\OneDrive\Desktop\Airbnb2img\Author image.jpeg" alt="Host Image"
+                                        class="card-img-top profile-image">
+                                    <div class="card-body text-center">
+                                        <h5 class="author-name">Author Name</h5>
+                                        <p class="author-designation">Started Hosting In 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inner-container mt-4">
+                                <ul class="list-unstyled">
+                                    <li class="list-item">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                                            fill="currentColor" class="bi bi-mortarboard" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917zM8 8.46 1.758 5.965 8 3.052l6.242 2.913z" />
+                                            <path
+                                                d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46z" />
+                                        </svg>
+
+                                        <p>Where I went to school: George Washington High School</p>
+
+                                    </li>
+                                    <li class="list-item">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                                            fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
+                                            <path
+                                                d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5m1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0M1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5" />
+                                        </svg>
+                                        <p>My work: Comedian/businessman </p>
+                                    </li>
+                                    <li class="list-item">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                                            fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16">
+                                            <path
+                                                d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6m6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1" />
+                                        </svg>
+
+                                        <p>Fun fact: I was a nationally competitive swimmer </p>
+                                    </li>
+                                    <li class="list-item">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                                            fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
+                                            <path
+                                                d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
+                                        </svg>
+                                        <p>RI spend too much time: Working </p>
+                                    </li>
+                                    <li class="list-item">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                                            fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
+                                            <path
+                                                d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
+                                        </svg>
+                                        <p>Pets: My two dogs </p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <hr>
+                            <div>
+                                <p>What up, world?! It’s Kevin Hart! You might know me as an actor and comedian, but I’m
+                                    also a producer, media mogul and one-time underwear model (not a joke). I’m also a
+                                    lifelong lover of tequila and the founder of Gran Coramino. It may sound like a lot,
+                                    but hard work tastes different. I’m excited for YOU to get a taste of all that hard
+                                    work at the Coramino Live Lounge. Mark your calendars, it’s about to go down!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex justify-content-end">
+                    <div class="side-by-side-container">
+                        <div class="cookie-card">
+                            <span class="title">Coming on 28 October</span>
+
+                            <div class="actions">
+                                <button class="accept">
+                                    Notify Me
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <!-- New container -->
+    <div class="new-container mt-4">
+        <h2 class="new-container-title">Where you’ll be</h2> <br>
+        <div class=>Los Angeles, California, United States</div><br>
+        <div>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119064.9003428725!2d78.9899362563994!3d21.161225913807623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c0a5a31faf13%3A0x19b37d06d0bb3e2b!2sNagpur%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1722581270493!5m2!1sen!2sin"
+                width="100%" height="500px" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div> <br>
+        <span>We verified that this listing’s location is accurate. Learn more</span>
+
+    </div>
+    <!-- New container with centered content -->
+    <div class="centered-container mt-4 d-flex flex-column align-items-center">
+        <div class="first-div mb-3">
+            <img src="c:\Users\Admin\OneDrive\Desktop\WhatsApp Image 2024-08-07 at 13.07.46_80eed2c9.jpg" alt="Image" class="img-fluid" style="max-width: 855.27px; height: 376px;">
+        </div>
+        <div class="second-div mb-3">
+            <strong style="font-size: 96px;">icons</strong>
+        </div>
+        <p style="font-size: 20px;">Extraordinary experiences hosted by the world’s greatest <br>names in music, film, TV,
+            art, sports and more.</p>
+    </div>
+    <hr>
+    <!-- Container with three side-by-side divs box-->
+
+    <div class="container mt-5">
+        <div class="row" id="threebox">
+            <div class="col-sm-4">
+                <div class="content">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-envelope" viewBox="0 0 16 16">
+                        <path
+                            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                    </svg>
+                    <h5>Request to book</h5>
+                    <div>
+                        <p>Choose your dates, add your guests, then answer a question about why you want to go.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                    class="bi bi-check-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                    <path
+                        d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05" />
+                </svg>
+                <h5>Selection process</h5>
+                <div>
+                    <p>First, we’ll randomly choose a set of potential guests. Next, we’ll review their answers for
+                        unique perspectives and connections to the icon. Then, we’ll invite selected guests to book.</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                    class="bi bi-bag-dash" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M5.5 10a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5" />
+                    <path
+                        d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
+                </svg>
+                <h5>Requirements</h5>
+
+                <p>You’ll need an active Airbnb account and the app to participate, and be a resident of an eligible
+                    country or region. It doesn’t cost anything to submit a request.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- new para -->
+    <hr>
+    <div>
+        <p style="color: grey; font-size: 12px;" class="text1">
+            If you’re selected and decide to book, you’ll have 24 hours to complete the purchase. Travel costs are not
+            included. Read the full rules,<br> including age and geographical eligibility, how data will be used, odds of
+            being selected and other terms.
+        </p>
+        <hr>
+
+    </div>
+    <hr>
+
+    <!-- new start for containers  -->
+    <h2 class="new-container-title">Things To Know</h2>
+    <div class="new-main-container">
+        <div class="new-inner-container">
+            <div class="new-inner-box">
+                <h3 class="new-heading">The basics</h3>
+                <div class="new-description">
+                    <span>Check-in after 5:00 pm</span>
+                    <span>Checkout before 8:00 pm</span>
+                    <span>2 guests maximum</span>
+                    <span><a href="">Show more<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                            </svg></a></span>
+                </div>
+            </div>
+            <div class="new-inner-box mx-3">
+                <h3 class="new-heading"> Safety & property</h3>
+                <div class="new-description">
+                    <span>Exterior security cameras on property</span>
+                    <span>Carbon monoxide alarm</span>
+                    <span>Smoke alarm</span>
+                    <span><a href="">Show more<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                            </svg></a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- three divs container for 2nd half -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

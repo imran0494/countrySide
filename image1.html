@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images desktop</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    .image-container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        /* border: 1px solid #ccc; */
+        background-color: #f1f1f1;
+    }
+
+    .img-fluid {
+        max-height: 300px;
+        width: auto;
+        height: auto;
+    }
+
+    /* container section  */
+    .cookie-card {
+        width: 100%;
+        max-width: 320px;
+        padding: 1rem;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100px;
+        width: 400px;
+    }
+
+    .title {
+        font-weight: 600;
+        color: rgb(31 41 55);
+    }
+
+    .description {
+        margin-top: 1rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        color: rgb(75 85 99);
+    }
+
+    .description a {
+        --tw-text-opacity: 1;
+        color: rgb(59 130 246);
+    }
+
+    .description a:hover {
+        text-decoration: underline;
+    }
+
+    .actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 1rem;
+        column-gap: 1rem;
+        flex-shrink: 0;
+    }
+
+    .pref {
+        font-size: 0.75rem;
+        line-height: 1rem;
+        color: rgb(31 41 55);
+        text-decoration: underline;
+        transition: all .3s;
+        border: none;
+        background-color: transparent;
+    }
+
+    .pref:hover {
+        color: rgb(156 163 175);
+    }
+
+    .pref:focus {
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+    }
+
+    .accept {
+        font-size: 0.75rem;
+        line-height: 1rem;
+        background-color: rgb(236, 50, 50);
+        font-weight: 500;
+        border-radius: 0.5rem;
+        color: #fff;
+        padding: 0.625rem 1rem;
+        border: none;
+        transition: all .15s;
+        width: 300px;
+        /* height: 20px; */
+    }
+
+    .accept:hover {
+        background-color: rgb(55 65 81);
+    }
+
+    .accept:focus {
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+    }
+
+    /* New styles for the added container */
+    .left-container-content {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        border: 1px solid #ddd;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1rem; /* Add margin if needed to space out */
+    }
+
+    .left-container-content img {
+        max-width: 80px;
+        margin-right: 1rem;
+        border-radius: 50%;
+    }
+
+    .author-name {
+        font-weight: 600;
+        color: rgb(31 41 55);
+    }
+/* css for list in left container */
+.inner-container {
+    width: 565.51px;
+    height: auto ;
+    overflow-y: auto; /* Allows scrolling if content exceeds height */
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+   
+}
+
+.list-item i {
+    margin-right: 0.5rem;
+    color: #000000; /* Adjust color as needed */
+}
+
+.list-item p {
+    margin: 3px 3px 3px;
+}
+
+/* profile card */
+.profile-card-container {
+    width: 100%;
+    padding: 1rem;
+    box-shadow: thistle;
+    
+}
+
+.profile-card {
+    max-width: 300px; /* Adjust as needed */
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+    width: 150px;
+    margin: auto;
+    margin-top: 5px;
+    height: 150px; /* Adjust height as needed */
+    object-fit: cover;
+    border-radius: 50%
+    /* border-top-left-radius: 50%;
+    border-top-right-radius: 50%; */
+}
+
+.author-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: rgb(31 41 55);
+    margin-bottom: 0.5rem;
+}
+
+.author-designation {
+    font-size: 1rem;
+    color: rgb(75 85 99);
+    margin: 0;
+}
+/* new container for 2nd half */
+.new-container {
+    width: 100%;
+    padding: 1rem;
+    
+    background-color: #f9f9f9;
+    /* border: 1px solid #ddd; */
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust shadow as needed */
+}
+.new-container-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(31, 41, 55); /* Adjust color as needed */
+    margin-bottom: 0.5rem;
+}
+
+.new-container-description {
+    font-size: 1rem;
+    color: rgb(75, 85, 99); /* Adjust color as needed */
+    margin: 0;
+}
+/* new containers center  */
+.centered-container {
+    width: 100%;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust shadow as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+/* three containers  */
+/* Container for the three inner divs */
+.inner-container {
+    width: 100%; /* Full width */
+    display: flex;
+    justify-content: space-between; /* Space between inner divs */
+    align-items: flex-start; /* Align items at the start of the container */
+    /* padding: 1rem; Optional padding around the container */
+    /* box-sizing: border-box; */
+}
+
+/* Individual inner divs */
+.inner-div {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for the div */
+    padding: 1rem;
+    box-sizing: border-box;
+    text-align: left; /* Align content to the left */
+    width: 455.76px; /* Fixed width */
+    height: 293px; /* Fixed height */
+    display: flex; /* Flexbox layout for inner content */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+/* Align icons horizontally in one row */
+.inner-div svg {
+    margin-bottom: 0.5rem; /* Space below the icon */
+}
+
+/* Heading styles */
+.inner-div h2 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0; /* Margin for heading */
+}
+
+/* Paragraph container styles */
+.paragraph-container {
+    width: 100%; /* Full width of the inner div */
+    text-align: left; /* Align text to the left */
+}
+
+.paragraph-container p {
+    font-size: 1rem;
+    margin: 0; /* No margin for paragraphs */
+}
+
+
+/* new  */
+  /* New main container styling */
+  .new-main-container {
+    width: 100%; /* Full width */
+    display: flex; /* Flex layout */
+    justify-content: center; /* Center the inner container */
+    align-items: center; /* Center align items */
+    padding: 1rem; /* Padding around the main container */
+}
+
+/* New inner container styling */
+.new-inner-container {
+    width: 100%; /* Full width */
+    display: flex; /* Flex layout for inner boxes */
+    justify-content: flex-start; /* Align inner boxes to the left */
+    align-items: flex-start; /* Align inner boxes to the top */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* New inner box styling */
+.new-inner-box {
+    width: 300px; /* Fixed width for inner box */
+    text-align: left; /* Align content to the left */
+    padding: 1rem; /* Padding inside the inner box */
+}
+
+/* New heading styling */
+.new-heading {
+    font-size: 1.25rem; /* Font size for heading */
+    margin-bottom: 0.5rem; /* Space below heading */
+}
+
+/* New description styling */
+.new-description {
+    display: flex; /* Flex layout for spans */
+    flex-direction: column; /* Stack spans vertically */
+    align-items: flex-start; /* Align spans to the left */
+}
+
+.new-description span {
+    display: block; /* Block display for spans */
+    font-size: 1rem; /* Font size for spans */
+    margin-bottom: 0.5rem; /* Space below each span */
+}
+
+/* New button styling */
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.dialog {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    width: 570px; /* Set width */
+    height: 575px; /* Set height */
+}
+
+.dialog-content h1{
+    font-weight: bold;
+}
+.close {
+    position: absolute;
+    top: 20px;
+    left: 20px; /* Move close button to the right */
+    font-size: 24px;
+    cursor: pointer;
+    color: black;
+}
+
+.ticket-icon {
+    margin-top: 30px;
+    width: 401px; /* Set width */
+    height: 270px; /* Set height */
+    margin-right: 2px;
+}
+
+.app-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 10px;
+}
+
+.vacayhome-logo {
+    margin-top: 12px;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.app-details {
+    margin-top: 30px;
+    flex: 1;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.qr-code {
+    width: 70px;
+    height: 70px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dialog-content {
+        width: 391px;
+        height: auto;
+        padding: 15px;
+        
+    }
+
+    .ticket-icon {
+        max-width: 300px; /* Adjust maximum width */
+    }
+
+    .vacayhome-logo,
+    .qr-code {
+        width: 40px;
+        height: 40px;
+    }
+
+    .app-details span {
+        font-size: 14px;
+    }
+
+    .app-details p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dialog-content {
+        width: 270px;
+        padding: 10px;
+    }
+
+    .ticket-icon {
+        max-width: 250px; /* Adjust maximum width */
+    }
+
+    .vacayhome-logo,
+    .qr-code {
+        width: 30px;
+        height: 30px;
+    }
+
+    .app-details span {
+        font-size: 12px;
+    }
+
+    .app-details p {
+        font-size: 10px;
+    }
+}
+</style>
+</head>
+<body>
+<div class="main-container container">
+    <!-- nav section  -->
+    <div class="navbar d-flex justify-content-between align-items-center mb-4">
+        <div class="left">
+            <h1 class="h4">Go VIP with Kevin Hart</h1>
+        </div>
+        <div class="right">
+            <button class="btn "> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-upload"  margin="8px" viewBox="0 0 16 16">
+                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708z"/>
+              </svg><a href="">Share</a></button>
+            <button class="btn "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart"  margin="6px"viewBox="0 0 16 16">
+                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+              </svg> <a href="">Save</a></button>
+        </div>
+    </div>
+    <!-- image container  -->
+    <div class="image-container d-flex flex-wrap justify-content-center mb-4">
+        <img src="./images/pic.webp" class="img-fluid m-2" alt="Random Image 1">
+        <img src="./images/imgpage2.webp" class="img-fluid m-2"  alt="Random Image 2" >
+        <img src="./images/imgpage3.webp" class="img-fluid m-2" alt="Random Image 3">
+        <img src="./images/imgpage5.jpeg" class="img-fluid m-2" alt="Random Image 4">
+    </div>
+
+    <div class="main-container container">
+        <!-- Existing content here -->
+        <!-- New container inside the main-container -->
+        <div class="new-container container mt-4">
+            <div class="row">
+                <div class="col-md-6 d-flex justify-content-start">
+                    <div class="side-by-side-container">
+                        <div class="left-container-content" height="200px" width="500px">
+                            <img src="./images/logoimg1.webp" alt="Author Image">
+                            <div class="author-name">Hosted by Kevin Hart <br>Comedian</div>
+                        </div>
+
+                        <!-- New container inside the left-container-content -->
+                        <div class="inner-container mt-4">
+                            <ul class="list-unstyled">
+                                <li class="list-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <!-- <i class="bi bi-file-lock2"></i> -->
+                                    <p>Random sentence or item description 1.<br >Random sentence or item description 1.</p>
+                                    
+                                </li>
+                                <li class="list-item">
+                                    <i class="fas fa-info-circle"></i>
+                                    
+                                    <p>Random sentence or item description 2.</p>
+                                </li>
+                                <li class="list-item">
+                                    <i class="fas fa-times-circle"></i>
+                                    <p>Random sentence or item description 3.</p>
+                                </li>
+                                <li class="list-item">
+                                    <i class="fas fa-question-circle"></i>
+                                    <p>Random sentence or item description 4.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <!-- New container for description -->
+                        <div class="description-container mt-4">
+                            <p class="description-text">For the first time ever, I’m opening the doors to the Coramino Live Lounge – an exclusive, members-only speakeasy where you and a guest will get a front-row seat to how I live. This is inner circle stuff. You think I’d open a bottle of Gran Coramino’s finest reposado for any Joe and Nancy off the street? No! (Unless your name is Joe or Nancy, my apologies.) I hope you’re as hyped as I am. See you on the other side of that velvet rope.
+                                <br> <br>
+
+                               <strong>What you’ll do</strong> <br>
+                                The Coramino Live Lounge is my baby. It’s a labour of love and a testament to my hard work because it brings together my two greatest passions – comedy and tequila. (Besides my family, of course. Not trying to get in trouble here.) The vibe is incredible – it’s old-school Hollywood meets Kevin Hart. Like a Rat Pack spot if there were more menu options than just Beef Wellington. Come join me and share a few laughs (and a few drinks).
+                                <br> <br>
+                                Here’s the Kevin Hart-level VIP treatment you can expect.</p>
+                                <ul>
+                               <li>When you enter through the velvet rope, you’ll be greeted with Gran Coramino’s finest – cristalinos, añejos and my personal favourite, reposados – all paired with the perfect plant-based appetiser. Just a quick heads-up – I will say “flavour profile” no less than fifteen times. I apologise in advance.</li>
+                               <li>When you enter through the velvet rope, you’ll be greeted with Gran Coramino’s finest – cristalinos, añejos and my personal favourite, reposados – all paired with the perfect plant-based appetiser. Just a quick heads-up – I will say “flavour profile” no less than fifteen times. I apologise in advance.</li>
+                               <li>When you enter through the velvet rope, you’ll be greeted with Gran Coramino’s finest – cristalinos, añejos and my personal favourite, reposados – all paired with the perfect plant-based appetiser. Just a quick heads-up – I will say “flavour profile” no less than fifteen times. I apologise in advance.</li>
+                               <li>When you enter through the velvet rope, you’ll be greeted with Gran Coramino’s finest – cristalinos, añejos and my personal favourite, reposados – all paired with the perfect plant-based appetiser. Just a quick heads-up – I will say “flavour profile” no less than fifteen times. I apologise in advance.</li>
+                               <li>When you enter through the velvet rope, you’ll be greeted with Gran Coramino’s finest – cristalinos, añejos and my personal favourite, reposados – all paired with the perfect plant-based appetiser. Just a quick heads-up – I will say “flavour profile” no less than fifteen times. I apologise in advance.</li>
+                                 </ul> <br><br><hr>
+                                 
+                        </div>
+                        <!-- New container for host information -->
+                        <div class="host-info-container mt-4">
+                            <h4 class="host-title">Meet Your Host </h4>
+                            <!-- Profile card container -->
+                            <div class="profile-card-container mt-4 d-flex justify-content-center ">
+                                <div class="card profile-card shadow-lg p-3 mb-5 bg-body rounded">
+                                    <img src="./images/logoimg1.webp" alt="Host Image" class="card-img-top profile-image">
+                                    <div class="card-body text-center">
+                                        <h5 class="author-name">Author Name</h5>
+                                        <p class="author-designation">Started Hosting In 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inner-container mt-4">
+                                <ul class="list-unstyled">
+                                    <li class="list-item">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-mortarboard" viewBox="0 0 16 16">
+                                            <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917zM8 8.46 1.758 5.965 8 3.052l6.242 2.913z"/>
+                                            <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46z"/>
+                                          </svg>
+                                     
+                                        <p>Where I went to school: George Washington High School</p>
+                                        
+                                    </li>
+                                    <li class="list-item">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
+                                            <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5m1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0M1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5"/>
+                                          </svg>
+                                        <p>My work: Comedian/businessman </p>
+                                    </li>
+                                    <li class="list-item">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16">
+                                            <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6m6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1"/>
+                                          </svg>
+                                           
+                                        <p>Fun fact: I was a nationally competitive swimmer </p>
+                                    </li>
+                                    <li class="list-item">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"  fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                            <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                                          </svg>
+                                        <p>RI spend too much time: Working </p>
+                                    </li>
+                                    <li class="list-item">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"  fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                            <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                                          </svg>
+                                        <p>Pets: My two dogs </p>
+                                    </li>
+                                </ul>
+                            </div>
+                           <hr>
+                            <div>
+                                 <p>What up, world?! It’s Kevin Hart! You might know me as an actor and comedian, but I’m also a producer, media mogul and one-time underwear model (not a joke). I’m also a lifelong lover of tequila and the founder of Gran Coramino. It may sound like a lot, but hard work tastes different. I’m excited for YOU to get a taste of all that hard work at the Coramino Live Lounge. Mark your calendars, it’s about to go down!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex justify-content-end">
+                    <div class="side-by-side-container">
+                        <div class="cookie-card">
+                            <span class="title">Coming on 28 October</span>
+                   
+                            <div class="actions">
+                              <button id="openDialogBtn" class="accept btn btn-primary">Notify Me</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <!-- New container -->
+    <div class="new-container mt-4">
+        <h2 class="new-container-title">Where you’ll be</h2> <br>
+        <div class=>Los Angeles, California, United States</div><br>
+        <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119064.9003428725!2d78.9899362563994!3d21.161225913807623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c0a5a31faf13%3A0x19b37d06d0bb3e2b!2sNagpur%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1722581270493!5m2!1sen!2sin" width="100%" height="500px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div> <br>
+        <span>We verified that this listing’s location is accurate. Learn more</span>
+       
+    </div>
+    <!-- New container with centered content -->
+    <div class="centered-container mt-4 d-flex flex-column align-items-center">
+        <div class="first-div mb-3">
+            <img src="./images/centerimg.png" alt="Image" class="img-fluid" style="max-width: 855.27px; height: 376px;">
+        </div>
+        <div class="second-div mb-3">
+            <strong style="font-size: 96px;">icons</strong>
+        </div>
+        <p style="font-size: 20px;">Extraordinary experiences hosted by the world’s greatest names in music, film, TV, art, sports and more.</p>
+    </div>
+    <hr>
+     <!-- Container with three side-by-side divs -->
+     <div class="inner-container d-flex justify-content-between align-items-center" >
+        <div class="inner-div d-flex flex-column align-items-start justify-content-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+              </svg>
+            <h2>Request to book</h2>
+            <div class="paragraph-container">
+                <p>Choose your dates, add your guests, then answer a question about why you want to go.</p>
+            </div>
+        </div>
+        <div class="inner-div d-flex flex-column align-items-start justify-content-center mx-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
+              </svg>
+            <h2>Selection process</h2>
+            <div class="paragraph-container">
+                <p>TFirst, we’ll randomly choose a set of potential guests. Next, we’ll review their answers for unique perspectives and connections to the icon. Then, we’ll invite selected guests to book.</p>
+            </div>
+        </div>
+        <div class="inner-div d-flex flex-column align-items-start justify-content-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-bag-dash" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M5.5 10a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5"/>
+                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+              </svg>
+            <h2>Requirements</h2>
+            <div class="paragraph-container">
+                <p>You’ll need an active vacayhome account and the app to participate, and be a resident of an eligible country or region. It doesn’t cost anything to submit a request.</p>
+            </div>
+        </div>
+    </div>
+    <!-- new para --> <hr>
+    <div>
+        <p>
+            If you’re selected and decide to book, you’ll have 24 hours to complete the purchase. Travel costs are not included. Read the full rules, including age and geographical eligibility, how data will be used, odds of being selected and other terms.
+        </p>
+        <hr>
+    
+    </div>
+    <hr>
+   
+    <!-- new start for containers  -->
+    <h2 class="new-container-title">Things To Know</h2> 
+    <div class="new-main-container">
+        
+        <div class="new-inner-container">
+            <div class="new-inner-box">
+                <h3 class="new-heading">The basics</h3>
+                <div class="new-description">
+                    <span>Check-in after 5:00 pm</span>
+                    <span>Checkout before 8:00 pm</span>
+                    <span>2 guests maximum</span>
+                    <span><a href="">Show more<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+                     </svg></a></span>
+                </div>
+            </div>
+            <div class="new-inner-box mx-3">
+                <h3 class="new-heading"> Safety & property</h3>
+                <div class="new-description">
+                <span>Exterior security cameras on property</span>
+                <span>Carbon monoxide alarm</span>
+                <span>Smoke alarm</span>
+                <span><a href="">Show more<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+                     </svg></a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
+<div class="dialog" id="dialog">
+    <div class="dialog-content">
+        <span class="close" id="closeDialogBtn">&times;</span>
+        <img src="./images/centerimg.png" alt="Ticket Icon" class="ticket-icon">
+        <h1>Get the app</h1>
+        <p>Use the vacayhome app to request to book Icons and get notified about new ones.</p>
+        <div class="app-footer">
+            <img src="/images/logo/logo.jpeg" alt="vacayhome Logo" class="vacayhome-logo">
+            <div class="app-details">
+                <span>Download the vacayhome app</span>
+                <p>Scan the QR code to download</p>
+            </div>
+            <img src="/images/logo/bing_generated_qrcode.png" alt="QR Code" class="qr-code">
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    document.getElementById('openDialogBtn').addEventListener('click', function() {
+        document.getElementById('dialog').style.display = 'flex';
+    });
+
+    document.getElementById('closeDialogBtn').addEventListener('click', function() {
+        document.getElementById('dialog').style.display = 'none';
+    });
+</script>
+</body>
+</html>
