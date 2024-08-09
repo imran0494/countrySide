@@ -643,10 +643,11 @@ input[type="text"]:focus {
 @media (max-width: 575px) {
   .grid-container-custom {
     grid-template-columns: 1fr;
+    margin-right: 50px;
   }
 
   .slider-carousel-custom img {
-    width: 450px; /* Adjusted for extra small screens */
+    width: 285px; /* Adjusted for extra small screens */
     height: 270px; /* Adjusted for extra small screens */
   }
 }
