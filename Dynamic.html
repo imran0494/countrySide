@@ -3,21 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>not worked</title>
+    <title>Responsive Image Containers</title>
     <style>
       .container {
         max-width: 100%;
-
         padding-left: 60px;
         padding-right: 20px;
       }
+
       .carousel-container {
         width: 100%; /* Make the carousel containers responsive */
-        max-width: 284px; /* Constrain the maximum width */
-        margin: 0px auto;
+        max-width: 100%; /* Constrain the maximum width */
+        margin-right: 20px;
         position: relative;
       }
 
+      /* Flexbox to stack carousels vertically on smaller screens */
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; /* Adjust as needed */
+      }
+
+      /* Style for navigation buttons */
       .navigation-buttons .previous,
       .navigation-buttons .next {
         position: absolute;
@@ -36,7 +44,6 @@
       }
 
       .navigation-buttons .nav-btn {
-        /* background: rgba(243, 243, 243, 0.55); */
         cursor: pointer;
         border-radius: 50%;
         width: 30px;
@@ -57,8 +64,8 @@
       }
 
       .slider-carousel img {
-        width: 284px; /* Set fixed width */
-        height: 298px; /* Set fixed height */
+        width: 100%; /* Image scales with the container */
+        height: auto; /* Maintain aspect ratio */
         transition: all 0.3s ease;
         border-radius: 9px;
         margin-top: 3rem;
@@ -74,283 +81,308 @@
       }
 
       .image-text {
-        bottom: 0;
         width: 100%;
         display: flex;
         font-size: 15px;
         color: rgb(0, 0, 0);
-        height: 19px;
-        margin-top: 5px; /* Added margin top to create space between image and text */
+        margin-top: 5px;
       }
+
       .image-text p {
         color: grey;
         text-decoration: none;
         padding: 0px;
         margin: 0px;
       }
+
+      /* Grid layout for small to medium screens */
       .grid-container {
         display: grid;
-        grid-template-columns: auto auto auto auto;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 20px;
         padding: 10px;
+        margin-right: 35px;
       }
 
-      .grid-container > div {
-        text-align: center;
-        font-size: 30px;
+      /* Ensure only 4 carousels per row on large screens */
+      @media (min-width: 1200px) {
+        .grid-container {
+          grid-template-columns: repeat(4, 1fr); /* 4 carousels per row */
+        }
       }
     </style>
   </head>
   <body>
-    <!-- added new -->
     <div class="container">
       <div class="row justify-content-center">
         <div class="grid-container">
           <!-- Carousel 1 -->
-          <div>
-            <div class="col-12 col-md-3 carousel-container">
-              <div class="navigation-buttons">
-                <div class="previous nav-btn">&lt;</div>
-                <div class="next nav-btn">&gt;</div>
-              </div>
-              <div class="slider-carousel">
-                <a href="./image1.html" target="_blank">
-                  <div class="images main">
-                    <img src="./images/e1.webp" alt="flower 1" />
-                    <div class="image-text">
-                      <strong>Go VIP with Kevin Hart</strong>
-                    </div>
-                    <div class="image-text"><p>Hosted by Author</p></div>
-                    <div class="image-text">Coming on 21 August</div>
+          <div class="carousel-container">
+            <div class="navigation-buttons">
+              <div class="previous nav-btn">&lt;</div>
+              <div class="next nav-btn">&gt;</div>
+            </div>
+            <div class="slider-carousel">
+              <a href="/DynamicCollage.html" target="_blank">
+                <div class="images main">
+                  <img src="images/d1.webp" alt="flower 1" />
+                  <div class="image-text">
+                    <strong>Go VIP with Kevin Hart</strong>
                   </div>
-                  <div class="images">
-                    <img src="./images/e2.webp" alt="flower 2" />
-                    <div class="image-text">
-                      <strong>Go VIP with Kevin Hart</strong>
-                    </div>
-                    <div class="image-text"><p>Hosted by Author</p></div>
-                    <div class="image-text">Coming on 21 August</div>
+                  <div class="image-text"><p>Hosted by Author</p></div>
+                  <div class="image-text">Coming on 21 August</div>
+                </div>
+                <div class="images">
+                  <img
+                    src="/images/Airbnb2img/f39f4ad7-e951-464c-bfde-842e8ac3ea18.webp"
+                    alt="flower 2"
+                  />
+                  <div class="image-text">
+                    <strong>Go VIP with Kevin Hart</strong>
                   </div>
-                  <div class="images">
-                    <img src="./images/e3.webp" alt="flower 3" />
-                    <div class="image-text">
-                      <strong> VIP with Kevin Hart</strong>
-                    </div>
-                    <div class="image-text"><p>Hosted by Author</p></div>
-                    <div class="image-text">Coming on 21 August</div>
+                  <div class="image-text"><p>Hosted by Author</p></div>
+                  <div class="image-text">Coming on 21 August</div>
+                </div>
+                <div class="images">
+                  <img
+                    src="/images//Airbnb2img/55a2777a-fc80-4d7b-af05-a9f737ff8661 (1).webp"
+                    alt="flower 3"
+                  />
+                  <div class="image-text">
+                    <strong> VIP with Kevin Hart</strong>
                   </div>
-                </a>
-              </div>
+                  <div class="image-text"><p>Hosted by Author</p></div>
+                  <div class="image-text">Coming on 21 August</div>
+                </div>
+              </a>
             </div>
           </div>
+
           <!-- Carousel 2 -->
-          <div>
-            <div class="col-12 col-md-3 carousel-container">
-              <div class="navigation-buttons">
-                <div class="previous nav-btn">&lt;</div>
-                <div class="next nav-btn">&gt;</div>
-              </div>
-              <div class="slider-carousel">
-                <a href="./image2.html" target="_blank">
-                  <div class="images main">
-                    <img src="./images/d1.webp" alt="flower 1" />
-                    <div class="image-text">
-                      <strong>Go VIP with Kevin Hart</strong>
-                    </div>
-                    <div class="image-text"><p>Hosted by Author</p></div>
-                    <div class="image-text">Coming on 21 August</div>
+          <div class="carousel-container">
+            <div class="navigation-buttons">
+              <div class="previous nav-btn">&lt;</div>
+              <div class="next nav-btn">&gt;</div>
+            </div>
+            <div class="slider-carousel">
+              <a
+                href="c:\Users\Admin\OneDrive\Desktop\task\ee4c5bb4-e0e5-4119-b34a-7f83c183f3c0.webp"
+                target="_blank"
+              >
+                <div class="images main">
+                  <img
+                    src="/images/Airbnb2img/c963ea36-dc00-4030-9719-34ba4f45ce42.webp"
+                    alt="flower 1"
+                  />
+                  <div class="image-text">
+                    <strong>Go VIP with Kevin Hart</strong>
                   </div>
-                  <div class="images">
-                    <img src="./images/d2.jpeg" alt="flower 2" />
-                    <div class="image-text">
-                      <strong>Go VIP with Kevin Hart</strong>
-                    </div>
-                    <div class="image-text"><p>Hosted by Author</p></div>
-                    <div class="image-text">Coming on 21 August</div>
+                  <div class="image-text"><p>Hosted by Author</p></div>
+                  <div class="image-text">Coming on 21 August</div>
+                </div>
+                <div class="images">
+                  <img
+                    src="/images/Airbnb2img/d106e0ef-f825-4ff8-baf7-86256a54fbd5.webp"
+                    alt="flower 2"
+                  />
+                  <div class="image-text">
+                    <strong>Go VIP with Kevin Hart</strong>
                   </div>
-                  <div class="images">
-                    <img src="./images/d3.webp" alt="flower 3" />
-                    <div class="image-text">
-                      <strong> VIP with Kevin Hart</strong>
-                    </div>
-                    <div class="image-text"><p>Hosted by Author</p></div>
-                    <div class="image-text">Coming on 21 August</div>
+                  <div class="image-text"><p>Hosted by Author</p></div>
+                  <div class="image-text">Coming on 21 August</div>
+                </div>
+                <div class="images">
+                  <img
+                    src="/images/Airbnb2img/c9a998fa-2f64-4576-a8e7-025cf2f08e66.webp"
+                    alt="flower 3"
+                  />
+                  <div class="image-text">
+                    <strong> VIP with Kevin Hart</strong>
                   </div>
-                </a>
-              </div>
+                  <div class="image-text"><p>Hosted by Author</p></div>
+                  <div class="image-text">Coming on 21 August</div>
+                </div>
+              </a>
             </div>
           </div>
 
           <!-- Carousel 3 -->
-          <div>
-            <div class="col-12 col-md-3 carousel-container">
-              <div class="navigation-buttons">
-                <div class="previous nav-btn">&lt;</div>
-                <div class="next nav-btn">&gt;</div>
-              </div>
-              <div class="slider-carousel">
-                <a
-                  href="./image3.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div class="images main">
-                    <img src="./images/a4.webp" alt="flower 1" />
-                    <div class="image-text">
-                      <strong>Go VIP with Kevin Hart</strong>
-                    </div>
-                    <div class="image-text"><p>Hosted by Author</p></div>
-                    <div class="image-text">Coming on 21 August</div>
+          <div class="carousel-container">
+            <div class="navigation-buttons">
+              <div class="previous nav-btn">&lt;</div>
+              <div class="next nav-btn">&gt;</div>
+            </div>
+            <div class="slider-carousel">
+              <a
+                href="c:\Users\Admin\OneDrive\Desktop\task\1f396ee7-b944-40bb-825e-4b06a287b379.webp"
+                target="_blank"
+              >
+                <div class="images main">
+                  <img
+                    src="/images/Airbnb2img/c6e8b725-62c3-45d8-a9bb-33dd6b62df99.webp"
+                    alt="image 1"
+                  />
+                  <div class="image-text">
+                    <strong>Title for Image 1</strong>
                   </div>
-                  <div class="images">
-                    <img src="./images/a2.webp" alt="flower 2" />
-                    <div class="image-text">
-                      <strong>Go VIP with Kevin Hart</strong>
-                    </div>
-                    <div class="image-text"><p>Hosted by Author</p></div>
-                    <div class="image-text">Coming on 21 August</div>
+                  <div class="image-text"><p>Hosted by Author</p></div>
+                  <div class="image-text">Date or Details</div>
+                </div>
+                <div class="images">
+                  <img
+                    src="/images/Airbnb2img/c9a998fa-2f64-4576-a8e7-025cf2f08e66.webp"
+                    alt="image 2"
+                  />
+                  <div class="image-text">
+                    <strong>Title for Image 2</strong>
                   </div>
-                  <div class="images">
-                    <img src="./images/a1.webp" alt="flower 3" />
-                    <div class="image-text">
-                      <strong> VIP with Kevin Hart</strong>
-                    </div>
-                    <div class="image-text"><p>Hosted by Author</p></div>
-                    <div class="image-text">Coming on 21 August</div>
+                  <div class="image-text"><p>Hosted by Author</p></div>
+                  <div class="image-text">Date or Details</div>
+                </div>
+                <div class="images">
+                  <img
+                    src="/images/Airbnb2img/b676fc8d-8250-4df0-a7cb-728b0486e371.webp"
+                    alt="image 3"
+                  />
+                  <div class="image-text">
+                    <strong>Title for Image 3</strong>
                   </div>
-                </a>
-              </div>
+                  <div class="image-text"><p>Hosted by Author</p></div>
+                  <div class="image-text">Date or Details</div>
+                </div>
+              </a>
             </div>
           </div>
 
           <!-- Carousel 4 -->
-          <div>
-            <div class="col-12 col-md-3 carousel-container">
-              <div class="navigation-buttons">
-                <div class="previous nav-btn">&lt;</div>
-                <div class="next nav-btn">&gt;</div>
-              </div>
-              <div class="slider-carousel">
-                <a
-                  href="./image4.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div class="images main">
-                    <img src="./images/c1.webp" alt="flower 1" />
-                    <div class="image-text">
-                      <strong>Go VIP with Kevin Hart</strong>
-                    </div>
-                    <div class="image-text"><p>Hosted by Author</p></div>
-                    <div class="image-text">Coming on 21 August</div>
+          <div class="carousel-container">
+            <div class="navigation-buttons">
+              <div class="previous nav-btn">&lt;</div>
+              <div class="next nav-btn">&gt;</div>
+            </div>
+            <div class="slider-carousel">
+              <a
+                href="c:\Users\Admin\OneDrive\Desktop\task\1f396ee7-b944-40bb-825e-4b06a287b379.webp"
+                target="_blank"
+              >
+                <div class="images main">
+                  <img
+                    src="/images/Airbnb Image/c92634d0-4964-439a-905d-b9129af14d34.webp"
+                    alt="image 1"
+                  />
+                  <div class="image-text">
+                    <strong>Title for Image 1</strong>
                   </div>
-                  <div class="images">
-                    <img src="./images/e2.webp" alt="flower 2" />
-                    <div class="image-text">
-                      <strong>Go VIP with Kevin Hart</strong>
-                    </div>
-                    <div class="image-text"><p>Hosted by Author</p></div>
-                    <div class="image-text">Coming on 21 August</div>
+                  <div class="image-text"><p>Hosted by Author</p></div>
+                  <div class="image-text">Date or Details</div>
+                </div>
+                <div class="images">
+                  <img
+                    src="/images/Airbnb Image/bd73f0f8-9057-4bbc-ad70-1db13eb5c03f.webp"
+                    alt="image 2"
+                  />
+                  <div class="image-text">
+                    <strong>Title for Image 2</strong>
                   </div>
-                  <div class="images">
-                    <img src="./images/a1.webp" alt="flower 3" />
-                    <div class="image-text">
-                      <strong> VIP with Kevin Hart</strong>
-                    </div>
-                    <div class="image-text"><p>Hosted by Author</p></div>
-                    <div class="image-text">Coming on 21 August</div>
+                  <div class="image-text"><p>Hosted by Author</p></div>
+                  <div class="image-text">Date or Details</div>
+                </div>
+                <div class="images">
+                  <img
+                    src="/images/Airbnb Image/591f7acf-c271-4762-89ab-e8e3edb4115b.jpeg"
+                    alt="image 3"
+                  />
+                  <div class="image-text">
+                    <strong>Title for Image 3</strong>
                   </div>
-                </a>
-              </div>
+                  <div class="image-text"><p>Hosted by Author</p></div>
+                  <div class="image-text">Date or Details</div>
+                </div>
+              </a>
             </div>
           </div>
+
           <!-- Carousel 5 -->
-          <div>
-            <div class="col-12 col-md-3 carousel-container">
-              <div class="navigation-buttons">
-                <div class="previous nav-btn">&lt;</div>
-                <div class="next nav-btn">&gt;</div>
-              </div>
-              <div class="slider-carousel">
-                <a
-                  href="./image4.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div class="images main">
-                    <img src="./images/b1.webp" alt="flower 1" />
-                    <div class="image-text">
-                      <strong>Go VIP with Kevin Hart</strong>
-                    </div>
-                    <div class="image-text"><p>Hosted by Author</p></div>
-                    <div class="image-text">Coming on 21 August</div>
+          <div class="carousel-container">
+            <div class="navigation-buttons">
+              <div class="previous nav-btn">&lt;</div>
+              <div class="next nav-btn">&gt;</div>
+            </div>
+            <div class="slider-carousel">
+              <a
+                href="c:\Users\Admin\OneDrive\Desktop\task\1f396ee7-b944-40bb-825e-4b06a287b379.webp"
+                target="_blank"
+              >
+                <div class="images main">
+                  <img src="/images/a1.webp" alt="image 1" />
+                  <div class="image-text">
+                    <strong>Title for Image 1</strong>
                   </div>
-                  <div class="images">
-                    <img src="./images/e4.webp" alt="flower 2" />
-                    <div class="image-text">
-                      <strong>Go VIP with Kevin Hart</strong>
-                    </div>
-                    <div class="image-text"><p>Hosted by Author</p></div>
-                    <div class="image-text">Coming on 21 August</div>
+                  <div class="image-text"><p>Hosted by Author</p></div>
+                  <div class="image-text">Date or Details</div>
+                </div>
+                <div class="images">
+                  <img src="images/a4.webp" alt="image 2" />
+                  <div class="image-text">
+                    <strong>Title for Image 2</strong>
                   </div>
-                  <div class="images">
-                    <img src="./images/e1.webp" alt="flower 3" />
-                    <div class="image-text">
-                      <strong> VIP with Kevin Hart</strong>
-                    </div>
-                    <div class="image-text"><p>Hosted by Author</p></div>
-                    <div class="image-text">Coming on 21 August</div>
+                  <div class="image-text"><p>Hosted by Author</p></div>
+                  <div class="image-text">Date or Details</div>
+                </div>
+                <div class="images">
+                  <img src="/images/c1.webp" alt="image 3" />
+                  <div class="image-text">
+                    <strong>Title for Image 3</strong>
                   </div>
-                </a>
-              </div>
+                  <div class="image-text"><p>Hosted by Author</p></div>
+                  <div class="image-text">Date or Details</div>
+                </div>
+              </a>
             </div>
           </div>
-          <!-- carousel 6  -->
-          <div>
-            <div class="col-12 col-md-3 carousel-container">
-              <div class="navigation-buttons">
-                <div class="previous nav-btn">&lt;</div>
-                <div class="next nav-btn">&gt;</div>
-              </div>
-              <div class="slider-carousel">
-                <a
-                  href="./image4.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div class="images main">
-                    <img src="./images//a3.webp" alt="flower 1" />
-                    <div class="image-text">
-                      <strong>Go VIP with Kevin Hart</strong>
-                    </div>
-                    <div class="image-text"><p>Hosted by Author</p></div>
-                    <div class="image-text">Coming on 21 August</div>
+
+          <!-- Carousel 6 -->
+          <div class="carousel-container">
+            <div class="navigation-buttons">
+              <div class="previous nav-btn">&lt;</div>
+              <div class="next nav-btn">&gt;</div>
+            </div>
+            <div class="slider-carousel">
+              <a
+                href="c:\Users\Admin\OneDrive\Desktop\task\your-image-path-12.jpg"
+                target="_blank"
+              >
+                <div class="images main">
+                  <img src="/images/d3.webp" alt="image 1" />
+                  <div class="image-text">
+                    <strong>Title for Image 1</strong>
                   </div>
-                  <div class="images">
-                    <img src="./images//e2.webp" alt="flower 2" />
-                    <div class="image-text">
-                      <strong>Go VIP with Kevin Hart</strong>
-                    </div>
-                    <div class="image-text"><p>Hosted by Author</p></div>
-                    <div class="image-text">Coming on 21 August</div>
+                  <div class="image-text"><p>Hosted by Author</p></div>
+                  <div class="image-text">Date or Details</div>
+                </div>
+                <div class="images">
+                  <img src="/images/d2.jpeg" alt="image 2" />
+                  <div class="image-text">
+                    <strong>Title for Image 2</strong>
                   </div>
-                  <div class="images">
-                    <img src="./images//e3.webp" alt="flower 3" />
-                    <div class="image-text">
-                      <strong> VIP with Kevin Hart</strong>
-                    </div>
-                    <div class="image-text"><p>Hosted by Author</p></div>
-                    <div class="image-text">Coming on 21 August</div>
+                  <div class="image-text"><p>Hosted by Author</p></div>
+                  <div class="image-text">Date or Details</div>
+                </div>
+                <div class="images">
+                  <img src="/images/d4.webp" alt="image 3" />
+                  <div class="image-text">
+                    <strong>Title for Image 3</strong>
                   </div>
-                </a>
-              </div>
+                  <div class="image-text"><p>Hosted by Author</p></div>
+                  <div class="image-text">Date or Details</div>
+                </div>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- added script new -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script>

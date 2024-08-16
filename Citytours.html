@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Things</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #FFFFFF;
+            justify-content: space-between;
+        }
+
+        .cardSection {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .cards {
+            width: 100%;
+            margin: 5px;
+            padding: 5px;
+            display: flex;
+            max-width: 308px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-sizing: border-box;
+            flex-direction: column;
+        }
+
+        .cardheader {
+            height: 300px;
+            flex: 0 0 auto;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .cardbody {
+            display: flex;
+            flex: 1 1 auto;
+            margin: 15px 0;
+            padding: 0 2px;
+            align-items: center;
+        }
+
+        .cardTitle {
+
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.2em;
+            align-items: center;
+
+        }
+
+
+        .rental-image {
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .rental-title {
+            font-size: 1.2rem;
+        }
+
+        .rental-rating {
+            font-size: 1rem;
+            color: #007bff;
+        }
+
+
+        #card-text {
+            height: 170px;
+        }
+
+
+
+        .imageSection {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            align-items: center;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .men {
+            flex: 1;
+            height: 84vh;
+            margin-left: 35%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .content {
+            left: 0;
+            top: 50%;
+            width: 40%;
+            padding: 20px;
+            position: absolute;
+            border-radius: 10px;
+            background: white;
+            transform: translateY(-68%);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .search-box input,
+        .search-box button {
+            padding: 10px;
+            font-size: large;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .search-box input {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .search-box button {
+            border: none;
+            color: white;
+            cursor: pointer;
+            background-color: #e51852;
+        }
+
+
+        @media (min-width: 820px) and (max-width: 934px) {
+            .imageSection {
+                padding: 10px;
+                flex-direction: column;
+            }
+
+            .men {
+                height: 60vh;
+                margin-left: 0;
+                min-width: 100%;
+                background-size: cover;
+                background-position: center;
+            }
+
+            .content {
+                left: 0;
+                width: 90%;
+                transform: none;
+                margin-top: 20px;
+                position: relative;
+            }
+
+            .search-box input,
+            .search-box button {
+                font-size: medium;
+            }
+        }
+
+        /* Small screens (max-width: 768px) */
+        @media (max-width: 768px) {
+            .imageSection {
+                padding: 10px;
+                flex-direction: column;
+            }
+
+            .men {
+                height: 50vh;
+                margin-left: 0;
+                min-width: 100%;
+                background-size: cover;
+                background-position: center;
+            }
+
+            .content {
+                left: 0;
+                width: 90%;
+                transform: none;
+                margin-top: 20px;
+                position: relative;
+            }
+
+            .search-box input,
+            .search-box button {
+                font-size: medium;
+            }
+        }
+
+        /* Extra small screens (max-width: 576px) */
+        @media (max-width: 576px) {
+            .imageSection {
+                padding: 10px;
+                flex-direction: column;
+            }
+
+            .men {
+                height: 40vh;
+                margin-left: 0;
+                min-width: 100%;
+                background-size: cover;
+                background-position: center;
+            }
+
+            .content {
+                left: 0;
+                width: 90%;
+                transform: none;
+                margin-top: 20px;
+                position: relative;
+            }
+
+            .search-box input,
+            .search-box button {
+                font-size: small;
+            }
+        }
+
+
+        @media (min-width: 1200px) {
+            .men {
+                height: 100vh;
+                margin-left: 25%;
+            }
+
+            .content {
+                width: 35%;
+                padding: 30px;
+            }
+
+            .search-box input,
+            .search-box button {
+                font-size: large;
+            }
+        }
+
+        @media (max-width: 1280px) and (min-width: 800px) {
+            .imageSection {
+                padding: 20px;
+                flex-direction: column;
+            }
+
+            .men {
+                height: 60vh;
+                margin-left: 0;
+                min-width: 100%;
+                background-size: cover;
+                background-position: center;
+            }
+
+            .content {
+                left: 0;
+                width: 90%;
+                transform: none;
+                margin-top: 20px;
+                position: relative;
+            }
+
+            .search-box input,
+            .search-box button {
+                font-size: medium;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cards {
+                max-width: 45%;
+            }
+
+            .title {
+                font-size: 0.9rem;
+            }
+
+            .status .col {
+                flex: 0 0 33.33%;
+                max-width: 33.33%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .cards {
+                max-width: 100%;
+            }
+
+            .title {
+                font-size: 0.85rem;
+            }
+
+            .status .col {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+
+        .GuidSection {
+            background-color: rgb(250, 247, 247);
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <header class="header">
+            <div class="logo ">
+                <img src="images/air.jpg" style="width:90px;height:50px;" class="ml-4 img-fluid">
+            </div>
+            <p class="fw-semibold">
+                Airbnb your place
+            </p>
+            </nav>
+
+        </header>
+
+        <!-- Image Section -->
+
+
+        <div class="imageSection ">
+            <div class="men">
+                <img src="images/things.webp" class="img rounded img-fluid shadow" alt="Image">
+            </div>
+            <div class="content shadow border border-2 ">
+                <h4 class="fw-bold fs-3">Unique things to do in London</h4>
+                <p>Book unforgettable activities hosted by locals on Airbnb.</p>
+                <div class="search-box">
+                    <input type="text" placeholder="Location" value="Canmore, Canada" class="form-control">
+                    <input type="date" placeholder="Check In" class="form-control">
+                    <!-- <div class="d-flex flex-column flex-sm-row gap-2">
+                        <input type="date" placeholder="Check Out" class="form-control">
+                    </div> -->
+                    <button class="w-100">Search</button>
+                </div>
+            </div>
+        </div>
+        <div class="textSection d-flex ">
+            <div class="col-md-4 fs-3 fw-semibold ms-3">
+                Travel like a local
+            </div>
+            <div class="col-md-8 fs-5 font-monospace">
+                It may be one of the most recognizable cities in the world with its iconic landmarks and signature
+                style, but delve
+                deeper and there’s a side of London you never expected. The food is better than what you’ve been told.
+                The history goes
+                beyond the Royal Family. And there’s more ways to get around than the Tube. When exploring the things to
+                do in London,
+                don’t stick to what you know: Zip along the River Thames on a speedboat, go on hidden history tours, and
+                take cooking
+                classes, among other activities with Airbnb Experiences.
+            </div>
+        </div>
+
+
+        <div class="mt-5 ">
+            <span class="fw-semibold ms-1 fs-3">Quick stats about flat rentals in Canmore</span>
+            <div class="status">
+                <div class="row">
+                    <div class="col ">
+                        <div class="p-4  shadow border border-1 rounded">
+                            <!-- <i class="fa-solid fa-kitchen-set fs-2"></i> -->
+                            <p class=" fs-5 fw-semibold">Movie and TV</p>
+                        </div>
+                    </div>
+
+                    <div class="col ">
+                        <div class="p-4 shadow border border-1 rounded">
+                            <!-- <i class="fa-solid fa-wifi fs-2"></i> -->
+                            <p class=" fs-5 fw-semibold">Tea</p>
+                        </div>
+                    </div>
+
+                    <div class="col ">
+                        <div class="p-4 shadow border border-1 rounded">
+                            <!-- <i class="fa-solid fa-water-ladder fs-2"></i> -->
+                            <p class=" fs-5 fw-semibold">Literature</p>
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <div class="p-4  shadow border border-1 rounded ">
+                            <!-- <i class="fa-brands fa-product-hunt fs-2"></i> -->
+                            <p class=" fs-5 fw-semibold">Fashion</p>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="p-4  shadow border border-1 rounded ">
+                            <!-- <i class="fa-solid fa-tree fs-2"></i> -->
+                            <p class=" fs-5 fw-semibold">Walking tours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <section class="mt-5">
+            <span class="fw-semibold ms-1 fs-3 ms-3">Top-rated Activities</span>
+            <!-- <p class="ms-3">Guests agree: these apartments are highly rated for location, cleanliness and more.</p> -->
+            <div class="cardSection">
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/c1.webp" alt="Apartment">
+                        <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                            Guest Favourite
+                        </button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa Lorem ipsum dolor sit,
+                                amet consectetur adipisicing elit. Et voluptate
+                                temporibus consequatur odit excepturi voluptas accusamus itaque sed provident
+                                ipsum?</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/e4.webp" alt="Apartment">
+                        <button
+                            class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                            Superhost</button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa Lorem ipsum dolor sit,
+                                amet consectetur adipisicing elit. Et voluptate
+                                temporibus consequatur odit excepturi voluptas accusamus itaque sed provident
+                                ipsum?</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/e3.webp" alt="Apartment">
+                        <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                            Guest Favourite
+                        </button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa Lorem ipsum dolor sit,
+                                amet consectetur adipisicing elit. Et voluptate
+                                temporibus consequatur odit excepturi voluptas accusamus itaque sed provident
+                                ipsum?</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/e2.webp" alt="Apartment">
+                        <button
+                            class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                            Superhost</button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa Lorem ipsum dolor sit,
+                                amet consectetur adipisicing elit. Et voluptate temporibus consequatur odit excepturi
+                                voluptas accusamus itaque sed provident ipsum?</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+        <span class="fw-semibold ms-1 fs-3 ms-3">Loved by Locals</span>
+        <div class="cardSection">
+            <div class="cards">
+                <div class="cardheader position-relative">
+                    <img src="./images/r1.jpg" alt="Apartment">
+                    <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                        Guest Favourite
+                    </button>
+                </div>
+                <div class="cardbody">
+                    <div class="cardTitle text-start">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div>Rental unit in Canmore</div>
+                            <div class="ms-auto d-flex align-items-center">
+                                <i class="bi bi-star-fill"></i>
+                                <span>4.96(24)</span>
+                            </div>
+                        </div>
+                        <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cards">
+                <div class="cardheader position-relative">
+                    <img src="./images/r2.jpg" alt="Apartment">
+                    <button
+                        class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                        Superhost</button>
+                </div>
+                <div class="cardbody">
+                    <div class="cardTitle text-start">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div>Rental unit in Canmore</div>
+                            <div class="ms-auto d-flex align-items-center">
+                                <i class="bi bi-star-fill"></i>
+                                <span>4.96(24)</span>
+                            </div>
+                        </div>
+                        <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cards">
+                <div class="cardheader position-relative">
+                    <img src="./images/r3.jpg" alt="Apartment">
+                    <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                        Guest Favourite
+                    </button>
+                </div>
+                <div class="cardbody">
+                    <div class="cardTitle text-start">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div>Rental unit in Canmore</div>
+                            <div class="ms-auto d-flex align-items-center">
+                                <i class="bi bi-star-fill"></i>
+                                <span>4.96(24)</span>
+                            </div>
+                        </div>
+                        <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="cardheader position-relative">
+                    <img src="./images/r4.jpg" alt="Apartment">
+                    <button
+                        class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                        Superhost</button>
+                </div>
+                <div class="cardbody">
+                    <div class="cardTitle text-start">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div>Rental unit in Canmore</div>
+                            <div class="ms-auto d-flex align-items-center">
+                                <i class="bi bi-star-fill"></i>
+                                <span>4.96(24)</span>
+                            </div>
+                        </div>
+                        <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="mt-3 m-2">
+            <button class="btn text-start shadow p-3  border-info">
+                Show All <i class="bi bi-chevron-right"></i>
+            </button>
+        </div>
+
+        <span class="fw-semibold ms-1 fs-3 ms-3">Take Time for Tea</span>
+        <div class="cardSection">
+            <div class="cards">
+                <div class="cardheader position-relative">
+                    <img src="./images/r1.jpg" alt="Apartment">
+                    <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                        Guest Favourite
+                    </button>
+                </div>
+                <div class="cardbody">
+                    <div class="cardTitle text-start">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div>Rental unit in Canmore</div>
+                            <div class="ms-auto d-flex align-items-center">
+                                <i class="bi bi-star-fill"></i>
+                                <span>4.96(24)</span>
+                            </div>
+                        </div>
+                        <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cards">
+                <div class="cardheader position-relative">
+                    <img src="./images/r2.jpg" alt="Apartment">
+                    <button
+                        class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                        Superhost</button>
+                </div>
+                <div class="cardbody">
+                    <div class="cardTitle text-start">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div>Rental unit in Canmore</div>
+                            <div class="ms-auto d-flex align-items-center">
+                                <i class="bi bi-star-fill"></i>
+                                <span>4.96(24)</span>
+                            </div>
+                        </div>
+                        <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cards">
+                <div class="cardheader position-relative">
+                    <img src="./images/r3.jpg" alt="Apartment">
+                    <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                        Guest Favourite
+                    </button>
+                </div>
+                <div class="cardbody">
+                    <div class="cardTitle text-start">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div>Rental unit in Canmore</div>
+                            <div class="ms-auto d-flex align-items-center">
+                                <i class="bi bi-star-fill"></i>
+                                <span>4.96(24)</span>
+                            </div>
+                        </div>
+                        <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="cardheader position-relative">
+                    <img src="./images/r4.jpg" alt="Apartment">
+                    <button
+                        class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                        Superhost</button>
+                </div>
+                <div class="cardbody">
+                    <div class="cardTitle text-start">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div>Rental unit in Canmore</div>
+                            <div class="ms-auto d-flex align-items-center">
+                                <i class="bi bi-star-fill"></i>
+                                <span>4.96(24)</span>
+                            </div>
+                        </div>
+                        <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="mt-3 m-2">
+            <button class="btn text-start shadow p-3  border-info">
+                Show All <i class="bi bi-chevron-right"></i>
+            </button>
+        </div>
+
+
+
+
+        <div class="row mt-5">
+            <div class="col-md-4 ">
+                <div class="shadow rounded-3  p-4">
+                    <h4>London Eye</h4>
+                    <p>2,009 Locals recommend</p>
+                </div>
+            </div>
+            <div class="col-md-4 ">
+                <div class="shadow rounded-3  p-4">
+                    <h4>Buckingham Palace</h4>
+                    <p>1,607 locals recommend</p>
+                </div>
+            </div>
+            <div class="col-md-4 ">
+                <div class="shadow rounded-3  p-4 ">
+                    <h4>The Regent's Park</h4>
+                    <p>1,912 locals recommend</p>
+                </div>
+            </div>
+            <div class="col-md-4  mt-2">
+                <div class="shadow rounded-3  p-4 mt-3">
+                    <h4>Tower Bridge</h4>
+                    <p>1,577 locals recommend</p>
+                </div>
+
+            </div>
+            <div class="col-md-4  mt-2">
+                <div class="shadow rounded-3  p-4 mt-3">
+                    <h4>British Museum</h4>
+                    <p>1,546 locals recommend</p>
+                </div>
+            </div>
+            <div class="col-md-4 mt-2">
+                <div class="shadow rounded-3  p-4 mt-3">
+                    <h4>Harrods</h4>
+                    <p>1,522 locals recommend</p>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+        <section class="mt-5 p-2 border border-2 rounded-3">
+            <span class="fw-semibold ms-1 fs-3 ms-3">Top-rated Activities</span>
+            <!-- <p class="ms-3">Guests agree: these apartments are highly rated for location, cleanliness and more.</p> -->
+            <div class="cardSection">
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/c1.webp" alt="Apartment">
+                        <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                            Guest Favourite
+                        </button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa Lorem ipsum dolor sit,
+                                amet consectetur adipisicing elit. Et voluptate
+                                temporibus consequatur odit excepturi voluptas accusamus itaque sed provident
+                                ipsum?</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/e4.webp" alt="Apartment">
+                        <button
+                            class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                            Superhost</button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa Lorem ipsum dolor sit,
+                                amet consectetur adipisicing elit. Et voluptate
+                                temporibus consequatur odit excepturi voluptas accusamus itaque sed provident
+                                ipsum?</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/e3.webp" alt="Apartment">
+                        <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                            Guest Favourite
+                        </button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa Lorem ipsum dolor sit,
+                                amet consectetur adipisicing elit. Et voluptate
+                                temporibus consequatur odit excepturi voluptas accusamus itaque sed provident
+                                ipsum?</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/e2.webp" alt="Apartment">
+                        <button
+                            class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                            Superhost</button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa Lorem ipsum dolor sit,
+                                amet consectetur adipisicing elit. Et voluptate temporibus consequatur odit excepturi
+                                voluptas accusamus itaque sed provident ipsum?</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3 m-2">
+                    <button class="btn text-start shadow p-3  border-info">
+                        Show All <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <div class="mt-5 p-2 border border-2 rounded-3">
+            <span class="fw-semibold ms-1 fs-3 ms-3">Loved by Locals</span>
+            <div class="cardSection">
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/r1.jpg" alt="Apartment">
+                        <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                            Guest Favourite
+                        </button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/r2.jpg" alt="Apartment">
+                        <button
+                            class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                            Superhost</button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/r3.jpg" alt="Apartment">
+                        <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                            Guest Favourite
+                        </button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/r4.jpg" alt="Apartment">
+                        <button
+                            class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                            Superhost</button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="mt-3 m-2">
+                <button class="btn text-start shadow p-3  border-info">
+                    Show All <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <div class="mt-5 p-2 border border-2 rounded-3">
+            <span class="fw-semibold ms-1 fs-3 ms-3">Take Time for Tea</span>
+            <div class="cardSection">
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/r1.jpg" alt="Apartment">
+                        <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                            Guest Favourite
+                        </button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/r2.jpg" alt="Apartment">
+                        <button
+                            class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                            Superhost</button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/r3.jpg" alt="Apartment">
+                        <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                            Guest Favourite
+                        </button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/r4.jpg" alt="Apartment">
+                        <button
+                            class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                            Superhost</button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="mt-3 m-2">
+                <button class="btn text-start shadow p-3  border-info">
+                    Show All <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <section class="GuidSection">
+        <div class="container">
+            <h1 class="mb-5">Your guide to London</h1>
+            <div class="TextSection1 mt-5">
+                <div class="col-12 d-flex border border-2  border-top-0 border-end-0 border-start-0 ">
+                    <div class="col-md-4 d-flex fs-3">
+                        <i class="fa-solid fa-people-group m-2"></i>
+                        <p class="fw-semibold">What do locals do in London?</p>
+                    </div>
+                    <div class="col-md-8 p-3 fs-5 text-dark">
+                        <div>
+                            <p>Enjoy the art scene</p>
+                            <p>
+                          x      London is home to some of the world’s finest art institutions, but you are more apt to
+                                see in-the-know locals in places
+                                such as the Somerset art center, scoping the galleries in King’s Cross, and simply
+                                enjoying the street art that can pop
+                                up across the city at any given moment. For the best experiences, visit places such as
+                                the Tate with an art historian,
+                                or hit the streets with a local art lover in places such as Notting Hill. Londoners can
+                                still be spotted walking the
+                                famed corridors of places such as the National Gallery, Tate Modern, the British Museum,
+                                and the National History Museum
+                                — usually for traveling exhibits.
+                            </p>
+                        </div>
+
+                        <div>
+                            <p>Head outside to the parks</p>
+                            <p>
+                                London might have a reputation for dreary weather, but locals know how to navigate the
+                                weather reports — especially when
+                                the forecast is sunny. Picnics on Primrose Hill, bike rides around Regent’s Park, and
+                                the always-on Hyde Park (think
+                                concerts and events) only start the list of public parks enjoyed by Londoners.
+                            </p>
+                        </div>
+                        <div>
+                            <p>Relax on Sundays</p>
+                            <p>
+                                Brits have been doing Sundays right for quite some time (case in point: the Sunday
+                                roast). When it comes to truly
+                                relaxing, Londoners end the week with cozy meals, a stroll through Columbia Flower
+                                Market, and visits to neighborhood
+                                cafes with a good book in hand. For those looking to experience the feeling firsthand,
+                                consider booking a Sunday cooking
+                                class to learn how to make pastas, Indian food, and other soul-nurturing meals with
+                                local hosts.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="col-12 d-flex mt-5 border border-2  border-top-0 border-end-0 border-start-0 ">
+                    <div class="col-md-4 d-flex fs-3">
+                        <i class="fa-solid fa-spoon m-2"></i>
+                        <p class="fs-3 fw-medium ms-1 mb-2">What do locals do in London?</p>
+                    </div>
+                    <div class="col-md-8 p-3 fs-5 text-dark">
+                        <div class="">
+                            <p class="">Enjoy the art scene</p>
+                            <p>
+                                London is home to some of the world’s finest art institutions, but you are more apt to
+                                see in-the-know
+                                locals in places
+                                such as the Somerset art center, scoping the galleries in King’s Cross, and simply
+                                enjoying the street
+                                art that can pop
+                                up across the city at any given moment. For the best experiences, visit places such as
+                                the Tate with an
+                                art historian,
+                                or hit the streets with a local art lover in places such as Notting Hill. Londoners can
+                                still be spotted
+                                walking the
+                                famed corridors of places such as the National Gallery, Tate Modern, the British Museum,
+                                and the
+                                National History Museum
+                                — usually for traveling exhibits.
+                            </p>
+                        </div>
+
+                        <div>
+                            <p>Head outside to the parks</p>
+                            <p>
+                                London might have a reputation for dreary weather, but locals know how to navigate the
+                                weather reports —
+                                especially when
+                                the forecast is sunny. Picnics on Primrose Hill, bike rides around Regent’s Park, and
+                                the always-on Hyde
+                                Park (think
+                                concerts and events) only start the list of public parks enjoyed by Londoners.
+                            </p>
+                        </div>
+                        <div>
+                            <p>Relax on Sundays</p>
+                            <p>
+                                Brits have been doing Sundays right for quite some time (case in point: the Sunday
+                                roast). When it comes
+                                to truly
+                                relaxing, Londoners end the week with cozy meals, a stroll through Columbia Flower
+                                Market, and visits to
+                                neighborhood
+                                cafes with a good book in hand. For those looking to experience the feeling firsthand,
+                                consider booking
+                                a Sunday cooking
+                                class to learn how to make pastas, Indian food, and other soul-nurturing meals with
+                                local hosts.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 d-flex mt-5">
+                    <div class="col-md-4 d-flex fs-3">
+                        <i class="fa-regular fa-eye m-2"></i>
+                        <p class="fw-semibold">What are the best ways to go sightseeing in London?</p>
+                    </div>
+                    <div class="col-md-8 fs-5 text-dark">
+                        <div>
+                            <p>Enjoy the art scene</p>
+                            <p>
+                                London is home to some of the world’s finest art institutions, but you are more apt to
+                                see in-the-know
+                                locals in places
+                                such as the Somerset art center, scoping the galleries in King’s Cross, and simply
+                                enjoying the street
+                                art that can pop
+                                up across the city at any given moment. For the best experiences, visit places such as
+                                the Tate with an
+                                art historian,
+                                or hit the streets with a local art lover in places such as Notting Hill. Londoners can
+                                still be spotted
+                                walking the
+                                famed corridors of places such as the National Gallery, Tate Modern, the British Museum,
+                                and the
+                                National History Museum
+                                — usually for traveling exhibits.
+                            </p>
+                        </div>
+
+                        <div>
+                            <p>Head outside to the parks</p>
+                            <p>
+                                London might have a reputation for dreary weather, but locals know how to navigate the
+                                weather reports —
+                                especially when
+                                the forecast is sunny. Picnics on Primrose Hill, bike rides around Regent’s Park, and
+                                the always-on Hyde
+                                Park (think
+                                concerts and events) only start the list of public parks enjoyed by Londoners.
+                            </p>
+                        </div>
+                        <div>
+                            <p>Relax on Sundays</p>
+                            <p>
+                                Brits have been doing Sundays right for quite some time (case in point: the Sunday
+                                roast). When it comes
+                                to truly
+                                relaxing, Londoners end the week with cozy meals, a stroll through Columbia Flower
+                                Market, and visits to
+                                neighborhood
+                                cafes with a good book in hand. For those looking to experience the feeling firsthand,
+                                consider booking
+                                a Sunday cooking
+                                class to learn how to make pastas, Indian food, and other soul-nurturing meals with
+                                local hosts.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

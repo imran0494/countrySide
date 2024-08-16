@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Mentone</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #FFFFFF;
+            justify-content: space-between;
+        }
+
+        .cardSection {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .cards {
+            width: 100%;
+            margin: 5px;
+            padding: 5px;
+            display: flex;
+            max-width: 314px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-sizing: border-box;
+            flex-direction: column;
+        }
+
+        .cardheader {
+            height: 300px;
+            flex: 0 0 auto;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .cardbody {
+            display: flex;
+            flex: 1 1 auto;
+            margin: 15px 0;
+            padding: 0 2px;
+            align-items: center;
+        }
+
+        .cardTitle {
+
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.2em;
+            align-items: center;
+
+        }
+
+
+        .rental-image {
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .rental-title {
+            font-size: 1.2rem;
+        }
+
+        .rental-rating {
+            font-size: 1rem;
+            color: #007bff;
+        }
+
+
+        #card-text {
+            height: 170px;
+        }
+
+
+
+        .imageSection {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            align-items: center;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .men {
+            flex: 1;
+            height: 84vh;
+            margin-left: 35%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .content {
+            left: 0;
+            top: 50%;
+            width: 40%;
+            padding: 20px;
+            position: absolute;
+            border-radius: 10px;
+            background: white;
+            transform: translateY(-68%);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .search-box input,
+        .search-box button {
+            padding: 10px;
+            font-size: large;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .search-box input {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .search-box button {
+            border: none;
+            color: white;
+            cursor: pointer;
+            background-color: #e51852;
+        }
+
+
+        @media (min-width: 820px) and (max-width: 934px) {
+            .imageSection {
+                padding: 10px;
+                flex-direction: column;
+            }
+
+            .men {
+                height: 60vh;
+                margin-left: 0;
+                min-width: 100%;
+                background-size: cover;
+                background-position: center;
+            }
+
+            .content {
+                left: 0;
+                width: 90%;
+                transform: none;
+                margin-top: 20px;
+                position: relative;
+            }
+
+            .search-box input,
+            .search-box button {
+                font-size: medium;
+            }
+        }
+
+        /* Small screens (max-width: 768px) */
+        @media (max-width: 768px) {
+            .imageSection {
+                padding: 10px;
+                flex-direction: column;
+            }
+
+            .men {
+                height: 50vh;
+                margin-left: 0;
+                min-width: 100%;
+                background-size: cover;
+                background-position: center;
+            }
+
+            .content {
+                left: 0;
+                width: 90%;
+                transform: none;
+                margin-top: 20px;
+                position: relative;
+            }
+
+            .search-box input,
+            .search-box button {
+                font-size: medium;
+            }
+        }
+
+        /* Extra small screens (max-width: 576px) */
+        @media (max-width: 576px) {
+            .imageSection {
+                padding: 10px;
+                flex-direction: column;
+            }
+
+            .men {
+                height: 40vh;
+                margin-left: 0;
+                min-width: 100%;
+                background-size: cover;
+                background-position: center;
+            }
+
+            .content {
+                left: 0;
+                width: 90%;
+                transform: none;
+                margin-top: 20px;
+                position: relative;
+            }
+
+            .search-box input,
+            .search-box button {
+                font-size: small;
+            }
+        }
+
+
+        @media (min-width: 1200px) {
+            .men {
+                height: 100vh;
+                margin-left: 25%;
+            }
+
+            .content {
+                width: 35%;
+                padding: 30px;
+            }
+
+            .search-box input,
+            .search-box button {
+                font-size: large;
+            }
+        }
+
+        @media (max-width: 1280px) and (min-width: 800px) {
+            .imageSection {
+                padding: 20px;
+                flex-direction: column;
+            }
+
+            .men {
+                height: 60vh;
+                margin-left: 0;
+                min-width: 100%;
+                background-size: cover;
+                background-position: center;
+            }
+
+            .content {
+                left: 0;
+                width: 90%;
+                transform: none;
+                margin-top: 20px;
+                position: relative;
+            }
+
+            .search-box input,
+            .search-box button {
+                font-size: medium;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cards {
+                max-width: 45%;
+            }
+
+            .title {
+                font-size: 0.9rem;
+            }
+
+            .status .col {
+                flex: 0 0 33.33%;
+                max-width: 33.33%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .cards {
+                max-width: 100%;
+            }
+
+            .title {
+                font-size: 0.85rem;
+            }
+
+            .status .col {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <header class="header">
+            <div class="logo ">
+                <img src="images/air.jpg" style="width:90px;height:50px;" class="ml-4 img-fluid">
+            </div>
+            <p class="fw-semibold">
+                Airbnb your place
+            </p>
+            </nav>
+
+        </header>
+
+        <!-- Image Section -->
+
+
+        <div class="imageSection ">
+            <div class="men">
+                <img src="images/mountain.webp" class="img rounded img-fluid shadow" alt="Image">
+            </div>
+            <div class="content shadow border border-2 ">
+                <h4 class="">Pet-friendly holiday rentals in Lake Martin</h4>
+                <p>Find and book unique pet-friendly homes on Airbnb</p>
+                <div class="search-box">
+                    <input type="text" placeholder="Location" value="Canmore, Canada" class="form-control">
+                    <div class="d-flex flex-column flex-sm-row gap-2">
+                        <input type="date" placeholder="Check In" class="form-control">
+                        <input type="date" placeholder="Check Out" class="form-control">
+                    </div>
+                    <button class="w-100">Search</button>
+                </div>
+            </div>
+        </div>
+
+
+
+        
+        <section class="mt-3">
+            <span class="fw-semibold ms-1 fs-3 ms-3">Top-rated house rentals in Phoenix</span>
+            <p class="ms-3">Guests agree: these apartments are highly rated for location, cleanliness and more.</p>
+            <div class="cardSection">
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/c1.webp" alt="Apartment">
+                        <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                            Guest Favourite
+                        </button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa Lorem ipsum dolor sit,
+                                amet consectetur adipisicing elit. Et voluptate
+                                temporibus consequatur odit excepturi voluptas accusamus itaque sed provident
+                                ipsum?</span>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/e4.webp" alt="Apartment">
+                        <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                            Superhost</button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa Lorem ipsum dolor sit,
+                                amet consectetur adipisicing elit. Et voluptate
+                                temporibus consequatur odit excepturi voluptas accusamus itaque sed provident
+                                ipsum?</span>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/e3.webp" alt="Apartment">
+                        <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                            Guest Favourite
+                        </button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa Lorem ipsum dolor sit,
+                                amet consectetur adipisicing elit. Et voluptate
+                                temporibus consequatur odit excepturi voluptas accusamus itaque sed provident
+                                ipsum?</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/e2.webp" alt="Apartment">
+                        <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                            Superhost</button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa Lorem ipsum dolor sit,
+                                amet consectetur adipisicing elit. Et voluptate temporibus consequatur odit excepturi
+                                voluptas accusamus itaque sed provident ipsum?</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="mt-3 m-2">
+                        <button class="btn text-start shadow p-3  border-info ">
+                            Show All <i class="bi bi-chevron-right"></i>
+                        </button>
+                    </div> -->
+        </section>
+        <!-- ---------------------------------Section Two--------------------------------- -->
+
+        <h4 class="mt-4">Holiday rentals for every style</h4>
+        <p class="">Get the amount of space that is right for you</p>
+        <div class="row mt-4">
+            <div class="col-md-4 rental-card">
+                <div class="card border-0">
+                    <img src="./images/section1-img.jpg" class="card-img-top rental-image rounded-5"
+                        alt="Rental Unit 1">
+                    <div class="card-body">
+                        <div class="card-title fw-medium rental-title fs-5">House</div>
+                        <p class="card-text fs-6">A Space that's all yours, with room for everyone.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 rental-card">
+                <div class="card border-0">
+                    <img src="./images/section2-img.jpg" class="card-img-top rental-image rounded-5"
+                        alt="Rental Unit 2">
+                    <div class="card-body">
+                        <div class="card-title fw-medium rental-title fs-5">Cabins</div>
+                        <p class="card-text fs-6">Kick of you hiking boots at these roustic lodging.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 rental-card">
+                <div class="card border-0">
+                    <img src="./images/section3-img.jpg" class="card-img-top rental-image rounded-5"
+                        alt="Rental Unit 3">
+                    <div class="card-body">
+                        <div class="card-title fw-medium rental-title fs-5">Hotels</div>
+                        <p class="card-text fs-6">Stylish accomodation and aminities. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ---------------------------------Section Two--------------------------------- -->
+        <!-- <div class="container-fluid mt-5">
+            <h4 class="mb-4">Popular Amenities for Canmore Apartment Rentals</h4>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-2">
+                    <div class="card shadow">
+                        <div class="card-body d-flex flex-column align-items-center">
+                            <i class="bi bi-egg-fried fs-2"></i>
+                            <h5 class="card-title mt-3">Kitchen</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card shadow">
+                        <div class="card-body d-flex flex-column align-items-center">
+                            <i class="bi bi-wifi fs-2"></i>
+                            <h5 class="card-title mt-3">Wifi</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card shadow">
+                        <div class="card-body d-flex flex-column align-items-center">
+                            <i class="bi bi-water fs-2"></i>
+                            <h5 class="card-title mt-3">Pool</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card shadow">
+                        <div class="card-body d-flex flex-column align-items-center">
+                            <i class="bi bi-p-circle fs-2"></i>
+                            <h5 class="card-title mt-3">Free Parking</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card shadow">
+                        <div class="card-body d-flex flex-column align-items-center">
+                            <i class="bi bi-snow fs-2"></i>
+                            <h5 class="card-title mt-3">Air Conditioner</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+
+        <div class="mt-3 mb-3">
+            <span class="fw-semibold ms-1 fs-3">Quick stats about flat rentals in Canmore</span>
+            <div class="status">
+                <div class="row">
+                    <div class="col ">
+                        <div class="p-4 m-1 shadow border border-1 rounded">
+                            <i class="fa-solid fa-kitchen-set fs-2"></i>
+                            <p class="">Kitchen</p>
+                        </div>
+                    </div>
+
+                    <div class="col ">
+                        <div class="p-4 m-1 shadow border border-1 rounded">
+                            <i class="fa-solid fa-wifi fs-2"></i>
+                            <p class="">Wifi</p>
+                        </div>
+                    </div>
+
+                    <div class="col ">
+                        <div class="p-4 m-1 shadow border border-1 rounded">
+                            <i class="fa-solid fa-water-ladder fs-2"></i>
+                            <p class="">Pool</p>
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <div class="p-4 m-1 shadow border border-1 rounded ">
+                            <i class="fa-brands fa-product-hunt fs-2"></i>
+                            <p class="">Free parking </p>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="p-4 m-1 shadow border border-1 rounded ">
+                            <i class="fa-solid fa-tree fs-2"></i>
+                            <p class="">Air Conditioning</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <span class="fw-semibold ms-1 fs-3 ms-3">Private apartment rentals</span>
+        <div class="cardSection">
+            <div class="cards">
+                <div class="cardheader position-relative">
+                    <img src="./images/r1.jpg" alt="Apartment">
+                    <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                        Guest Favourite
+                    </button>
+                </div>
+                <div class="cardbody">
+                    <div class="cardTitle text-start">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div>Rental unit in Canmore</div>
+                            <div class="ms-auto d-flex align-items-center">
+                                <i class="bi bi-star-fill"></i>
+                                <span>4.96(24)</span>
+                            </div>
+                        </div>
+                        <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cards">
+                <div class="cardheader position-relative">
+                    <img src="./images/r2.jpg" alt="Apartment">
+                    <button
+                        class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                        Superhost</button>
+                </div>
+                <div class="cardbody">
+                    <div class="cardTitle text-start">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div>Rental unit in Canmore</div>
+                            <div class="ms-auto d-flex align-items-center">
+                                <i class="bi bi-star-fill"></i>
+                                <span>4.96(24)</span>
+                            </div>
+                        </div>
+                        <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cards">
+                <div class="cardheader position-relative">
+                    <img src="./images/r3.jpg" alt="Apartment">
+                    <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                        Guest Favourite
+                    </button>
+                </div>
+                <div class="cardbody">
+                    <div class="cardTitle text-start">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div>Rental unit in Canmore</div>
+                            <div class="ms-auto d-flex align-items-center">
+                                <i class="bi bi-star-fill"></i>
+                                <span>4.96(24)</span>
+                            </div>
+                        </div>
+                        <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="cardheader position-relative">
+                    <img src="./images/r4.jpg" alt="Apartment">
+                    <button
+                        class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                        Superhost</button>
+                </div>
+                <div class="cardbody">
+                    <div class="cardTitle text-start">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div>Rental unit in Canmore</div>
+                            <div class="ms-auto d-flex align-items-center">
+                                <i class="bi bi-star-fill"></i>
+                                <span>4.96(24)</span>
+                            </div>
+                        </div>
+                        <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="cardheader position-relative">
+                    <img src="./images/r5.jpg" alt="Apartment">
+                    <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                        Guest Favourite
+                    </button>
+                </div>
+                <div class="cardbody">
+                    <div class="cardTitle text-start">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div>Rental unit in Canmore</div>
+                            <div class="ms-auto d-flex align-items-center">
+                                <i class="bi bi-star-fill"></i>
+                                <span>4.96(24)</span>
+                            </div>
+                        </div>
+                        <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cards">
+                <div class="cardheader position-relative">
+                    <img src="./images/r6.jpg" alt="Apartment">
+                    <button
+                        class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                        Superhost</button>
+                </div>
+                <div class="cardbody">
+                    <div class="cardTitle text-start">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div>Rental unit in Canmore</div>
+                            <div class="ms-auto d-flex align-items-center">
+                                <i class="bi bi-star-fill"></i>
+                                <span>4.96(24)</span>
+                            </div>
+                        </div>
+                        <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cards">
+                <div class="cardheader position-relative">
+                    <img src="./images/r7.jpg" alt="Apartment">
+                    <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                        Guest Favourite
+                    </button>
+                </div>
+                <div class="cardbody">
+                    <div class="cardTitle text-start">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div>Rental unit in Canmore</div>
+                            <div class="ms-auto d-flex align-items-center">
+                                <i class="bi bi-star-fill"></i>
+                                <span>4.96(24)</span>
+                            </div>
+                        </div>
+                        <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cards">
+                <div class="cardheader position-relative">
+                    <img src="./images/room1.png" alt="Apartment">
+                    <button
+                        class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                        Superhost</button>
+                </div>
+
+                <div class="cardbody">
+                    <div class="cardTitle text-start">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div>Rental unit in Canmore</div>
+                            <div class="ms-auto d-flex align-items-center">
+                                <i class="bi bi-star-fill"></i>
+                                <span>4.96(24)</span>
+                            </div>
+                        </div>
+                        <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-3 m-2">
+            <button class="btn text-start shadow p-3  border-info">
+                Show All <i class="bi bi-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Private Apartment -->
+        <section class="mt-3">
+            <span class="fw-semibold ms-1 fs-3  ms-3">Private apartment rentals</span>
+            <div class="cardSection">
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/Airbnb2img/p1.webp" alt="Apartment">
+                        <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                            Guest Favourite
+                        </button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/Airbnb2img/p2.webp" alt="Apartment">
+                        <button
+                            class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                            Superhost</button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/Airbnb2img/p3.jpeg" alt="Apartment">
+                        <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                            Guest Favourite
+                        </button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/Airbnb2img/p4.jpeg" alt="Apartment">
+                        <button
+                            class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                            Superhost</button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/Airbnb2img/p5.webp" alt="Apartment">
+                        <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                            Guest Favourite
+                        </button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/Airbnb2img/p6.webp" alt="Apartment">
+                        <button
+                            class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                            Superhost</button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/Airbnb2img/p7.webp" alt="Apartment">
+                        <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                            Guest Favourite
+                        </button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/Airbnb2img/p8.webp" alt="Apartment">
+                        <button
+                            class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                            Superhost</button>
+                    </div>
+
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3 m-2">
+                <button class="btn text-start shadow p-3  border-info">
+                    Show All <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Apartment Rentals -->
+
+        <section class="mt-3">
+            <span class="fw-semibold ms-1 fs-3 ms-3">Apartment rentals with a hot tub</span>
+            <div class="cardSection">
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/c1.webp" alt="Apartment">
+                        <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                            Guest Favourite
+                        </button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/e4.webp" alt="Apartment">
+                        <button
+                            class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                            Superhost</button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/e3.webp" alt="Apartment">
+                        <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                            Guest Favourite
+                        </button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/e2.webp" alt="Apartment">
+                        <button
+                            class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                            Superhost</button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/r5.jpg" alt="Apartment">
+                        <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                            Guest Favourite
+                        </button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/r6.jpg" alt="Apartment">
+                        <button
+                            class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                            Superhost</button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/r7.jpg" alt="Apartment">
+                        <button class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 ">
+                            Guest Favourite
+                        </button>
+                    </div>
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="cardheader position-relative">
+                        <img src="./images/room1.png" alt="Apartment">
+                        <button
+                            class="position-absolute top-0 start-0 m-2 p-2 rounded-pill border-0 bg-secondary text-white">
+                            Superhost</button>
+                    </div>
+
+                    <div class="cardbody">
+                        <div class="cardTitle text-start">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>Rental unit in Canmore</div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>4.96(24)</span>
+                                </div>
+                            </div>
+                            <span class="fs-6 ">Cozy 1 bedroom getaway with views @ Resort & Spa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3 m-2">
+                <button class="btn text-start shadow p-3  border-info ">
+                    Show All <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Quick stats about flat rentals in Canmore -->
+
+        <!-- <div class="mt-3">
+            <span class="fw-semibold ms-1 fs-3">Quick stats about flat rentals in Canmore</span>
+            <div class="status">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-12 mt-3">
+                        <div class="p-4 m-1 shadow border border-1 h-100 rounded">
+                            <span><i class="fa-solid fa-house-user"></i></span>
+                            <span class="fw-bold ms-2 mt-2">Total rentals</span>
+                            <p class="ms-4 mb-0">440 properties</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-12 mt-3">
+                        <div class="p-4 m-1 shadow border border-1 h-100 rounded">
+                            <span><i class="fa-solid fa-moon"></i></span>
+                            <span class="fw-bold ms-2 mt-2">Nightly prices starting at</span>
+                            <p class="ms-4 mb-0">₹2,518 before taxes and fees</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-12 mt-3">
+                        <div class="p-4 m-1 shadow border border-1 h-100 rounded ">
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span class="fw-bold ms-2 mt-2">Total number of reviews</span>
+                            <p class="ms-4  mb-0">18T Reviews</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="status">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-12 mt-3">
+                        <div class="p-4 m-1 shadow border border-1 h-100 rounded ">
+                            <span><i class="fa-solid fa-people-group"></i></span>
+                            <span class="fw-bold ms-2 mt-2">Family-friendly rentals</span>
+                            <p class="ms-4  mb-0">250 properties are a good fit for families</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-12 mt-3">
+                        <div class="p-4 m-1 shadow border border-1 h-100 rounded">
+                            <span><i class="fa-solid fa-people-line"></i></span>
+                            <span class="fw-bold ms-2 mt-2">Pet-friendly rentals</span>
+                            <p class="ms-4 mb-0">50 properties allow pets</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-12 mt-3 m-0">
+                        <div class="p-4 shadow border border-1 h-100 rounded">
+                            <span><i class="fa-solid fa-person-swimming"></i></span>
+                            <span class="fw-bold ms-2 mt-2">Rentals with a pool</span>
+                            <p class="ms-4 mb-0">180 properties have a pool</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="destination mt-5 mb-5">
+            <h4>Destinations to explore</h4>
+            <div class="nearby d-flex mt-4 ">
+                <div class="me-4">
+                    <span class="border border-3 border-top-0 border-start-0 border-end-0 border-dark ">Nearby
+                        destinations</span>
+                    <div class="mt-2 d-flex ">
+                        <p class="text-decoration-none me-4">Destin</p>
+                        <p class="text-decoration-none me-4">Biloxi</p>
+                    </div>
+                </div>
+                <div class="me-4">
+                    <span class="border border-3 border-top-0 border-start-0 border-end-0 border-dark">Other types of
+                        stays</span>
+        
+                </div>
+                <div class="me-4">
+                    <span class="border border-3 border-top-0 border-start-0 border-end-0 border-dark">Unique stays</span>
+        
+                </div>
+        
+            </div>
+        </div>
+        
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

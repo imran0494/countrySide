@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <style>
+      .image-container {
+        /* background-color: #000; Black background for contrast */
+        /* padding: 20px; */
+        color: white;
+      }
+
+      .main-image img {
+        width: 100%;
+        height: auto;
+        /* border-radius: 10px; */
+      }
+
+      .grid-image img {
+        width: 100%;
+        height: 205px;
+
+        /* border-radius: 10px; */
+      }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .smaller-image {
+          display: none;
+        }
+        .main-image {
+          display: block;
+        }
+      }
+
+      /* dialog button css */
+
+      .dialog {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .dialog-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        position: relative;
+        width: 570px; /* Set width */
+        height: 575px; /* Set height */
+      }
+
+      .dialog-content h1 {
+        font-weight: bold;
+      }
+      .close {
+        position: absolute;
+        top: 20px;
+        left: 20px; /* Move close button to the right */
+        font-size: 24px;
+        cursor: pointer;
+        color: black;
+      }
+
+      .ticket-icon {
+        margin-top: 30px;
+        width: 401px; /* Set width */
+        height: 270px; /* Set height */
+        margin-right: 2px;
+      }
+
+      .app-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+        border-top: 1px solid #e0e0e0;
+        padding-top: 10px;
+      }
+
+      .vacayhome-logo {
+        margin-top: 12px;
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+      }
+
+      .app-details {
+        margin-top: 30px;
+        flex: 1;
+        text-align: left;
+        margin-left: 10px;
+      }
+
+      .qr-code {
+        width: 70px;
+        height: 70px;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .dialog-content {
+          width: 391px;
+          height: auto;
+          padding: 15px;
+        }
+
+        .ticket-icon {
+          max-width: 300px; /* Adjust maximum width */
+        }
+
+        .vacayhome-logo,
+        .qr-code {
+          width: 40px;
+          height: 40px;
+        }
+
+        .app-details span {
+          font-size: 14px;
+        }
+
+        .app-details p {
+          font-size: 12px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .dialog-content {
+          width: 270px;
+          padding: 10px;
+        }
+
+        .ticket-icon {
+          max-width: 250px; /* Adjust maximum width */
+        }
+
+        .vacayhome-logo,
+        .qr-code {
+          width: 30px;
+          height: 30px;
+        }
+
+        .app-details span {
+          font-size: 12px;
+        }
+
+        .app-details p {
+          font-size: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body class="container mt-5">
+    <!-- header -->
+    <div class="d-flex justify-content-between">
+      <div class="h3">Go VIP with Kevin Hart</div>
+      <div>
+        <span
+          ><i class="bi bi-share"></i
+          ><button class="btn btn-link text-dark">Share</button></span
+        >
+        <span
+          ><i class="bi bi-heart"></i
+          ><button class="btn btn-link text-dark">Save</button></span
+        >
+      </div>
+    </div>
+
+    <!-- Gallery section -->
+    <section class="">
+      <div class="row image-container">
+        <!-- Main large image -->
+        <div class="col-lg-6 main-image">
+          <a href="/firstCollage.html" class="image-item">
+            <img src="images/a1.webp" alt="Main Image" class="rounded-start-4"
+          /></a>
+        </div>
+
+        <!-- Smaller images grid -->
+        <div class="col-lg-6 smaller-image">
+          <div class="row mb-3">
+            <div class="col-sm-6 grid-image">
+              <a href="firstCollage.html" class="image-item">
+                <img src="images/imgpage1.webp" alt="Image 1" />
+              </a>
+            </div>
+            <div class="col-sm-6 grid-image">
+              <a href="firstCollage.html" class="image-item">
+                <img
+                  src="images/imgpage3.jpeg"
+                  alt="Image 2"
+                  class="rounded-end-3"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-6 grid-image">
+              <a href="firstCollage.html" class="image-item">
+                <img src="images/imgpage4.webp" alt="Image 1" />
+              </a>
+            </div>
+            <div class="col-sm-6 grid-image">
+              <a href="firstCollage.html" class="image-item">
+                <img src="images/a4.webp" alt="Image 2" class="rounded-end-3" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="row">
+        <div class="col-lg-7">
+          <div
+            class="py-3 border border-1 border-secondary border-start-0 border-top-0 border-end-0"
+          >
+            <div class="h4">Los Angeles, California, United States</div>
+            <div>
+              <p>Evening Experience</p>
+            </div>
+          </div>
+
+          <div
+            class="border border-1 border-secondary border-start-0 border-top-0 border-end-0"
+          >
+            <div class="py-3 d-flex">
+              <div>
+                <img
+                  src="images/logoimg1.webp"
+                  alt=""
+                  class="rounded-circle"
+                  height="50px"
+                  width="50px"
+                />
+              </div>
+              <div>
+                <div class="px-3"><b>Hosted by Kevin Hart</b></div>
+                <div class="px-3">Comedian</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 py-5">
+          <div class="card px-5 py-3">
+            <div class="card-body">
+              <div class="h5 text-center">Coming 21 August</div>
+            </div>
+            <div class="actions">
+              <button id="openDialogBtn" class="accept btn btn-danger w-100">
+                Notify Me
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="">
+          <div
+            class="border border-1 border-secondary border-start-0 border-top-0 border-end-0"
+          >
+            <div class="d-flex my-4">
+              <i class="fs-2 bi bi-lock"></i>
+              <div class="px-3">
+                <div class="fw-bold">
+                  Hang out with me in my private speakeasy
+                </div>
+                <p>
+                  Get exclusive access to me AND my club. It’s fancy –
+                  closed-toed shoes fancy.
+                </p>
+              </div>
+            </div>
+            <div class="d-flex my-4">
+              <i class="fs-2 bi bi-cup-straw"></i>
+              <div class="px-3">
+                <div class="fw-bold">Turn up for tequila time</div>
+                <p>
+                  My resident tequila tutor Chai Lee will take you to school on
+                  these dranks!
+                </p>
+              </div>
+            </div>
+            <div class="d-flex my-4">
+              <i class="fs-2 bi bi-emoji-wink"></i>
+              <div class="px-3">
+                <div class="fw-bold">Throw down on the dance floor</div>
+                <p>
+                  Get wild to our DJ – just don’t challenge me to a dance
+                  battle. I will win.
+                </p>
+              </div>
+            </div>
+            <div class="d-flex my-4">
+              <i class="fs-2 bi bi-ticket-perforated"></i>
+              <div class="px-3">
+                <div class="fw-bold">Watch all-stars perform</div>
+                <p>
+                  I’m calling in some favours for this one. Hell, I might even
+                  hit the stage.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="row">
+        <div class="col-lg-7 py-4">
+          <div
+            class="border border-1 border-secondary border-start-0 border-top-0 border-end-0"
+          >
+            <div>
+              <p>
+                For the first time ever, I’m opening the doors to the Coramino
+                Live Lounge – an exclusive, members-only speakeasy where you and
+                a guest will get a front-row seat to how I live. This is inner
+                circle stuff. You think I’d open a bottle of Gran Coramino’s
+                finest reposado for any Joe and Nancy off the street? No!
+                (Unless your name is Joe or Nancy, my apologies.) I hope you’re
+                as hyped as I am. See you on the other side of that velvet rope.
+              </p>
+            </div>
+            <div>
+              <div class="fw-bold">What you’ll do</div>
+              <p>
+                The Coramino Live Lounge is my baby. It’s a labour of love and a
+                testament to my hard work because it brings together my two
+                greatest passions – comedy and tequila. (Besides my family, of
+                course. Not trying to get in trouble here.) The vibe is
+                incredible – it’s old-school Hollywood meets Kevin Hart. Like a
+                Rat Pack spot if there were more menu options than just Beef
+                Wellington. Come join me and share a few laughs (and a few
+                drinks).
+              </p>
+            </div>
+            <div>
+              <div class="py-3">
+                Here’s the Kevin Hart-level VIP treatment you can expect.
+              </div>
+              <ul>
+                <li class="py-3">
+                  When you enter through the velvet rope, you’ll be greeted with
+                  Gran Coramino’s finest – cristalinos, añejos and my personal
+                  favourite, reposados – all paired with the perfect plant-based
+                  appetiser. Just a quick heads-up – I will say “flavour
+                  profile” no less than fifteen times. I apologise in advance.
+                </li>
+                <li class="py-3">
+                  I’ll personally guide you through a tasting alongside Chai
+                  Lee, the 2023 Gran Coramino Bartender of the Year. We’ll give
+                  you a tasting card that has details on all three Gran Coramino
+                  tequilas, and while you’re reading them, I’m going to steal a
+                  reposado right out from under you. Nah, I won’t do that. (I
+                  might, though.)
+                </li>
+                <li class="py-3">
+                  Even after the tasting, we’ll have servers walking around all
+                  night with our four signature cocktails – The Boss, The Hart,
+                  Summer Melon Spritz and The Mic Drop. I even have a laser to
+                  etch the Gran Coramino logo onto the ice cubes. That’s how
+                  serious I am about this, people. Lasers!
+                </li>
+                <li class="py-3">
+                  Our live DJ is gonna bring the beat, so you gotta bring the
+                  heat. Just make sure you stretch first. I want you to tear it
+                  up, just not your ligaments.
+                </li>
+                <li class="py-3">
+                  Did you even come if you didn’t snap a pic? Strike a pose for
+                  our photographer and let the ’gram know I’m taller in person,
+                  HA!
+                </li>
+                <li class="py-3">
+                  To top it all off, we’ve got a killer lineup of all-star
+                  performers straight from my contact list. I’d name-drop, but
+                  I’m too classy for that. You’ll just have to come and see for
+                  yourself.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="row">
+        <div class="col-lg-7">
+          <div
+            class="border border-1 border-secondary border-start-0 border-top-0 border-end-0 py-4"
+          >
+            <div>
+              <!-- <div class="border border-1 border-secondary border-start-0 border-top-0 border-end-0 py-5"> -->
+              <div class="h3">Meet Your Host</div>
+              <div class="card w-50 text-center py-5 rounded-5 border-0 shadow">
+                <div class="card-body rounded-5">
+                  <div class="">
+                    <img
+                      src="images/logoimg1.webp"
+                      alt=""
+                      class="position-relative rounded-circle"
+                      height="100px"
+                      width="100px"
+                    />
+                  </div>
+                  <span
+                    class="position-absolute translate-middle badge rounded-circle fs-7 text-bg-primary"
+                    ><i class="bi bi-patch-check"></i
+                  ></span>
+                </div>
+                <div class="h2">Kevin Hart</div>
+                <div class="fw-bold">Started hosting in 2024</div>
+              </div>
+              <!-- </div> -->
+            </div>
+
+            <div class="py-4">
+              <div class="d-flex">
+                <i class="fs-3 bi bi-mortarboard"></i>
+                <div class="py-2 px-2">
+                  Where I went to school: George Washington High School
+                </div>
+              </div>
+              <div class="d-flex py-2">
+                <i class="fs-3 bi bi-briefcase"></i>
+                <div class="py-2 px-2">My work: Comedian/businessman</div>
+              </div>
+              <div class="d-flex py-2">
+                <i class="fs-3 bi bi-lightbulb"></i>
+                <div class="py-2 px-2">
+                  Fun fact: I was a nationally competitive swimmer
+                </div>
+              </div>
+              <div class="d-flex py-2">
+                <i class="fs-3 bi bi-clock"></i>
+                <div class="py-2 px-2">I spend too much time: Working</div>
+              </div>
+              <div class="d-flex py-2">
+                <i class="fs-3 bi bi-emoji-heart-eyes"></i>
+                <div class="py-2 px-2">Pets: My two dogs</div>
+              </div>
+            </div>
+
+            <div>
+              <p>
+                What up, world?! It’s Kevin Hart! You might know me as an actor
+                and comedian, but I’m also a producer, media mogul and one-time
+                underwear model (not a joke). I’m also a lifelong lover of
+                tequila and the founder of Gran Coramino. It may sound like a
+                lot, but hard work tastes different. I’m excited for YOU to get
+                a taste of all that hard work at the Coramino Live Lounge. Mark
+                your calendars, it’s about to go down!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div>
+        <div>
+          <div
+            class="border border-1 border-secondary border-start-0 border-top-0 border-end-0 py-4"
+          >
+            <div class="h3">Where you’ll be</div>
+            <div class="py-4">Los Angeles, California, United States</div>
+            <div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119064.9003428725!2d78.9899362563994!3d21.161225913807623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c0a5a31faf13%3A0x19b37d06d0bb3e2b!2sNagpur%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1722581270493!5m2!1sen!2sin"
+                width="100%"
+                height="500px"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div class="py-4">
+              We verified that this listing’s location is accurate.
+              <a href="">Learn more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div
+        class="border border-1 border-secondary border-start-0 border-top-0 border-end-0 py-4"
+      >
+        <div class="h3">Neighbourhood highlights</div>
+        <p>
+          The Coramino Live Lounge is a cathedral of cool. (I just made that up.
+          Pretty good, right?) It’s a mix of old school and new school that will
+          set the vibe for an evening of great comedy and even better tequila.
+          It’s going to be a great time, so leave your old life at home and let
+          me show you how to live that VIP life.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div
+        class="border border-1 border-secondary border-start-0 border-top-0 border-end-0 py-4"
+      >
+        <div class="d-flex justify-content-center">
+          <img src="images/centerimg.png" alt="" />
+        </div>
+        <div class="text-center">
+          <div class="fs-1 fw-bolder">icons</div>
+          <div class="fs-4">
+            Extraordinary experiences hosted by the world’s greatest <br />
+            names in music, film, TV, art, sports and more.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div
+        class="row py-5 border border-1 border-secondary border-start-0 border-top-0 border-end-0"
+      >
+        <div class="col-4">
+          <div>
+            <i class="bi bi-envelope fs-3"></i>
+            <div class="fw-bold">Request to book</div>
+            <div>
+              <p>
+                Choose your dates, add your guests, then answer a question about
+                why you want to go.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div>
+            <i class="bi bi-check-circle fs-3"></i>
+            <div class="fw-bold">Selection process</div>
+            <div>
+              <p>
+                First, we’ll randomly choose a set of potential guests. Next,
+                we’ll review their answers for unique perspectives and
+                connections to the icon. Then, we’ll invite selected guests to
+                book.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div>
+            <i class="bi bi-person-vcard fs-3"></i>
+            <div class="fw-bold">Requirements</div>
+            <div>
+              <p>
+                You’ll need an active Airbnb account and the app to participate,
+                and be a resident of an eligible country or region. It doesn’t
+                cost anything to submit a request.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div
+        class="border border-1 border-secondary border-start-0 border-top-0 border-end-0 py-4"
+      >
+        <p>
+          If you’re selected and decide to book, you’ll have 24 hours to
+          complete the purchase. Travel costs are not included. Read the full
+          rules, including age and geographical eligibility, how data will be
+          used, odds of being selected and other terms.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="py-3 fs-2">Things to know</div>
+      <div class="row">
+        <div class="col-4">
+          <div class="fs-4">The basics</div>
+          <div class="fs-5">Check-in after 5:00 pm</div>
+          <div class="fs-5">Checkout before 8:00 pm</div>
+          <div class="fs-5">2 guests maximum</div>
+          <button class="btn btn-link fs-5 text-decoration-none">
+            Show more <i class="bi bi-arrow-right-short"></i>
+          </button>
+        </div>
+
+        <div class="col-4">
+          <div class="fs-4">Safety & property</div>
+          <div class="fs-5">Exterior security cameras on property</div>
+          <div class="fs-5">Carbon monoxide alarm</div>
+          <div class="fs-5">Smoke alarm</div>
+          <button class="btn btn-link fs-5 text-decoration-none">
+            Show more <i class="bi bi-arrow-right-short"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- dialog button -->
+
+    <div class="dialog" id="dialog">
+      <div class="dialog-content">
+        <span class="close" id="closeDialogBtn">&times;</span>
+        <img
+          src="./images/centerimg.png"
+          alt="Ticket Icon"
+          class="ticket-icon"
+        />
+        <h1>Get the app</h1>
+        <p>
+          Use the vacayhome app to request to book Icons and get notified about
+          new ones.
+        </p>
+        <div class="app-footer">
+          <img
+            src="/images/logo/logo.jpeg"
+            alt="vacayhome Logo"
+            class="vacayhome-logo"
+          />
+          <div class="app-details">
+            <span>Download the vacayhome app</span>
+            <p>Scan the QR code to download</p>
+          </div>
+          <img
+            src="/images/logo/bing_generated_qrcode.png"
+            alt="QR Code"
+            class="qr-code"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- dialog button js -->
+
+    <script>
+      document
+        .getElementById("openDialogBtn")
+        .addEventListener("click", function () {
+          document.getElementById("dialog").style.display = "flex";
+        });
+
+      document
+        .getElementById("closeDialogBtn")
+        .addEventListener("click", function () {
+          document.getElementById("dialog").style.display = "none";
+        });
+    </script>
+  </body>
+</html>

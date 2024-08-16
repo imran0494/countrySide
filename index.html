@@ -10,17 +10,17 @@ License URI: http://www.themevault.net/license/-->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="icon" href="images/icons/favicon.png" /> -->
+    <link rel="icon" href="images/icons/favicon.png" />
     <link rel="stylesheet" href="https://cdn.lineicons.com/3.0/lineicons.css">
     <title>CountrySide</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <!-- <link
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet" /> -->
+    <link
       href="font-awesome/css/font-awesome.min.css"
       rel="stylesheet"
       type="text/css"
-    /> -->
+    />
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet" />
     <link href="fonts/antonio-exotic/stylesheet.css" rel="stylesheet" />
@@ -29,6 +29,12 @@ License URI: http://www.themevault.net/license/-->
     <link rel="stylesheet" href="css/icons.css" />
     <link rel="stylesheet" href="css/page.css" />
     <link rel="stylesheet" href="css/footer.css">
+
+    <!-- header link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+
     <!-- <link rel="stylesheet" href="css/carousel.css"> -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -43,11 +49,11 @@ License URI: http://www.themevault.net/license/-->
     <script src="js/instafeed.min.js" type="text/javascript"></script>
     <script src="js/custom.js" type="text/javascript"></script>
     <!-- added new -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
-    />
+    /> 
    
   </head>
   <body>
@@ -79,35 +85,235 @@ License URI: http://www.themevault.net/license/-->
       </div>
       
       <!--header--->
-      <header class="header-container">
-        <div class="container">
-          <div class="top-row">
-                <div class="bar">
-                    <div class="location">
-                      <p>Where</p>
-                      <input type="text" placeholder="Search destinations">
-                    </div>
-
-                      <div class="check-in">
-                        <p>Check in</p>
-                        <input type="text" name="dates" placeholder="Add dates">
-                      </div>
-                      <div class="check-out">
-                        <p>Check out</p>
-                        <input type="text" name="dates" placeholder="Add dates">
-                      </div>
-                    <div class="guests">
-                          <p>Guests</p>
-                      <input type="text" placeholder="Add guests">
-                    </div>
-                    <div class="search-btn">
-
-                        <button class=" flex"><i class="lni lni-search-alt"></i></button>
-                    </div>
-                  </div>
-          
+      <div class="container my-3">
+        <div class="search-container flex flex-col sm:flex-row justify-center items-center rounded-5 border p-2 space-y-2 sm:space-y-0 sm:space-x-2">
+            <div class="search-item flex border border-1 border-start-0 border-top-0 border-bottom-0 sm:border-r px-3 w-full sm:w-auto"
+                data-bs-toggle="modal" data-bs-target="#whereModal">
+                <span class="mobilevw fw-medium" style="display: flex; align-items: center;">Search Destinations</span>
+                <!-- <input type="text" placeholder="" style="border: none; margin-top: 20px; margin-left: -20px;"> -->
+                
+                <i class="bi bi-globe-americas mx-3 fs-6" style="display: flex; align-items: center;"></i>
+            </div>
+            <div class="search-item flex justify-center border border-1 border-start-0 border-top-0 border-bottom-0 sm:border-r text-center w-full sm:w-auto"
+                data-bs-toggle="modal" data-bs-target="#checkInModal">
+                <span class="mobilevw fw-medium" style="display: flex; align-items: center;">Check In</span>
+                <!-- <input type="date" class="form-control"/> -->
+                <i class="bi bi-calendar-check mx-3 fs-6" style="display: flex; align-items: center;"></i>
+            </div>
+            <div class="search-item flex justify-center border border-1 border-start-0 border-top-0 border-bottom-0 sm:border-r text-center w-full sm:w-auto"
+                data-bs-toggle="modal" data-bs-target="#checkOutModal">
+                <span class="mobilevw fw-medium" style="display: flex; align-items: center;">Check Out</span>
+                <!-- <input type="date" class="form-control"/> -->
+                <i class="bi bi-calendar2-x mx-3 fs-6" style="display: flex; align-items: center;"></i>
+            </div>
+            <div class="search-item flex justify-center border border-1 border-start-0 border-top-0 border-bottom-0 border-end-0 sm:border-r-0 text-center w-full sm:w-auto"
+                data-bs-toggle="modal" data-bs-target="#whoModal">
+                <span class="mobilevw fw-medium" style="display: flex; align-items: center;">Add guests</span>
+                <i class="bi bi-person-check mx-3 fs-6" style="display: flex; align-items: center;"></i>
+            </div>
+            <div class="search-icon bg-danger rounded-circle text-white">
+                <i class="bi bi-search"></i>
+            </div>
         </div>
-      </header>
+    </div>
+    
+
+    <!-- Search destinations Modal -->
+    <div class="modal fade" id="whereModal" tabindex="-1" aria-labelledby="whereModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="whereModalLabel">
+                        Search Destinations
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" >
+                    <input type="text" class="form-control" placeholder="Enter destination">
+                    <div class="d-flex justify-content-around my-1" style="margin-left: -5.5rem;">
+                        <div class="card border-0">
+                            <div class="card-body object-fit-cover">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44010653.96915278!2d63.263687254527156!3d47.68059124072403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x453c569a896724fb%3A0x1409fdf86611f613!2sRussia!5e0!3m2!1sen!2sin!4v1723635000299!5m2!1sen!2sin" width="130px" class="rounded" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <div class="hide text-center border-0 bg-white">I am Flexible</div>
+                            </div>
+                        </div>
+                        <div class="card border-0">
+                            <div class="card-body object-fit-cover">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22059536.838395897!2d1.029282580291894!3d47.55193788479341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ed8886cfadda85%3A0x72ef99e6b3fcf079!2sEurope!5e0!3m2!1sen!2sin!4v1723635349364!5m2!1sen!2sin" width="130px" class="rounded" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <div class="hide text-center border-0 bg-white">Europe</div>
+                            </div>
+                        </div>
+                        <div class="card border-0">
+                            <div class="card-body object-fit-cover">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15934871.425245194!2d90.8106800527992!3d12.820679544254093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304d8df747424db1%3A0x9ed72c880757e802!2sThailand!5e0!3m2!1sen!2sin!4v1723634558289!5m2!1sen!2sin" width="130px" class="rounded" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <div class="hide text-center border-0 bg-white">Thailand</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-around my-1" style="margin-left: -5.5rem;">
+                        <div class="card border-0">
+                            <div class="card-body object-fit-cover">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31652608.416496404!2d57.11280008574031!3d14.43616373892258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb51e126ff8d06f%3A0xf0562e73e5dc9d0!2sSouth%20Asia!5e0!3m2!1sen!2sin!4v1723634607250!5m2!1sen!2sin" width="130px" class="rounded" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <div class="hide text-center border-0 bg-white">south Asia</div>
+                            </div>
+                        </div>
+                        <div class="card border-0">
+                            <div class="card-body object-fit-cover">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29518485.153185204!2d22.413215308421183!3d25.427204954614616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x157ec4658142ffb7%3A0xa5b8320215ea72c!2sMiddle%20East!5e0!3m2!1sen!2sin!4v1723634647514!5m2!1sen!2sin" width="130px" class="rounded" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <div class="hide text-center border-0 bg-white">Middle east</div>
+                            </div>
+                        </div>
+                        <div class="card border-0">
+                            <div class="card-body object-fit-cover">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9585026.214095859!2d-15.008879607730824!3d54.08980357479194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x25a3b1142c791a9%3A0xc4f8a0433288257a!2sUnited%20Kingdom!5e0!3m2!1sen!2sin!4v1723634683818!5m2!1sen!2sin" width="130px" class="rounded" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <div class="hide text-center border-0 bg-white">United Kindom</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Check In Modal -->
+    <div class="modal fade" id="checkInModal" tabindex="-1" aria-labelledby="checkInModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="checkInModalLabel">Check In Date</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body"><input type="date" class="form-control"/></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Check Out Modal -->
+    <div class="modal fade" id="checkOutModal" tabindex="-1" aria-labelledby="checkOutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="checkOutModalLabel">Check Out Date</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="date" class="form-control" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Guest Modal -->
+    <div class="modal fade" id="whoModal" tabindex="-1" aria-labelledby="whoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="whoModalLabel">Guests</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-between my-4">
+                        <div>
+                            <div class="fw-medium">Adults</div>
+                            <div>Ages 13 or above</div>
+                        </div>
+                        <div>
+                            <span>
+                                <button class="bi bi-plus-circle border-0 rounded-circle fs-5 bg-white"></button>
+                            </span>
+                            <span>
+                                <input type="text" name="" id="" size="1" placeholder="0" class="text-center border-0" />
+                            </span>
+                            <span>
+                                <button class="bi bi-dash-circle border-0 rounded-circle fs-5 bg-white"></button>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between my-4">
+                        <div>
+                            <div class="fw-medium">Childrens</div>
+                            <div>Ages 2 to 12</div>
+                        </div>
+                        <div>
+                            <span>
+                                <button class="bi bi-plus-circle border-0 rounded-circle fs-5 bg-white"></button></span>
+                            <span>
+                                <input type="text" name="" id="" size="1" placeholder="0" class="text-center border-0" />
+                            </span>
+                            <span>
+                                <button class="bi bi-dash-circle border-0 rounded-circle fs-5 bg-white"></button>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between my-4">
+                        <div>
+                            <div class="fw-medium">Infant</div>
+                            <div>Under 2</div>
+                        </div>
+                        <div>
+                            <span>
+                                <button class="bi bi-plus-circle border-0 rounded-circle fs-5 bg-white"></button>
+                            </span>
+                            <span>
+                                <input type="text" name="" id="" size="1" placeholder="0" class="text-center border-0" />
+                            </span>
+                            <span>
+                                <button class="bi bi-dash-circle border-0 rounded-circle fs-5 bg-white"></button>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div >
+                        <div class="d-flex justify-content-between my-4">
+                            <div>
+                                <div class="fw-medium">Pets</div>
+                            </div>
+                            <div>
+                                <span>
+                                    <button class="bi bi-plus-circle border-0 rounded-circle fs-5 bg-white"></button>
+                                </span>
+                                <span>
+                                    <input type="text" name="" id="" size="1" placeholder="0" class="text-center border-0" />
+                                </span>
+                                <span>
+                                    <button class="bi bi-dash-circle border-0 rounded-circle fs-5 bg-white"></button>
+                                </span>
+                            </div>
+                        </div>
+                        <div><a href="#">Bringing a service animal?</a></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+
 
       <!--end-->
 
@@ -351,7 +557,7 @@ License URI: http://www.themevault.net/license/-->
                 </div>
                 <div class="slider-carousel-custom">
                   
-                  <a href="./second.html" target="_blank">
+                  <a href="./first.html" target="_blank">
                     <div class="images main">
                       <img src="./images/a4.webp" alt="flower 1" />
                       <div class="image-text">
@@ -394,7 +600,7 @@ License URI: http://www.themevault.net/license/-->
                   <div class="next nav-btn">&gt;</div>
                 </div>
                 <div class="slider-carousel-custom">
-                  <a href="./image2.html" target="_blank">
+                  <a href="./second.html" target="_blank">
                     <div class="images main">
                       <img src="./images/b1.webp" alt="flower 1" />
                       <div class="image-text">
@@ -437,7 +643,7 @@ License URI: http://www.themevault.net/license/-->
                   <div class="next nav-btn">&gt;</div>
                 </div>
                 <div class="slider-carousel-custom">
-                  <a href="./image1.html" target="_blank">
+                  <a href="./third.html" target="_blank">
                     <div class="images main">
                       <img src="./images/c1.webp" alt="flower 1" />
                       <div class="image-text">
@@ -479,7 +685,7 @@ License URI: http://www.themevault.net/license/-->
                   <div class="next nav-btn">&gt;</div>
                 </div>
                 <div class="slider-carousel-custom">
-                  <a href="./image1.html" target="_blank">
+                  <a href="./fourth.html" target="_blank">
                     <div class="images main">
                       <img src="./images/d1.webp" alt="flower 1" />
                       <div class="image-text">
@@ -521,8 +727,9 @@ License URI: http://www.themevault.net/license/-->
                   <div class="next nav-btn">&gt;</div>
                 </div>
                 <div class="slider-carousel-custom">
-                  <a href="./image1.html" target="_blank">
+                  <a href="./fifth.html" target="_blank">
                     <div class="images main">
+                    
                       <img src="./images/d4.webp" alt="flower 1" />
                       <div class="image-text">
                         <strong>Go VIP with Kevin Hart</strong>
@@ -563,7 +770,7 @@ License URI: http://www.themevault.net/license/-->
                   <div class="next nav-btn">&gt;</div>
                 </div>
                 <div class="slider-carousel-custom">
-                  <a href="./image1.html" target="_blank">
+                  <a href="./sixth.html" target="_blank">
                     <div class="images main">
                       <img src="./images/e1.webp" alt="flower 1" />
                       <div class="image-text">
@@ -614,14 +821,14 @@ License URI: http://www.themevault.net/license/-->
               href="experience.html"
             >
               <img
-                src="/images/room1.png"
+                src="/images/Airbnb2img/Icons_files/ae3426d1-fba4-44d4-bed2-690426f25f7a.jpeg"
                 alt="Open the Olympic Games at Musée"
                 class="pastExperience-active"
               />
-              <img src="/images/room2.png" alt="Image 2" />
-              <img src="/images/room3.png" alt="Image 3" />
-              <img src="/images/room4.png" alt="Image 4" />
-              <img src="/images/room1.png" alt="Image 5" />
+              <img src="/images/Airbnb2img/Icons_files/bf7a757d-9352-4b37-a8c2-9656427bc7fb.jpeg" alt="Image 2" />
+              <img src="/images/Airbnb2img/Icons_files/ed09d57f-3074-45ae-b711-c4c1d1b7b018.jpeg" alt="Image 3" />
+              <img src="/images/Airbnb2img/Icons_files/04966b4d-fe31-4bc0-b1ca-2df033d1527a.jpeg" alt="Image 4" />
+              <img src="/images/Airbnb2img/Icons_files/ex5.webp" alt="Image 5" />
             </a>
             <div class="pastExperience-slider">
               <input
@@ -647,14 +854,14 @@ License URI: http://www.themevault.net/license/-->
           <div class="experience">
             <a href="experience1.html">
               <img
-                src="/images/room2.png"
+                src="/images/Airbnb Image/ee71281a-74af-4200-882a-53c2c8d96a42.webp"
                 alt="Open the Olympic Games at Musée"
                 class="pastExperience-active"
               />
-              <img src="/images/room2.png" alt="Image 2" />
-              <img src="/images/room3.png" alt="Image 3" />
-              <img src="/images/room4.png" alt="Image 4" />
-              <img src="/images/room1.png" alt="Image 5" />
+              <img src="/images/Airbnb Image/ee71281a-74af-4200-882a-53c2c8d96a42.webp" alt="Image 2" />
+              <img src="/images/Airbnb Image/bd73f0f8-9057-4bbc-ad70-1db13eb5c03f.webp" alt="Image 3" />
+              <img src="/images/Airbnb Image/b90b03a6-8bff-46f3-812e-21bf3636104f.webp" alt="Image 4" />
+              <img src="/images/Airbnb Image/6cf06751-2105-4462-9d7c-86db287fe20c.webp" alt="Image 5" />
             </a>
             <div class="pastExperience-slider">
               <input
@@ -680,14 +887,14 @@ License URI: http://www.themevault.net/license/-->
           <div class="experience">
             <a href="experience2.html">
               <img
-                src="/images/room3.png"
+                src="/images/ced15ffe-0ab5-48cf-a189-dbdeaaf04387.webp"
                 alt="Open the Olympic Games at Musée"
                 class="pastExperience-active"
               />
-              <img src="/images/room2.png" alt="Image 2" />
-              <img src="/images/room3.png" alt="Image 3" />
-              <img src="/images/room4.png" alt="Image 4" />
-              <img src="/images/room1.png" alt="Image 5" />
+              <img src="/images/Airbnb Image/f52a6a13-c8d1-4966-ad19-e614fd4bae3c.webp" alt="Image 2" />
+              <img src="/images/Airbnb Image/dcb25748-642f-4314-9815-acaba652ca1e.webp" alt="Image 3" />
+              <img src="/images/Airbnb Image/0caa1462-bd5f-4cfa-8f9d-7012f7eb7d02.webp" alt="Image 4" />
+              <img src="/images/Airbnb Image/d25d568a-7cd3-460b-accc-94c6d71ccbde.webp" alt="Image 5" />
             </a>
             <div class="pastExperience-slider">
               <input
@@ -713,14 +920,14 @@ License URI: http://www.themevault.net/license/-->
           <div class="experience">
             <a href="experience3.html">
               <img
-                src="/images/room4.png"
+                src="/images//Airbnb Image/c92634d0-4964-439a-905d-b9129af14d34.webp"
                 alt="Open the Olympic Games at Musée"
                 class="pastExperience-active"
               />
-              <img src="/images/room3.png" alt="Image 2" />
-              <img src="/images/room1.png" alt="Image 3" />
-              <img src="/images/room2.png" alt="Image 4" />
-              <img src="/images/room4.png" alt="Image 5" />
+              <img src="/images/Airbnb Image/b4348974-568a-4623-9d8b-0890067e5e34.webp Airbnb" alt="Image 2" />
+              <img src="/images/Airbnb Image/591f7acf-c271-4762-89ab-e8e3edb4115b.jpeg" alt="Image 3" />
+              <img src="/images/Airbnb Image/46c755f6-23e2-4f1b-81e2-836ce5581a73.webp" alt="Image 4" />
+              <img src="/images/Airbnb Image/82a3d8ea-c9f1-4a2f-975e-7006723db174.webp" alt="Image 5" />
             </a>
             <div class="pastExperience-slider">
               <input
@@ -1329,19 +1536,22 @@ License URI: http://www.themevault.net/license/-->
         </div>
         <div class="content">
           <div class="footer-top"></div>
+          
         </div>
 
         <div class="footer-mid" style="font-size: small;">
           <div >
-            <h4 style="margin: 1rem 19px">Support</h4>
-            <ul>
-              <li>Help Centre</li>
-              <li>AirCover</li>
-              <li>Anti-discrimination</li>
-              <li>Disability support</li>
-              <li>Cancellation options</li>
-              <li>Report neighbourhood concern</li>
-            </ul>
+            <h4 style="margin: 1rem 19px;">Support</h4>
+    <ul style="list-style: none; padding-left: 0;">
+        <a href="/Help-Center.html" style="text-decoration: none; color: inherit;">
+            <li style="text-decoration: none;">Help Centre</li>
+        </a>
+        <li>AirCover</li>
+        <li>Anti-discrimination</li>
+        <li>Disability support</li>
+        <li>Cancellation options</li>
+        <li>Report neighbourhood concern</li>
+    </ul>
           </div>
           <div>
             <h4 style="margin: 1rem 19px">Hosting</h4>
@@ -1402,8 +1612,8 @@ License URI: http://www.themevault.net/license/-->
     
 
     <!-- added script new -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script> -->
     <script src="js/icons.js" type="text/javascript"></script>
     <script src="js/page.js" type="text/javascript"></script>
     <script src="js/icons-page.js" type="text/javascript"></script>
@@ -1412,10 +1622,13 @@ License URI: http://www.themevault.net/license/-->
   
       
     </script> 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-      <script src="js/header.js" type="text/javascript"></script>
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script> -->
+      <!-- <script src="js/header.js" type="text/javascript"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
+
 
   </body>
 </html>

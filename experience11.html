@@ -375,6 +375,128 @@
             margin-bottom: 0.5rem;
             /* Space below each span */
         }
+        /* dialog button css */
+
+      .dialog {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .dialog-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        position: relative;
+        width: 570px; /* Set width */
+        height: 575px; /* Set height */
+      }
+
+      .dialog-content h1 {
+        font-weight: bold;
+      }
+      .close {
+        position: absolute;
+        top: 20px;
+        left: 20px; /* Move close button to the right */
+        font-size: 24px;
+        cursor: pointer;
+        color: black;
+      }
+
+      .ticket-icon {
+        margin-top: 30px;
+        width: 401px; /* Set width */
+        height: 270px; /* Set height */
+        margin-right: 2px;
+      }
+
+      .app-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+        border-top: 1px solid #e0e0e0;
+        padding-top: 10px;
+      }
+
+      .vacayhome-logo {
+        margin-top: 12px;
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+      }
+
+      .app-details {
+        margin-top: 30px;
+        flex: 1;
+        text-align: left;
+        margin-left: 10px;
+      }
+
+      .qr-code {
+        width: 70px;
+        height: 70px;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .dialog-content {
+          width: 391px;
+          height: auto;
+          padding: 15px;
+        }
+
+        .ticket-icon {
+          max-width: 300px; /* Adjust maximum width */
+        }
+
+        .vacayhome-logo,
+        .qr-code {
+          width: 40px;
+          height: 40px;
+        }
+
+        .app-details span {
+          font-size: 14px;
+        }
+
+        .app-details p {
+          font-size: 12px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .dialog-content {
+          width: 270px;
+          padding: 10px;
+        }
+
+        .ticket-icon {
+          max-width: 250px; /* Adjust maximum width */
+        }
+
+        .vacayhome-logo,
+        .qr-code {
+          width: 30px;
+          height: 30px;
+        }
+
+        .app-details span {
+          font-size: 12px;
+        }
+
+        .app-details p {
+          font-size: 10px;
+        }
+      }
     </style>
 </head>
 
@@ -585,10 +707,10 @@
                             <span class="title">Coming on 28 October</span>
 
                             <div class="actions">
-                                <button class="accept">
-                                    Notify Me
+                                <button id="openDialogBtn" class="accept btn btn-danger ">
+                                  Notify Me
                                 </button>
-                            </div>
+                              </div>
                         </div>
                     </div>
                 </div>
@@ -716,6 +838,57 @@
         </div>
     </div>
     </div>
+
+
+    <!-- dialog button -->
+
+    <div class="dialog" id="dialog">
+        <div class="dialog-content">
+          <span class="close" id="closeDialogBtn">&times;</span>
+          <img
+            src="./images/centerimg.png"
+            alt="Ticket Icon"
+            class="ticket-icon"
+          />
+          <h1>Get the app</h1>
+          <p>
+            Use the vacayhome app to request to book Icons and get notified about
+            new ones.
+          </p>
+          <div class="app-footer">
+            <img
+              src="/images/logo/logo.jpeg"
+              alt="vacayhome Logo"
+              class="vacayhome-logo"
+            />
+            <div class="app-details">
+              <span>Download the vacayhome app</span>
+              <p>Scan the QR code to download</p>
+            </div>
+            <img
+              src="/images/logo/bing_generated_qrcode.png"
+              alt="QR Code"
+              class="qr-code"
+            />
+          </div>
+        </div>
+      </div>
+  
+      <!-- dialog button js -->
+  
+      <script>
+        document
+          .getElementById("openDialogBtn")
+          .addEventListener("click", function () {
+            document.getElementById("dialog").style.display = "flex";
+          });
+  
+        document
+          .getElementById("closeDialogBtn")
+          .addEventListener("click", function () {
+            document.getElementById("dialog").style.display = "none";
+          });
+      </script>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

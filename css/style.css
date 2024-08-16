@@ -78,7 +78,7 @@ ul {
 /*footer*/
 footer {
   background-color: #f3f3f3e1;
-  padding: 5rem 10rem;
+  padding: 2rem 4rem;
 }
 .footer-bottom {
   display: flex;
@@ -107,6 +107,8 @@ ul li::marker {
   color: black;
   font-size: 0.5em;
 }
+
+
 
 @media (min-width: 1100px) {
   .footer-mid {
@@ -222,7 +224,7 @@ ul li::marker {
 
 /* search bar  */
 
-.bar {
+/* .bar {
   background: white;
   box-shadow: 0 0 5px hsl(0 0% 78%);
   height: auto;
@@ -363,6 +365,57 @@ input[type="text"]:focus {
   .empty-div {
     display: none;
   }
+} */
+
+.search-item {
+  flex: 1;
+  flex-direction: row;
+}
+
+.search-container {
+  box-shadow: 0px 0px 5px 1px red;
+}
+
+.search-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+}
+
+@media (min-width: 0px) and (max-width: 559px) {
+  .search-item i {
+    display: block;
+  }
+
+  .search-item span {
+    display: none;
+  }
+  .input-group {
+    display: block;
+  }
+  .card-body {
+    iframe {
+      display: none;
+    }
+    .hide {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 427px) and (max-width: 1024px) {
+  .mobilevw {
+    display: block;
+  }
+  .input-group {
+    display: none;
+  }
+}
+.card {
+  width: 250px;
 }
 
 .flex {
@@ -598,6 +651,21 @@ input[type="text"]:focus {
 .grid-container-custom > .carousel-container-custom {
   text-align: center;
   font-size: 16px;
+}
+
+.slider-carousel-custom a {
+  text-decoration: none;
+}
+
+.slider-carousel-custom a p,
+.slider-carousel-custom a strong {
+  text-decoration: none;
+  color: inherit; /* Ensure the text color remains consistent */
+}
+
+.slider-carousel-custom a:hover p,
+.slider-carousel-custom a:hover strong {
+  text-decoration: none; /* Remove underline on hover as well */
 }
 
 /* Media Queries */

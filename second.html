@@ -39,6 +39,129 @@
           display: block;
         }
       }
+
+      /* dialog button css */
+
+      .dialog {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .dialog-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        position: relative;
+        width: 570px; /* Set width */
+        height: 575px; /* Set height */
+      }
+
+      .dialog-content h1 {
+        font-weight: bold;
+      }
+      .close {
+        position: absolute;
+        top: 20px;
+        left: 20px; /* Move close button to the right */
+        font-size: 24px;
+        cursor: pointer;
+        color: black;
+      }
+
+      .ticket-icon {
+        margin-top: 30px;
+        width: 401px; /* Set width */
+        height: 270px; /* Set height */
+        margin-right: 2px;
+      }
+
+      .app-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+        border-top: 1px solid #e0e0e0;
+        padding-top: 10px;
+      }
+
+      .vacayhome-logo {
+        margin-top: 12px;
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+      }
+
+      .app-details {
+        margin-top: 30px;
+        flex: 1;
+        text-align: left;
+        margin-left: 10px;
+      }
+
+      .qr-code {
+        width: 70px;
+        height: 70px;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .dialog-content {
+          width: 391px;
+          height: auto;
+          padding: 15px;
+        }
+
+        .ticket-icon {
+          max-width: 300px; /* Adjust maximum width */
+        }
+
+        .vacayhome-logo,
+        .qr-code {
+          width: 40px;
+          height: 40px;
+        }
+
+        .app-details span {
+          font-size: 14px;
+        }
+
+        .app-details p {
+          font-size: 12px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .dialog-content {
+          width: 270px;
+          padding: 10px;
+        }
+
+        .ticket-icon {
+          max-width: 250px; /* Adjust maximum width */
+        }
+
+        .vacayhome-logo,
+        .qr-code {
+          width: 30px;
+          height: 30px;
+        }
+
+        .app-details span {
+          font-size: 12px;
+        }
+
+        .app-details p {
+          font-size: 10px;
+        }
+      }
     </style>
   </head>
   <body class="container mt-5">
@@ -62,29 +185,39 @@
       <div class="row image-container">
         <!-- Main large image -->
         <div class="col-lg-6 main-image">
-          <img src="images/a1.webp" alt="Main Image" class="rounded-start-4" />
+          <a href="/secondCollage.html" class="image-item">
+            <img src="images/a1.webp" alt="Main Image" class="rounded-start-4"
+          /></a>
         </div>
 
         <!-- Smaller images grid -->
         <div class="col-lg-6 smaller-image">
           <div class="row mb-3">
             <div class="col-sm-6 grid-image">
-              <img src="images/imgpage1.webp" alt="Image 1" />
+              <a href="secondCollage.html" class="image-item">
+                <img src="images/imgpage1.webp" alt="Image 1" />
+              </a>
             </div>
             <div class="col-sm-6 grid-image">
-              <img
-                src="images/imgpage3.jpeg"
-                alt="Image 2"
-                class="rounded-end-3"
-              />
+              <a href="secondCollage.html" class="image-item">
+                <img
+                  src="images/imgpage3.jpeg"
+                  alt="Image 2"
+                  class="rounded-end-3"
+                />
+              </a>
             </div>
           </div>
           <div class="row mb-3">
             <div class="col-sm-6 grid-image">
-              <img src="images/imgpage4.webp" alt="Image 1" />
+              <a href="secondCollage.html" class="image-item">
+                <img src="images/imgpage4.webp" alt="Image 1" />
+              </a>
             </div>
             <div class="col-sm-6 grid-image">
-              <img src="images/a4.webp" alt="Image 2" class="rounded-end-3" />
+              <a href="secondCollage.html" class="image-item">
+                <img src="images/a4.webp" alt="Image 2" class="rounded-end-3" />
+              </a>
             </div>
           </div>
         </div>
@@ -128,8 +261,10 @@
             <div class="card-body">
               <div class="h5 text-center">Coming 21 August</div>
             </div>
-            <div class="">
-              <button class="btn btn-danger w-100">Notify Me</button>
+            <div class="actions">
+              <button id="openDialogBtn" class="accept btn btn-danger w-100">
+                Notify Me
+              </button>
             </div>
           </div>
         </div>
@@ -485,7 +620,41 @@
       </div>
     </section>
 
-    <!-- dialog box -->
+    <!-- dialog button -->
+
+    <div class="dialog" id="dialog">
+      <div class="dialog-content">
+        <span class="close" id="closeDialogBtn">&times;</span>
+        <img
+          src="./images/centerimg.png"
+          alt="Ticket Icon"
+          class="ticket-icon"
+        />
+        <h1>Get the app</h1>
+        <p>
+          Use the vacayhome app to request to book Icons and get notified about
+          new ones.
+        </p>
+        <div class="app-footer">
+          <img
+            src="/images/logo/logo.jpeg"
+            alt="vacayhome Logo"
+            class="vacayhome-logo"
+          />
+          <div class="app-details">
+            <span>Download the vacayhome app</span>
+            <p>Scan the QR code to download</p>
+          </div>
+          <img
+            src="/images/logo/bing_generated_qrcode.png"
+            alt="QR Code"
+            class="qr-code"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- dialog button js -->
 
     <script>
       document
