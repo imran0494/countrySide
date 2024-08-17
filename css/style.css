@@ -108,8 +108,6 @@ ul li::marker {
   font-size: 0.5em;
 }
 
-
-
 @media (min-width: 1100px) {
   .footer-mid {
     display: grid;
@@ -221,6 +219,8 @@ ul li::marker {
 #back-to-top > span {
   display: block;
 }
+
+/* header css */
 
 /* search bar  */
 
@@ -367,7 +367,7 @@ input[type="text"]:focus {
   }
 } */
 
-.search-item {
+/* .search-item {
   flex: 1;
   flex-direction: row;
 }
@@ -403,9 +403,9 @@ input[type="text"]:focus {
     .hide {
       display: none;
     }
-  }
-}
-
+  } 
+     } */
+/* 
 @media (min-width: 427px) and (max-width: 1024px) {
   .mobilevw {
     display: block;
@@ -420,6 +420,62 @@ input[type="text"]:focus {
 
 .flex {
   display: flex;
+} */
+
+.search-item {
+  flex: 1;
+  flex-direction: row;
+}
+
+.search-container {
+  box-shadow: 0px 0px 5px 1px red;
+}
+
+.search-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+}
+
+@media (min-width: 0px) and (max-width: 559px) {
+  .search-item i {
+    display: block;
+  }
+
+  .search-item span {
+    display: none;
+  }
+
+  .input-group {
+    display: block;
+  }
+
+  .card-body {
+    iframe {
+      display: none;
+    }
+
+    .hide {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 427px) and (max-width: 1024px) {
+  .mobilevw {
+    display: block;
+  }
+
+  .input-group {
+    display: none;
+  }
+}
+
+.card {
+  width: 250px;
 }
 
 .nav-bar {
@@ -453,7 +509,7 @@ input[type="text"]:focus {
 .menu {
   position: absolute;
   right: 10px;
-  top: 10rem;
+  top: 5rem;
   background-color: #ffffff;
   list-style-type: none;
   padding: 2rem 10rem;
@@ -855,4 +911,15 @@ input[type="text"]:focus {
   .experience-info p {
     font-size: 12px;
   }
+}
+
+ul.flex {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+ul.flex li {
+  display: inline; /* Ensure list items are inline */
+
 }

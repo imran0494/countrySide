@@ -95,7 +95,7 @@ const data = {
     { name: "Tenby", category: "Cabin rentals" },
   ],
   artsAndCulture: [
-    { name: "Phoenix", category: "Villa rentals" },
+    { name: "phoenix", category: "Villa rentals" },
     { name: "Hot Springs", category: "Lakehouse rentals" },
     { name: "Los Angeles", category: "Rentals with pools" },
     { name: "San Diego", category: "Rentals with pools" },
@@ -140,7 +140,7 @@ const data = {
     { name: "Seattle", category: "Holiday rentals" },
   ],
   outdoors: [
-    { name: "Lake Martin", category: "Flat rentals" },
+    { name: "lake-martin", category: "Flat rentals" },
     { name: "Banff", category: "Apartment rentals" },
     { name: "Nerja", category: "Beach house rentals" },
     { name: "Greer", category: "Cabin rentals" },
@@ -265,7 +265,7 @@ const data = {
     { name: "United States", category: "Holiday rentals" },
   ],
   mountains: [
-    { name: "Himalayas", category: "High-altitude trekking" },
+    { name: "himalayas", category: "High-altitude trekking" },
     { name: "Andes", category: "Mountain climbing" },
     { name: "Rockies", category: "Snowboarding" },
     { name: "Alps", category: "Ski resorts" },
@@ -278,7 +278,7 @@ const data = {
     { name: "Dolomites", category: "Mountain villages" },
   ],
   beach: [
-    { name: "Maldives", category: "Luxury resorts" },
+    { name: "maldives", category: "Luxury resorts" },
     { name: "Bora Bora", category: "Overwater bungalows" },
     { name: "Maui", category: "Surfing" },
     { name: "Bali", category: "Beach clubs" },
@@ -291,7 +291,7 @@ const data = {
     { name: "Cancun", category: "Party beaches" },
   ],
   uniqueStays: [
-    { name: "Treehouse", category: "Nature retreats" },
+    { name: "treehouse", category: "Nature retreats" },
     { name: "Igloo", category: "Arctic experience" },
     { name: "Cave hotel", category: "Underground lodging" },
     { name: "Yurt", category: "Nomadic living" },
@@ -304,7 +304,7 @@ const data = {
     { name: "Airstream", category: "Retro camping" },
   ],
   categories: [
-    { name: "Family-friendly", category: "Accommodations" },
+    { name: "family-friendly", category: "Accommodations" },
     { name: "Pet-friendly", category: "Accommodations" },
     { name: "Luxury", category: "Accommodations" },
     { name: "Budget", category: "Accommodations" },
@@ -317,7 +317,7 @@ const data = {
     { name: "All-inclusive", category: "Resorts" },
   ],
   thingsToDo: [
-    { name: "City tours", category: "Sightseeing" },
+    { name: "city-tours", category: "Sightseeing" },
     { name: "Cooking classes", category: "Cultural experiences" },
     { name: "Wine tasting", category: "Gastronomy" },
     { name: "Safari", category: "Wildlife viewing" },
