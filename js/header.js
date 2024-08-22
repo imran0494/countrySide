@@ -1,9 +1,3 @@
-$('input[name="dates"]').daterangepicker({
-  buttonClasses: "datepicker-btn",
-  applyButtonClasses: "btn-apply",
-  cancelButtonClasses: "btn-cancel",
-});
-
 function toggleModal() {
   document.getElementById("modal").classList.toggle("active");
 }

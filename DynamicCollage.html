@@ -12,6 +12,16 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
+
+    <!-- Flatpickr CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
     <style>
       .image-container {
         /* background-color: #000; Black background for contrast */
@@ -193,73 +203,124 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-5 py-5">
-          <div class="card px-5 py-3">
-            <div class="card-body">
-              <div class="h5 text-center">Coming 21 August</div>
+
+          <div class="">
+            <div
+              class="border border-1 border-secondary border-start-0 border-top-0 border-end-0"
+            >
+              <div class="d-flex my-4">
+                <i class="fs-2 bi bi-lock"></i>
+                <div class="px-3">
+                  <div class="fw-bold">
+                    Hang out with me in my private speakeasy
+                  </div>
+                  <p>
+                    Get exclusive access to me AND my club. It’s fancy –
+                    closed-toed shoes fancy.
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex my-4">
+                <i class="fs-2 bi bi-cup-straw"></i>
+                <div class="px-3">
+                  <div class="fw-bold">Turn up for tequila time</div>
+                  <p>
+                    My resident tequila tutor Chai Lee will take you to school
+                    on these dranks!
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex my-4">
+                <i class="fs-2 bi bi-emoji-wink"></i>
+                <div class="px-3">
+                  <div class="fw-bold">Throw down on the dance floor</div>
+                  <p>
+                    Get wild to our DJ – just don’t challenge me to a dance
+                    battle. I will win.
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex my-4">
+                <i class="fs-2 bi bi-ticket-perforated"></i>
+                <div class="px-3">
+                  <div class="fw-bold">Watch all-stars perform</div>
+                  <p>
+                    I’m calling in some favours for this one. Hell, I might even
+                    hit the stage.
+                  </p>
+                </div>
+              </div>
             </div>
-            <div class="actions">
+          </div>
+        </div>
+
+        <!-- reserve div -->
+        <div class="col-lg-5 py-5">
+          <div class="card p-4 shadow">
+            <div class="card-body">
+              <span class="h6 text-muted text-decoration-line-through"
+                >₹8,809</span
+              >
+              <span class="h5">₹7,970 night</span>
+              <div class="d-flex justify-content-between my-2">
+                <div>
+                  <label for="checkin">CHECK-IN</label>
+                  <input
+                    id="checkin"
+                    class="form-control flatpickr"
+                    type="text"
+                    placeholder="Select date"
+                  />
+                </div>
+                <div>
+                  <label for="checkout">CHECKOUT</label>
+                  <input
+                    id="checkout"
+                    class="form-control flatpickr"
+                    type="text"
+                    placeholder="Select date"
+                  />
+                </div>
+              </div>
+              <div class="d-flex justify-content-between my-2">
+                <label for="guests" class="mt-2 mx-1">GUESTS</label>
+                <select id="guests" class="form-select">
+                  <option>1 guest</option>
+                </select>
+              </div>
+            </div>
+            <div class="actions mt-3">
               <a href="/user-booking.html">
                 <button id="openDialogBtn" class="accept btn btn-danger w-100">
                   Reserve
                 </button>
               </a>
             </div>
+            <div class="mt-2 text-center text-muted">
+              You won't be charged yet
+            </div>
+            <div class="d-flex justify-content-between">
+              <div>₹7,970 x 3 nights</div>
+              <div class="fw-bold">₹23,909</div>
+            </div>
+            <div class="d-flex justify-content-between">
+              <div>Cleaning fee</div>
+              <div>₹1,678</div>
+            </div>
+            <div class="d-flex justify-content-between">
+              <div>Airbnb service fee</div>
+              <div>₹4,196</div>
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between fw-bold">
+              <div>Total before taxes</div>
+              <div>₹29,783</div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="row">
-        <div class="">
-          <div
-            class="border border-1 border-secondary border-start-0 border-top-0 border-end-0"
-          >
-            <div class="d-flex my-4">
-              <i class="fs-2 bi bi-lock"></i>
-              <div class="px-3">
-                <div class="fw-bold">
-                  Hang out with me in my private speakeasy
-                </div>
-                <p>
-                  Get exclusive access to me AND my club. It’s fancy –
-                  closed-toed shoes fancy.
-                </p>
-              </div>
-            </div>
-            <div class="d-flex my-4">
-              <i class="fs-2 bi bi-cup-straw"></i>
-              <div class="px-3">
-                <div class="fw-bold">Turn up for tequila time</div>
-                <p>
-                  My resident tequila tutor Chai Lee will take you to school on
-                  these dranks!
-                </p>
-              </div>
-            </div>
-            <div class="d-flex my-4">
-              <i class="fs-2 bi bi-emoji-wink"></i>
-              <div class="px-3">
-                <div class="fw-bold">Throw down on the dance floor</div>
-                <p>
-                  Get wild to our DJ – just don’t challenge me to a dance
-                  battle. I will win.
-                </p>
-              </div>
-            </div>
-            <div class="d-flex my-4">
-              <i class="fs-2 bi bi-ticket-perforated"></i>
-              <div class="px-3">
-                <div class="fw-bold">Watch all-stars perform</div>
-                <p>
-                  I’m calling in some favours for this one. Hell, I might even
-                  hit the stage.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="row"></div>
     </section>
 
     <section>
@@ -559,5 +620,12 @@
         </div>
       </div>
     </section>
+
+    <script>
+      // Initialize Flatpickr on the input fields
+      flatpickr(".flatpickr", {
+        dateFormat: "m/d/Y",
+      });
+    </script>
   </body>
 </html>

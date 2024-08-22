@@ -145,43 +145,83 @@
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
 }
 
+/* display toggle button */
+
 .toggle-container {
   display: flex;
   align-items: center;
-  gap: 3px;
-  padding: 10px 40px;
-  border: 1px solid #c8c8c8;
-  border-radius: 14px;
-  background-color: white;
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 300;
-  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
-  outline: none;
-  margin-left: 13px;
-  line-height: 1;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  background-color: #f7f7f7;
+  /* width: fit-content; */
 }
 
-.toggle-container:hover,
-.toggle-container:focus-within {
-  border-color: black;
+.toggle-container:hover {
+  border-color: #000;
 }
 
-.toggle-label {
-  font-size: 12px;
-  font-weight: 300;
-}
-
-.toggle-switch {
+.switch {
   position: relative;
   display: inline-block;
-  width: 40px;
-  height: 20px;
+  width: 70px;
+  height: 28px;
 }
 
-.toggle-switch input {
-  display: none;
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
+
+.sliderD {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+  width: 50px;
+}
+
+.sliderD:hover {
+  background-color: #000;
+}
+
+.sliderD:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: transparent;
+}
+
+input:checked + .sliderD {
+  background-color: black;
+  border: 2px solid black;
+}
+
+input:checked + .sliderD:before {
+  transform: translateX(22px);
+  content: "✓";
+  color: black;
+}
+
+/* end */
 
 .slider {
   position: absolute;
